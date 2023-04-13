@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#F4AB00" offset="0%"></stop>
+            <stop stop-color="#ED8702" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#F7D168" offset="0%"></stop>
+            <stop stop-color="#FCBC56" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#FFDB4B" offset="0%"></stop>
+            <stop stop-color="#FFCB3D" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="我的金币" transform="translate(-30.000000, -154.000000)">
+            <g id="编组" transform="translate(30.000000, 154.000000)">
+                <circle id="椭圆形" fill="url(#linearGradient-1)" cx="11" cy="11" r="10"></circle>
+                <circle id="椭圆形备份" fill="url(#linearGradient-2)" cx="10" cy="10" r="10"></circle>
+                <circle id="椭圆形备份-2" fill="url(#linearGradient-1)" cx="10" cy="10" r="8"></circle>
+                <g id="H" transform="translate(4.590118, 5.613735)" fill="#FFAE22" fill-rule="nonzero">
+                    <polygon id="路径" points="2.78988159 0.606675442 5.09724563 -3.50889243e-14 5.59788159 0.606675442 4.79388159 3.57067544 7.36188159 3.57067544 8.16588159 0.606675442 10.4098816 9.09013925e-14 10.9738816 0.606675442 8.71788159 9.00667544 5.90988159 9.00667544 5.40988159 8.41986523 6.71388159 5.99467544 4.14588159 5.99467544 3.34188159 9.00667544 0.533881592 9.00667544 2.74075628e-13 8.39114783"></polygon>
+                </g>
+                <text id="H" fill="url(#linearGradient-3)" fill-rule="nonzero" font-family="GothamUltra-Italic, Gotham Ultra" font-size="12" font-style="italic" font-weight="800">
+                    <tspan x="5" y="14">H</tspan>
+                </text>
+                <path d="M4.8,8 C4.8,4.95416823 6.60413018,4.31487703 8.06666667,4.31487703 C7.09596246,4.31487703 4.8,4.31487703 4.8,1 C4.8,4.31487703 2.99586982,4.31487703 1.53333333,4.31487703 C3.51891674,4.31487703 4.8,4.87407808 4.8,8 Z" id="椭圆形" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

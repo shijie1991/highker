@@ -1,0 +1,33 @@
+<!--pages/feed-publish/index.wxml-->
+<hk-custom-nav isBack></hk-custom-nav>
+<image class="common__nav-bg" src="https://hk-resources.oss-cn-beijing.aliyuncs.com/images/nav-top-bg-1.png"></image>
+<scroll-view scroll-y style="height: calc(100vh - {{customBarHeight}}px);padding-bottom: calc(env(safe-area-inset-bottom) + 130rpx);">
+  <view class="padding">
+    <textarea style=" width: 100%;" name="content" value="{{content}}" id="" cols="30" rows="10" placeholder="我想说…" bindinput="textareaAInput" show-confirm-bar='{{false}}'></textarea>
+    <view class="margin-top-sm img-list">
+      <view class="img-item" wx:for="{{images}}" wx:key="item">
+        <image mode="aspectFill" src="{{item}}"></image>
+        <view class="icon-close hk-icon" bindtap="removeImage" data-index="{{index}}"></view>
+      </view>
+      <view wx:if="{{images.length < 9}}" class="img-item">
+        <image src="./images/icon-add.svg" bindtap="uploadImgeas"></image>
+      </view>
+    </view>
+    <view class="flex align-center topic-list" style="flex-wrap: wrap;">
+      <view class="topic-item bg-gray flex margin-right-sm align-center margin-bottom-sm" wx:for="{{topicList}}" wx:key="id">
+        <image style="width: 32rpx;height: 32rpx;" src="/images/icon-huati.svg"> </image>
+        <text>{{item.name}}</text>
+        <view class="" style="font-size: 26rpx;" class="icon-close hk-icon margin-left-xs" data-index="{{index}}" bindtap="removeTopic"> </view>
+      </view>
+      <!-- <view class="topic-item bg-gray flex margin-right-sm align-center margin-bottom-sm" bindtap="toFeedPublishTopicPage">
+        <image style="width: 32rpx;height: 32rpx;" src="/images/icon-huati.svg"> </image>
+        <text>选择话题</text>
+        <view style="font-size: 26rpx;" class="icon-arrow-right-bold hk-icon margin-left-xs"></view>
+      </view> -->
+
+    </view>
+  </view>
+</scroll-view>
+<view class=" flex flex-direction" style="position: fixed;left: 0;right: 0; padding-left: 30rpx;padding-right: 30rpx; bottom: calc(env(safe-area-inset-bottom) + 30rpx);">
+  <button disabled="{{disabled}}" style="height: 88rpx;" class="hk-btn bg-black lg  radius" bindtap="submit">发布</button>
+</view>

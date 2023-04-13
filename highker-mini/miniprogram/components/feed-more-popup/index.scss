@@ -1,0 +1,34 @@
+/* components/feed-more/index.wxss */
+.icon-item {
+  width: 112rpx;
+  height: 112rpx;
+  margin: 0 auto;
+}
+.report-box {
+  .title {
+    font-size: 32rpx;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #222222;
+    padding-bottom: 14rpx;
+  }
+  .report-item {
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #666666;
+    & > view {
+      margin: 8rpx;
+      padding: 16rpx 0;
+      background: #f5f7f9;
+      border-radius: 4rpx;
+    }
+  }
+}
+.footer {
+  height: 98rpx;
+  line-height: 98rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+}

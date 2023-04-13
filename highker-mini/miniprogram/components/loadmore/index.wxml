@@ -1,0 +1,8 @@
+<!--components/loadmore/index.wxml-->
+<view class="flex align-center" wx:if="{{isMore}}">
+  <view class="icon-loading hk-icon iconfont-spin"></view>
+  <view class="margin-left-sm">正在加载...</view>
+</view>
+<view wx:else class=" text-grey" style="height: 60rpx;line-height: 60rpx;">
+  已经到底啦！
+</view>

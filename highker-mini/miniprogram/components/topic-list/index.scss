@@ -1,0 +1,143 @@
+/* components/topic/list.wxss */
+.hk-vertical-nav {
+  width: 180rpx;
+  flex: 0 0 180rpx;
+  white-space: initial;
+  background-color: var(--gray);
+  padding-top: 16rpx;
+}
+
+.hk-vertical-nav .hk-item {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  border: none;
+  height: 96rpx;
+  position: relative;
+  color: #999;
+}
+
+.hk-vertical-nav .hk-item.cur {
+  font-size: 28rpx;
+  font-family: PingFangTC-Semibold, PingFangTC;
+  font-weight: 600;
+  color: #000000;
+}
+
+.hk-vertical-nav .hk-item.cur::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+
+  background: linear-gradient(90deg, #b0c3fe 0%, #ffffff 100%);
+  opacity: 0.3;
+}
+.hk-vertical-box {
+  display: flex;
+}
+.hk-vertical-main {
+  background: #fff;
+  margin-top: 16rpx;
+  .hk-vertical-list {
+    border-top-left-radius: 6rpx;
+    padding: 30rpx 30rpx 46rpx 30rpx;
+
+    .hk-item {
+      position: relative;
+      height: 128rpx;
+      overflow: hidden;
+      border-radius: 2px;
+      background: linear-gradient(
+        200deg,
+        rgba(144, 99, 245, 0.3) 0%,
+        #7349ee 100%
+      );
+      &.active::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border: 6rpx solid;
+        border-radius: 2px;
+      }
+      .active-checkbox {
+        &::before {
+          font-family: hk-icon;
+          display: flex;
+          position: absolute;
+          content: "\e688";
+          color: #fff;
+          font-size: 30px;
+          top: 6rpx;
+          right: 6rpx;
+          z-index: 1;
+          width: 56rpx;
+          font-size: 40rpx;
+          justify-content: center;
+          line-height: 40rpx;
+        }
+
+        &::after {
+          position: absolute;
+          content: "";
+          top: 6rpx;
+          right: 6rpx;
+          width: 56rpx;
+          height: 40rpx;
+          background: linear-gradient(315deg, #4db8ff 0%, #c183f2 100%) #f5f7f9;
+          border-left: 2px solid #000000;
+          border-bottom: 2px solid #000000;
+        }
+      }
+      // &::before {
+      //   position: absolute;
+      //   top: 0;
+      //   right: 2rpx;
+      //   bottom: 2rpx;
+      //   left: 0;
+      //   content: "";
+      //   border: 6rpx solid;
+      //   border-radius: 2px;
+      // }
+      & + .hk-item {
+        margin-top: 16rpx;
+        border-radius: 4rpx;
+      }
+
+      &:nth-of-type(odd) {
+        background: linear-gradient(
+          200deg,
+          rgba(51, 141, 231, 0.3) 0%,
+          #338de7 100%
+        );
+      }
+      .topic-title {
+        font-size: 28rpx;
+        font-family: PingFangTC-Semibold, PingFangTC;
+        font-weight: 600;
+        color: #ffffff;
+        height: 40rpx;
+        line-height: 40rpx;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .topic-sub-title {
+        font-size: 20rpx;
+        height: 40rpx;
+        font-family: PingFangTC-Regular, PingFangTC;
+        font-weight: 400;
+        color: #ffffff;
+        overflow: hidden;
+        line-height: 40rpx;
+        text-overflow: ellipsis;
+        overflow: hidden; //超出的文本隐藏
+      }
+    }
+  }
+}

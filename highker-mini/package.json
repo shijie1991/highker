@@ -1,0 +1,14 @@
+{
+  "name": "miniprogram-ts-less-quickstart",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "dependencies": {},
+  "devDependencies": {
+    "miniprogram-api-typings": "^3.4.6",
+    "tsconfig-paths": "^4.0.0"
+  }
+}

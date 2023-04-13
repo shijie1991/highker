@@ -1,0 +1,41 @@
+<view class="hk-modal bottom-modal {{show && isPopup ? 'show' : ''}}" bindtap="onPopupClose" wx:if="{{isPopup}}">
+  <view class="hk-dialog hk-comment__list" catchtap style="height: calc(100vh - ({{customBarHeight}}px + 20rpx));padding-bottom: env(safe-area-inset-bottom)">
+    <view class="flex align-center comment-num padding-lr">
+      <text>全部评论 {{commentList ?commentList.length : '' }}</text>
+      <view class="flex-sub flex align-center justify-end">
+        <view class="icon-close hk-icon" style="font-size: 36rpx;" bindtap="onPopupClose"></view>
+      </view>
+    </view>
+    <!-- 评论列表 -->
+    <block wx:if="{{commentList}}">
+      <hk-scroller style="height: calc(100% - 88rpx);" bind:loadmore="bindScrollToLower">
+        <block wx:if="{{commentList.length}}">
+          <hk-item bind:reply-comment="replyToComment" bind:link="onGiveALikeClick" wx:for="{{commentList}}" wx:key="item" item="{{item}}"></hk-item>
+          <view slot="loadmore" class="flex align-center justify-center padding-tb-sm">
+            <hk-loadmore isMore="{{isMore}}" />
+          </view>
+        </block>
+        <view wx:else class="margin-top-xl">
+          <hk-empty>暂无评论</hk-empty>
+        </view>
+      </hk-scroller>
+    </block>
+    <view wx:else class="flex  align-center justify-center" style="height: 100%;">
+      <hk-loading />
+    </view>
+
+  </view>
+</view>
+<view class="hk-comment__list " wx:else>
+  <view class="flex align-center comment-num padding-lr">
+    <text>全部评论 {{commentList ?commentList.length : '' }}</text>
+  </view>
+  <block wx:if="{{commentList}}">
+    <block wx:if="{{commentList.length}}">
+      <hk-item bind:reply-comment="replyToComment" bind:link="onGiveALikeClick" wx:for="{{commentList}}" wx:key="item" item="{{item}}"></hk-item>
+    </block>
+    <view wx:else class="margin-top-xl">
+      <hk-empty>暂无评论</hk-empty>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,140 @@
+/* pages/index/mey.wxss */
+.my-top-bg {
+  height: 500rpx;
+  width: 750rpx;
+  left: 0rpx;
+  top: 0rpx;
+  position: fixed;
+  background-size: cover;
+  background-position: top center;
+  background-color: rgba(255, 255, 255, 1);
+}
+.hk-my {
+  &__header {
+    padding-top: 30rpx;
+    .vip-level {
+      height: 28rpx;
+      width: 76rpx;
+      padding-left: 6rpx;
+    }
+    .vip-member-diamond {
+      height: 34rpx;
+      width: 34rpx;
+    }
+    .hk-avatar {
+      position: relative;
+      width: 110rpx;
+      height: 110rpx;
+      flex: 0 0 110rpx;
+      .gender-icon {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 24rpx;
+        height: 24rpx;
+      }
+    }
+    .content {
+      overflow: hidden;
+    }
+    .nickname {
+      font-size: 32rpx;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: var(--black);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .signa {
+      font-size: 28rpx;
+      font-family: PingFangTC-Semibold, PingFangTC;
+      font-weight: 600;
+      color: #cccccc;
+    }
+    &-attention {
+      padding-top: 42rpx;
+      .num {
+        font-size: 32rpx;
+        font-family: PingFangTC-Semibold, PingFangTC;
+        font-weight: 600;
+        color: #000000;
+      }
+      .text {
+        font-size: 24rpx;
+        font-family: PingFangTC-Semibold, PingFangTC;
+        font-weight: 600;
+        color: #cccccc;
+      }
+    }
+    &-themember-state {
+      position: relative;
+      width: 100%;
+      height: 138rpx;
+      background-repeat: no-repeat;
+      margin-top: 48rpx;
+      padding-left: 40rpx;
+      padding-right: 32rpx;
+      .bg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+      .content {
+        position: relative;
+        z-index: 10;
+        height: 100%;
+      }
+      .huiyuan-img {
+        width: 238rpx;
+        height: 40rpx;
+      }
+      .time {
+        font-size: 24rpx;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #110f27;
+      }
+      .more-benefits-btn {
+        width: 88px;
+        height: 48rpx;
+        background: #ffffff;
+        border-radius: 24rpx;
+        font-size: 24rpx;
+        font-family: PingFangTC-Semibold, PingFangTC;
+        font-weight: 600;
+        color: #110f27;
+      }
+    }
+  }
+  &__main {
+    padding: 0 !important;
+    .the-member-item {
+      // padding: 54rpx 0 !important;
+      width: 250rpx;
+      height: 200rpx;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .item-icon {
+      width: 48rpx;
+      height: 48rpx;
+      margin: 0 auto;
+    }
+    .item-text {
+      font-size: 28rpx;
+      font-family: PingFangTC-Regular, PingFangTC;
+      font-weight: 400;
+      color: #000000;
+    }
+    .arrow::before {
+      content: "\e687" !important;
+      color: #ccc !important;
+    }
+  }
+}

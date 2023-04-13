@@ -1,0 +1,55 @@
+/* pages/subscription/index.wxss */
+.swiper-box {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 904rpx;
+}
+.screen-swiper {
+  min-height: 100%;
+}
+.title {
+  height: 50rpx;
+  font-size: 36rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #222222;
+  line-height: 50rpx;
+}
+.info {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 40rpx;
+  margin-top: 16rpx;
+}
+.sub-title {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #222222;
+  line-height: 40rpx;
+  margin-top: 56rpx;
+}
+.li {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 48rpx;
+  display: flex;
+  align-items: center;
+  &::before {
+    display: flex;
+    content: "";
+    width: 8rpx;
+    height: 8rpx;
+    background-color: #666666;
+    margin-right: 10rpx;
+    border-radius: 50%;
+  }
+}

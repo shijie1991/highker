@@ -1,0 +1,57 @@
+<!--components/feed-more/index.wxml-->
+<view class="hk-modal bottom-modal  {{show  ? 'show' : ''}}" bindtap="onPopupClose">
+  <view class="hk-dialog" catchtap style="height: calc(100vh - ({{popupPheight}}px + 20rpx));padding-bottom: env(safe-area-inset-bottom)">
+    <block wx:if="{{isDelete}}">
+      <view class="flex justify-center footer text-red" bindtap="onDeleteFeed">
+        删除
+      </view>
+    </block>
+    <block wx:else>
+      <view class="grid col-3 justify-center flex  no-border margin-tb-lg ">
+        <view class="hk-item text-center" bindtap="onChatClick">
+          <image class="icon-item" src="./images/icon-siliao-56x56.svg"></image>
+          <view>私聊</view>
+        </view>
+        <view class="hk-item text-center" bindtap="followedClick" wx:if="{{isFollow}}">
+          <image class="icon-item" src="./images/icon-guanzhu-56x56.svg"></image>
+          <view>{{feedItem && feedItem.user.has_followed ? '取消关注' : '关注'}}</view>
+        </view>
+        <view class="hk-item text-center" bindtap="reportClick">
+          <image class="icon-item" src="./images/icon-jubao-56x56.svg">d</image>
+          <view>举报</view>
+        </view>
+      </view>
+      <view class="report-box padding" wx:if="{{reportShow}}">
+        <view class="title">选择举报原因</view>
+        <view class="grid col-4 report">
+          <view data-id="{{item.id}}" bindtap="setFeddReport" class="hk-item text-center report-item" wx:for="{{feedReportList}}" wx:key="id">
+            <view>{{item.text}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="van-hairline--top"></view>
+    </block>
+    <view class="flex justify-center footer" bindtap="onPopupClose">
+      取消
+    </view>
+
+  </view>
+</view>
+
+
+<!-- 删除提示 -->
+<view class="hk-modal {{modalDelete ? 'show' : ''}}" wx:if="{{isDelete}}" bindtap="hideModalDelete">
+  <view class="hk-dialog">
+    <view class="padding-xl">
+      确定删除此动态？
+    </view>
+    <view class="hk-bar bg-white flex padding-lr padding-bottom">
+      <view class="flex-sub flex padding-right-sm" bindtap="hideModalDelete">
+        <button class="hk-btn line-black radius" style="width: 100%;">取消</button>
+      </view>
+      <view class="flex-sub flex padding-left-sm" bindtap="onDeleteFeed">
+        <button class="hk-btn bg-black radius" style="width: 100%;">确定</button>
+      </view>
+    </view>
+  </view>
+</view>

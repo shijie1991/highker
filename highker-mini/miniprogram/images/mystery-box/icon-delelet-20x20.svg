@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon_Delet_20x20</title>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="盲盒-放消息-语音录入完" transform="translate(-62.000000, -319.000000)">
+            <g id="icon_Delet_20x20" transform="translate(62.000000, 319.000000)">
+                <rect id="矩形" fill-opacity="0" fill="#D8D8D8" x="0" y="0" width="20" height="20"></rect>
+                <polygon id="路径" fill="#000000" fill-rule="nonzero" points="-6.40302118e-13 4.99011777 19.9743509 4.99011777 19.9743509 7.05660046 2.69192583e-13 7.05660046"></polygon>
+                <polygon id="形状" fill="#000000" fill-rule="nonzero" points="14.8953728 18.0111044 14.8953728 7.05660046 17.0452923 7.05660046 17.0452923 19.9937013 2.79529234 19.9937013 2.79529234 7.05660046 4.88790962 7.05660046 4.88790962 18.0111044"></polygon>
+                <path d="M5.35779232,0 L14.4827923,0 L14.4827923,2.04350448 L5.35779232,2.04350448 L5.35779232,0 Z M6.92029233,9.40880061 L8.92029233,9.40880061 L8.92029233,15.289301 L6.92029233,15.289301 L6.92029233,9.40880061 Z M10.9202923,9.40880061 L12.9202923,9.40880061 L12.9202923,15.289301 L10.9202923,15.289301 L10.9202923,9.40880061 Z" id="形状" fill="#000000" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

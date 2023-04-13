@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon_Fapinglun_56x56</title>
+    <defs>
+        <linearGradient x1="93.834529%" y1="92.6234327%" x2="9.29043532%" y2="10.3392386%" id="linearGradient-1">
+            <stop stop-color="#4DB8FF" offset="0%"></stop>
+            <stop stop-color="#C183F2" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="动态详情" transform="translate(-303.000000, -1208.000000)">
+            <g id="icon_Fapinglun_56x56" transform="translate(303.000000, 1208.000000)">
+                <circle id="椭圆形" fill="#000000" cx="28" cy="28" r="28"></circle>
+                <text id="发评论" font-family="PingFangSC-Semibold, PingFang SC" font-size="10" font-weight="500" fill="#FFFFFF">
+                    <tspan x="13" y="43">发评论</tspan>
+                </text>
+                <g id="编组-3" transform="translate(16.000000, 9.000000)">
+                    <rect id="矩形" fill-opacity="0" fill="#D8D8D8" x="0" y="0" width="24" height="24"></rect>
+                    <polygon id="路径-5" stroke="url(#linearGradient-1)" stroke-width="2" points="19.9190813 19.5967211 19.9190813 3.6 3.6 3.6 3.6 16.5886471 15.5305962 16.5886471"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/index",
+    "pages/improve-userInfo/index",
+    "pages/personal-editor/index",
+    "pages/about/index",
+    "pages/member-center/index",
+    "pages/my-task/index",
+    "pages/my-level/index",
+    "pages/my-score/index",
+    "pages/feed-details/index",
+    "pages/my-follow/index",
+    "pages/my-fans/index",
+    "pages/my-visitor/index",
+    "pages/personal-homepage/index",
+    "pages/feed-publish/index",
+    "pages/feed-publish-topic/index",
+    "pages/topic-details/index",
+    "pages/my-score-exchange/index",
+    "pages/box-publish/index",
+    "pages/faq/index",
+    "pages/agreement/index",
+    "pages/chat/index",
+    "pages/user-feedback/index",
+    "pages/subscription/index",
+    "pages/comment-list/index",
+    "pages/rank-detail/rank-detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "useExtendedLib": {
+    "weui": true
+  },
+  "usingComponents": {
+    "hk-custom-nav": "/components/custom-nav/index",
+    "hk-empty": "/components/empty/index",
+    "hk-loading": "/components/loading/index"
+  }
+}

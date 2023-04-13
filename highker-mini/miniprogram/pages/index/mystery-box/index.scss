@@ -1,0 +1,177 @@
+/* pages/index/mystery-box.wxss */
+.hk-mystery-box {
+	height: 100vh;
+	overflow: auto;
+}
+
+.hk-mystery-box-bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 750rpx;
+	height: 100%;
+}
+
+.hk-mystery-box-title {
+	width: 540rpx;
+	height: 210rpx;
+	margin: 0 auto;
+	overflow: hidden;
+
+	image {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.hk-mystery-box-main {
+	position: relative;
+	width: 624rpx;
+	height: 759rpx;
+	margin: 40rpx auto 0;
+
+	.mystery-box-img {
+		width: 624rpx;
+		height: 759rpx;
+	}
+
+	.guide {
+		position: absolute;
+		width: 212rpx;
+		height: 202rpx;
+		top: -16rpx;
+		right: -36rpx;
+		animation: moveright 1.5s infinite;
+	}
+
+	.tips-box {
+		position: absolute;
+		left: 30rpx;
+		right: 10rpx;
+		bottom: 0;
+		color: #fff;
+		display: flex;
+		flex-wrap: nowrap;
+		height: 70rpx;
+		line-height: 70rpx;
+		white-space: nowrap;
+		overflow: hidden;
+		letter-spacing: 2rpx;
+		font-size: 24rpx;
+		white-space: nowrap;
+	}
+
+	.tips-move {
+		position: absolute;
+		width: 1700rpx;
+		top: 0;
+		left: 100%;
+		white-space: nowrap;
+		animation: moveAni 15s infinite linear normal;
+		// animation: moveAni 5s infinite linear normal;
+		// animation-fill-mode: forwards;
+	}
+
+	.tips-item {
+		float: left;
+		width: 800rpx;
+		// width: 745rpx;
+	}
+
+	@keyframes moveAni {
+		0% {
+			left: 0;
+		}
+
+		100% {
+			left: -800rpx;
+		}
+	}
+
+	@keyframes moveright {
+		0% {
+			transform: translateX(0);
+		}
+
+		50% {
+			transform: translateX(-30rpx) translateY(30rpx);
+		}
+
+		100% {
+			transform: translateX(0);
+		}
+	}
+}
+
+.hk-footer {
+	margin-top: 60rpx;
+	padding-bottom: 30rpx;
+
+	.img-btn,
+	.btn {
+		position: relative;
+		width: 290rpx;
+		height: 96rpx;
+	}
+
+	.left-btn {
+		margin-right: 20rpx;
+	}
+
+	.right-btn {
+		margin-left: 20rpx;
+	}
+
+	.juxing image,
+	.juxing {
+		position: absolute;
+		top: -1px;
+		right: 0;
+		width: 60rpx;
+		height: 58rpx;
+		z-index: 1;
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-end;
+	}
+
+	.juxing .num {
+		padding-right: 4rpx;
+		font-size: 24rpx;
+		font-family: PingFangTC-Semibold, PingFangTC;
+		font-weight: 600;
+		color: #ffffff;
+		background: linear-gradient(307deg, #a991f6 0%, #75c1fd 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		z-index: 100;
+	}
+}
+
+.box-dialog {
+	position: relative;
+	width: 512rpx;
+	height: 572rpx;
+	background-image: url(https://hk-resources.oss-cn-beijing.aliyuncs.com/images/bj-2x.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 24rpx 76rpx 40rpx 76rpx;
+	overflow: initial;
+}
+
+.box-dialog-close {
+	position: absolute;
+	width: 72rpx;
+	height: 72rpx;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: -100rpx;
+	z-index: 100;
+	color: #fff;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

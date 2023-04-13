@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-circle-fill</title>
+    <defs>
+        <linearGradient x1="93.834529%" y1="94.3586064%" x2="9.29043532%" y2="8.72467346%" id="linearGradient-1">
+            <stop stop-color="#4DB8FF" offset="0%"></stop>
+            <stop stop-color="#C183F2" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="微信登录" transform="translate(-103.000000, -659.000000)">
+            <g id="分享" transform="translate(16.000000, 641.000000)">
+                <g id="icon_Tianjia_16x16" transform="translate(87.000000, 18.000000)">
+                    <circle id="椭圆形备份-5" fill="url(#linearGradient-1)" cx="8" cy="8" r="8"></circle>
+                    <polyline id="路径" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="4.15612793 8.81152344 7.10437012 11.2080078 11.5740356 6.38311768"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

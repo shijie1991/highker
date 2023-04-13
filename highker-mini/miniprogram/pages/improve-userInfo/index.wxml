@@ -1,0 +1,39 @@
+<!--pages/improveUserInformation/index.wxml-->
+<hk-custom-nav>
+	<view slot="content">完善信息</view>
+</hk-custom-nav>
+<view class="hk-user-info">
+	<!-- <view class="hk-user-info__avatar" bindtap="uploadAvatar"> -->
+	<view class="hk-user-info__avatar" style="position: relative;">
+		<image style="width: 100%; height: 100%;border-radius: 50%;" src="{{form.avatarUrl ? form.avatarUrl:'/images/touxiang@2x.png'}}"></image>
+		<button open-type="chooseAvatar" style="width: 100%; height: 100%;border-radius: 50%; position: absolute;top: 0;opacity: 0;" bind:chooseavatar="onChooseAvatar"></button>
+		<!-- <image style="width: 100%; height: 100%;border-radius: 50%;" src='/images/touxiang@2x.png' wx:else></image> -->
+		<image class="hk-user-info__camera" src="../../images/icon-user-shangchuan.svg"></image>
+	</view>
+	<view class="hk-user-info__form">
+		<view class="flex align-center hk-form-group">
+			<view class="hk-user-info__form_title">昵称</view>
+			<!-- <input maxlength="18" value="{{form.name}}" class="hk-user-info__form_input" placeholder="请输入昵称" bindinput="onUpdateNickname" /> -->
+			<input maxlength="18" class="hk-user-info__form_input" placeholder="请输入昵称" bindblur="onUpdateNickname"  type="nickname" />
+		</view>
+		<view class="hk-user-info__form_gender">
+			<view class="hk-user-info__form_title">性别</view>
+			<text>提交后不可修改，请谨慎</text>
+			<view class="flex align-center justify-between">
+				<view bindtap="onUpdateGender" data-id="{{2}}" class="gender-item flex-sub bg-gray padding-top-lg padding-left-lg margin-right-xs radius {{form.gender === 2 ? 'active' : ''}}">
+					<image src="../../images/icon-user-female.svg"></image>
+					<view class="gender-zh-text">女生</view>
+					<view class="gender-us-text">FEMALE</view>
+				</view>
+				<view bindtap="onUpdateGender" data-id="{{1}}" class="gender-item flex-sub bg-gray padding-top-lg padding-left-lg  margin-left-xs radius {{form.gender === 1 ? 'active' : ''}}">
+					<image src="../../images/icon-user-male.svg"></image>
+					<view class="gender-zh-text">男生</view>
+					<view class="gender-us-text">MALE</view>
+				</view>
+			</view>
+		</view>
+		<view class=" flex flex-direction">
+			<button class="hk-btn bg-black lg hk-user-info__btn" bindtap="onSubmit">完成</button>
+		</view>
+	</view>
+</view>

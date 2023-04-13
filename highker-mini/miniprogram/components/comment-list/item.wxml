@@ -1,0 +1,59 @@
+<!--components/comment-list/item.wxml-->
+<view class="flex comment-item padding-lr padding-bottom-lg padding-top-xs">
+  <view class="avatar" bindtap="onUserInfoClick" data-id='{{item.user.id}}'>
+    <view class="bg-grey" style="width: 68rpx;height: 68rpx;border-radius: 50%;background-image: url({{item.user.avatar}});background-repeat: no-repeat;background-size: cover;"></view>
+    <image wx:if="{{item.user.gender === 2}}" width="12" height="12" class="gender" src="/images/icon-famale-tubiao.svg"></image>
+    <image wx:elif="{{item.user.gender === 1}}" width="12" height="12" class="gender" src="/images/icon-male-tubiao.svg"></image>
+
+  </view>
+  <view class="content flex-sub "  bindtap="replyToComment">
+    <view class="flex align-center" >
+      <text class="nickname " catchtap="onUserInfoClick" data-id='{{item.user.id}}'>{{item.user.name}}</text>
+      <image class="vip-level" wx:if="{{item.vipLevel}}" src="{{item.vipLevel}}" catchtap="onUserInfoClick" data-id='{{item.user.id}}'></image>
+
+    </view>
+    <view class="comment-content flex  padding-top-xs" >
+      <block wx:for="{{item.emojiArray}}" wx:key="index">
+        <text wx:if="{{item.type === 1}}">{{item.content}}</text>
+        <view wx:if="{{item.type === 2}}" style="display: inline-block; width: {{24}}px; height: {{24}}px">
+          <view class="{{item.imageClass}}" style="background-image: url({{emojiURL}});transform-origin: 0 0; transform: scale({{24 / 64}});"></view>
+        </view>
+      </block>
+    </view>
+    <image catchtap="onCommentImageClick" class="margin-top-sm" wx:if="{{item.images}}" style="width: 204rpx;height: 204rpx;" mode="aspectFill" src="{{item.images.path}}"></image>
+    <view class="sub-comment-list" wx:if="{{item.replys.length}}">
+      <view wx:for="{{item.replys}}" wx:key="item" class="sub-comment-item" wx:for-item="o">
+        <view class="flex align-start">
+          <view class="text-blue ">{{o.user.name}}：</view>
+          <view class="flex flex-sub" style="flex-wrap: wrap;">
+            <block wx:for="{{o.emojiArray}}" wx:key="index" wx:for-item="k">
+              <view wx:if="{{k.type === 1}}">{{k.content}}</view>
+              <view wx:if="{{k.type === 2}}" style="display: inline-block; width: {{24}}px; height: {{24}}px">
+                <view class="{{k.imageClass}}" style="background-image: url({{emojiURL}});transform-origin: 0 0; transform: scale({{24 / 64}});"></view>
+              </view>
+            </block>
+          </view>
+        </view>
+        <view class="flex align-center  margin-top-xs">
+          <view class="post-address">{{o.created_at}}</view>
+
+        </view>
+      </view>
+      <!-- <view catchtap="onSubCommentMoreClick" data-id="{{item.id}}" class="flex align-center text-blue" wx:if="{{item.reply_count > 2}}">共{{item.reply_count}}条回复 -->
+      <view catchtap="onSubCommentMoreClick" data-id="{{item.id}}" class="flex align-center text-blue" wx:if="{{item.reply_count > 0}}">共{{item.reply_count}}条回复
+        <view class="icon-arrow-right-bold hk-icon" style="font-size: 14px;margin-left: 4rpx;"></view>
+      </view>
+    </view>
+    <view class="flex align-center footer margin-top-sm">
+      <view class="post-address">{{item.created_at}}</view>
+      <view style="flex: 1;"></view>
+      <!-- <view class="flex align-center margin-left-lg" bindtap="onGiveALikeClick"> -->
+      <!-- 点赞 -->
+      <view class="flex align-center margin-left-lg" catchtap="onGiveALikeClick">
+        <image wx:if="{{item.has_liked}}" style="width: 32rpx;height: 32rpx;" src="/images/icon-zan.svg"></image>
+        <image wx:else style="width: 32rpx;height: 32rpx;" src="/images/icon-zan-no.svg"></image>
+        <text class="text-num padding-left-xs">{{item.like_count}}</text>
+      </view>
+    </view>
+  </view>
+</view>

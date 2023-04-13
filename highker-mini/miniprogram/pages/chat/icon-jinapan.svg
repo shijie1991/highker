@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="27px" viewBox="0 0 27 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>键盘备份</title>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="聊天-语音" transform="translate(-11.000000, -741.000000)">
+            <g id="编组-10" transform="translate(0.000000, 729.000000)">
+                <g id="键盘备份" transform="translate(11.000000, 12.000000)">
+                    <circle id="椭圆形" stroke="#000000" stroke-width="1.5" cx="13.5" cy="13.5" r="12.75"></circle>
+                    <rect id="矩形" fill="#000000" x="7" y="8" width="2.6" height="2.6"></rect>
+                    <rect id="矩形备份-15" fill="#000000" x="7" y="12" width="2.6" height="2.6"></rect>
+                    <rect id="矩形备份-12" fill="#000000" x="10.8" y="8" width="2.6" height="2.6"></rect>
+                    <rect id="矩形备份-16" fill="#000000" x="10.8" y="12" width="2.6" height="2.6"></rect>
+                    <rect id="矩形备份-13" fill="#000000" x="14.6" y="8" width="2.6" height="2.6"></rect>
+                    <rect id="矩形备份-17" fill="#000000" x="14.6" y="12" width="2.6" height="2.6"></rect>
+                    <rect id="矩形备份-14" fill="#000000" x="18.4" y="8" width="2.6" height="2.6"></rect>
+                    <rect id="矩形备份-18" fill="#000000" x="18.4" y="12" width="2.6" height="2.6"></rect>
+                    <rect id="矩形备份-19" fill="#000000" x="10" y="17" width="8" height="2.6"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

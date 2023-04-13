@@ -1,0 +1,44 @@
+/* custom-tab-bar/index.wxss */
+.tab-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: calc(48px + env(safe-area-inset-bottom));
+    background: white;
+    display: flex;
+    padding-bottom: env(safe-area-inset-bottom);
+    z-index: 99;
+}
+
+.tab-bar-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 6rpx;
+}
+
+.tab-bar-item-img {
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.tab-bar-item-text {
+    font-size: 20rpx;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #999999;
+    padding-top: 8rpx;
+
+    &.active {
+        color: var(--black);
+    }
+}
+
+
+.hk-tag.badge {
+    right: -25rpx;
+    top: -10rpx;
+}

@@ -1,0 +1,47 @@
+<hk-custom-nav style="background-color: #fff;" isBack>
+  <view slot="content">{{name}}</view>
+</hk-custom-nav>
+<!-- <scroll-view scroll-y style="height: calc(100vh - {{customBarHeight}}px);" wx:if="{{list}}"> -->
+<scroll-view scroll-y style="height: calc(100vh - {{customBarHeight}}px);">
+  <!-- <image class="common__nav-bg" src="https://hk-resources.oss-cn-beijing.aliyuncs.com/images/nav-top-bg-1.png"></image> -->
+  <block wx:if="{{list!=null}}">
+    <view class="my-fans hk-list menu" wx:if="{{list&&list[0]}}">
+      <view class="hk-item" wx:for="{{list}}" wx:key="id">
+        <view class="content flex align-center ">
+          <image src="../../images/no.{{item.index+1}}.png" style='width:68rpx;height:50rpx;margin-right: 22rpx;' wx:if="{{index<=2}}"></image>
+          <view wx:else style='width:68rpx;height:50rpx;margin-right: 22rpx;' class="flex justify-center align-center number-text">{{item.index+1}}</view>
+          <view class="common__avatar" bindtap="onUserInfoClick" data-id='{{item.id}}'>
+            <image src="{{item.avatar}}" mode="aspectFill"style="width: 88rpx;height: 88rpx;"></image>
+            <image wx:if="{{item.gender === 2}}" src="../../images/icon-famale-tubiao.svg" class="gender-icon"></image>
+            <image wx:else src="../../images/icon-male-tubiao.svg" class="gender-icon"></image>
+          </view>
+          <view>
+            <view class="flex align-center" bindtap="onUserInfoClick" data-id='{{item.id}}'>
+              <view class="common__nickname padding-left-sm">{{item.name}}</view>
+              <image class="common__vip-level" src="{{item.vipLevel}}"></image>
+              <image class="common-vip-member-diamond" wx:if="{{item.user.is_vip}}" src="/images/vip-level-list/member-of-the-diamond.svg"></image>
+            </view>
+            <view class="renqi flex" style="width: 100%;margin-left: 20rpx;">{{ranking.tips}} {{item.ranking}}</view>
+            <!-- <view style="margin-left: 20rpx;" style="width: 100%;" class="renqi flex">人气人气气人气值 {{item.ranking}}</view> -->
+          </view>
+        </view>
+        <view class="action">
+          <button class="hk-btn  bg-gray radius" style="height: 56rpx;" data-item='{{item}}' data-index='{{index}}' data-id="{{item.id}}" bindtap="followedClick" wx:if="{{item.has_followed }}">
+            <view>取消关注</view>
+          </button>
+          <button class="hk-btn  bg-black radius" style="height: 56rpx;" data-item='{{item}}' data-index='{{index}}' data-id="{{item.id}}" bindtap="followedClick" wx:else>
+            <view class="common-gradient-add-icon">+</view>
+            <view class="text-white">关注</view>
+          </button>
+
+        </view>
+      </view>
+    </view>
+    <view wx:else class="flex align-center justify-center" style="height: calc(100% - {{customBarHeight}}px)">
+      <hk-empty>暂无数据</hk-empty>
+    </view>
+  </block>
+  <view wx:else class="flex  align-center justify-center" style="height: 100%;">
+    <hk-loading />
+  </view>
+</scroll-view>

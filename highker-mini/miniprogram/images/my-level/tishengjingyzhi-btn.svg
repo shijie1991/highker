@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="78px" height="28px" viewBox="0 0 78 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组 5</title>
+    <defs>
+        <linearGradient x1="93.3492626%" y1="51.9167115%" x2="3.88578059e-13%" y2="47.0615243%" id="linearGradient-1">
+            <stop stop-color="#4DB8FF" offset="0%"></stop>
+            <stop stop-color="#C183F2" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="我的等级-特权" transform="translate(-265.000000, -221.000000)">
+            <g id="编组" transform="translate(16.000000, 107.000000)">
+                <g id="编组-5" transform="translate(249.000000, 114.000000)">
+                    <path d="M2,0 L76,0 C77.1045695,-2.02906125e-16 78,0.8954305 78,2 L78,26 C78,27.1045695 77.1045695,28 76,28 L2,28 C0.8954305,28 1.91162759e-15,27.1045695 0,26 L0,2 C-1.3527075e-16,0.8954305 0.8954305,-6.85272294e-16 2,0 Z" id="矩形" fill="#FFFFFF"></path>
+                    <text id="提升经验值" fill="url(#linearGradient-1)" fill-rule="nonzero" font-family="YouSheBiaoTiHei" font-size="14" font-weight="normal" line-spacing="16" letter-spacing="0.3099999">
+                        <tspan x="7" y="20">提升经验值</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

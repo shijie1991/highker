@@ -1,0 +1,48 @@
+/* pages/feed-details/index.wxss */
+page {
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.hk-feed-details .hk-card {
+  margin: 0;
+}
+
+.comment-image-box {
+  width: 92rpx;
+  height: 98rpx;
+  border-radius: 4rpx;
+  position: absolute;
+  top: -116rpx;
+  left: 28rpx;
+  z-index: 10;
+  padding: 4rpx;
+  background-color: #fff;
+  image {
+    width: 100%;
+    height: 100%;
+  }
+  .icon-close {
+    position: absolute;
+    top: 4rpx;
+    right: 4rpx;
+    font-size: 24rpx;
+    width: 30rpx;
+    height: 30rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 0px 4px 0px 4px;
+    background-color: rgba($color: #000000, $alpha: 0.2);
+  }
+  .arrow {
+    border: 8rpx solid #0000;
+    border-top-color: #fff;
+    bottom: -16rpx;
+    left: 50%;
+    content: "";
+    position: absolute;
+    transform: translateX(-50%);
+  }
+}

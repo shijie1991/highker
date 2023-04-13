@@ -1,0 +1,4 @@
+<!--components/loading/index.wxml-->
+<view class="flex align-center">
+  <view class="icon-loading hk-icon iconfont-spin" style="width: 80rpx;height: 80rpx;font-size: 80rpx;line-height: 80rpx;"></view>
+</view>

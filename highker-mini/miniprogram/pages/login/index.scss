@@ -1,0 +1,83 @@
+page {
+  background: #fff;
+}
+.hk-login {
+  background-color: rgba(255, 255, 255, 1);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 50rpx;
+
+  // &__nav-bg {
+  //   height: 500rpx;
+  //   width: 750rpx;
+  //   left: 0rpx;
+  //   top: 0rpx;
+  //   position: fixed;
+  //   background-size: cover;
+  //   background-position: top center;
+  //   background-color: rgba(255, 255, 255, 1);
+  // }
+
+  &__top-avatar {
+    box-sizing: border-box;
+    // background-color: rgba(216, 216, 216, 1);
+    border-radius: 42rpx;
+    width: 200rpx;
+    height: 200rpx;
+    // border: 1px solid rgba(151, 151, 151, 1);
+    display: flex;
+    margin: 0 auto;
+    margin-top: 318rpx;
+    position: relative;
+    z-index: 100;
+  }
+
+  &__logo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    // margin: 58rpx auto 0 auto;
+    font-size: 54rpx;
+    image {
+      transform: scale(2.5);
+    }
+  }
+
+  &__info {
+    width: 100%;
+    height: 44rpx;
+    font-size: 32rpx;
+    line-height: 44rpx;
+    display: block;
+    text-align: center;
+    padding-top: 16rpx;
+    font-family: PingFangSC-Regular, PingFang SC;
+    color: #666666;
+  }
+
+  &__btn {
+    width: 462rpx;
+    min-height: 104rpx;
+    margin: 0 auto;
+    // margin-top: 458rpx;
+    margin-top: 380rpx;
+
+    .icon-weixin {
+      font-size: 60rpx;
+    }
+  }
+
+  &__agreement {
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular, PingFang SC;
+    color: #666666;
+    line-height: 32rpx;
+  }
+}
+
+
+.back{
+
+}

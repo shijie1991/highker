@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-huati_16x16_white</title>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.900000036">
+        <g id="社区-话题" transform="translate(-122.000000, -125.000000)">
+            <g id="icon-huati_16x16_white" transform="translate(122.000000, 125.000000)">
+                <rect id="矩形" fill-opacity="0" fill="#D8D8D8" x="0" y="0" width="16" height="16"></rect>
+                <path d="M9.928,7.18 L9.604,9.028 L11.008,9.028 L11.008,10.132 L9.4,10.132 L9.004,12.328 L7.744,12.328 L8.14,10.132 L6.364,10.132 L5.968,12.328 L4.708,12.328 L5.104,10.132 L4.18,10.132 L4.18,9.028 L5.296,9.028 L5.632,7.18 L4.18,7.18 L4.18,6.076 L5.824,6.076 L6.196,4 L7.468,4 L7.096,6.076 L8.86,6.076 L9.232,4 L10.504,4 L10.132,6.076 L11.008,6.076 L11.008,7.18 L9.928,7.18 Z M8.668,7.18 L6.892,7.18 L6.568,9.028 L8.332,9.028 L8.668,7.18 Z" id="形状" fill="#FFFFFF" fill-rule="nonzero"></path>
+                <path d="M4.18,2 L4.18,3.5 L1.5,3.5 L1.5,12.5 L4.18,12.5 L4.18,14 L0,14 L0,2 L4.18,2 Z M15,14 L11,14 L11,12.5 L13.5,12.5 L13.5,3.5 L11,3.5 L11,2 L15,2 L15,14 Z" id="形状结合" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

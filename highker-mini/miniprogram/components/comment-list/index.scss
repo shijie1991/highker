@@ -1,0 +1,16 @@
+/* components/comment-item/index.wxss */
+// background: #fff;
+.hk-comment__list {
+  text-align: left;
+  .comment-item {
+    padding-top: 20rpx !important;
+  }
+}
+.comment-num {
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #222222;
+  line-height: 88rpx;
+  height: 88rpx;
+}

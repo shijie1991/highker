@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>金币兑换icon</title>
+    <defs>
+        <linearGradient x1="90.7133557%" y1="61.0650291%" x2="8.17987351%" y2="42.1600384%" id="linearGradient-1">
+            <stop stop-color="#A991F6" offset="0%"></stop>
+            <stop stop-color="#75C1FD" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="个人主页" transform="translate(-301.000000, -332.000000)">
+            <g id="金币兑换icon" transform="translate(301.000000, 332.000000)">
+                <rect id="矩形" fill-opacity="0" fill="#D8D8D8" x="0" y="0" width="24" height="24"></rect>
+                <g id="兑换icon" transform="translate(2.000000, 3.000000)">
+                    <path d="M2,2 L2,16 L18,16 L18,2 L2,2 Z M1,0 L19,0 C19.2652,0 19.5196,0.10536 19.7071,0.29289 C19.8946,0.48043 20,0.73478 20,1 L20,17 C20,17.2652 19.8946,17.5196 19.7071,17.7071 C19.5196,17.8946 19.2652,18 19,18 L1,18 C0.73478,18 0.48043,17.8946 0.29289,17.7071 C0.10536,17.5196 0,17.2652 0,17 L0,1 C0,0.73478 0.10536,0.48043 0.29289,0.29289 C0.48043,0.10536 0.73478,0 1,0 Z M10,6 L10,3 L15,8 L6,8 L6,6 L10,6 Z M5,10 L14,10 L14,12 L10,12 L10,15 L5,10 Z" id="形状" fill="#222222" fill-rule="nonzero"></path>
+                    <polygon id="路径" fill="url(#linearGradient-1)" points="5 10 14 10 14 12 10 12 10 15"></polygon>
+                    <polygon id="路径" fill="url(#linearGradient-1)" points="10 6 10 3 15 8 6 8 6 6"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

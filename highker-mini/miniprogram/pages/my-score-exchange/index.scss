@@ -1,0 +1,109 @@
+/* pages/my-score-exchange/index.wxss */
+page {
+  background-color: #fff;
+}
+.hk-custom {
+  background-color: #222222;
+}
+.nav-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 750rpx;
+  background: linear-gradient(360deg, rgba(71, 71, 71, 0) 0%, #222222 100%);
+}
+.my-score-exchenge {
+  padding-bottom: env(safe-area-inset-bottom);
+  &__header {
+    height: 200rpx;
+    background: #ffffff;
+    box-shadow: 0px 4rpx 24rpx 0px rgba(0, 0, 0, 0.08);
+    border-radius: 8rpx;
+    .header-title {
+      height: 40rpx;
+      font-size: 28rpx;
+      font-family: PingFangSC-Semibold, PingFang SC;
+      font-weight: 600;
+      color: #999999;
+      line-height: 40rpx;
+      margin-top: 10rpx;
+    }
+    .header-right {
+      height: 40rpx;
+      font-size: 28rpx;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #999999;
+      line-height: 40rpx;
+    }
+  }
+  &__list {
+    margin-top: 64rpx;
+    .list-title {
+      height: 44rpx;
+      font-size: 32rpx;
+      font-family: PingFangTC-Semibold, PingFangTC;
+      font-weight: 600;
+      color: #222222;
+      line-height: 44rpx;
+    }
+    .hk-list {
+      margin: 0 -16rpx;
+    }
+    .hk-list.grid.no-border > .hk-item {
+      position: relative;
+      padding: 6rpx;
+    }
+    .item-text {
+      height: 40rpx;
+      font-size: 28rpx;
+      font-family: PingFangSC-Semibold, PingFang SC;
+      font-weight: 600;
+      color: #222222;
+      line-height: 40rpx;
+      margin: 10rpx 0;
+    }
+    .score-value {
+      position: absolute;
+      height: 40rpx;
+      background: rgba($color: #ffd844, $alpha: 0.4);
+      border-radius: 2px 0px 2px 0px;
+      padding: 0 16rpx 0 10rpx;
+      .val-text {
+        height: 32rpx;
+        font-size: 24rpx;
+        font-family: PingFangSC-Semibold, PingFang SC;
+        font-weight: 600;
+        color: #d56128;
+        line-height: 32rpx;
+        line-height: 36rpx;
+        padding-left: 6rpx;
+      }
+    }
+    .disable-btn {
+      height: 52rpx;
+      background: #e5e7e9;
+
+      color: #999999;
+    }
+  }
+}
+.score-48 {
+  width: 48rpx;
+  height: 48rpx;
+  flex: 0 0 48rpx;
+}
+.score-28 {
+  width: 28rpx;
+  height: 28rpx;
+  flex: 0 0 28rpx;
+}
+.score-num {
+  height: 80rpx;
+  font-size: 56rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #222222;
+  line-height: 80rpx;
+}

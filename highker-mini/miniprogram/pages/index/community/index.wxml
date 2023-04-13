@@ -1,0 +1,61 @@
+<!-- 头部菜单栏 -->
+<hk-custom-nav class="hk-community__nav" isCustom>
+  <!-- <view class="flex-sub flex justify-center nav-item {{feedParams.type === item.id ? 'header-nav-active' : ''}} " wx:for="{{navigationMenuList}}" wx:key="text" data-id="{{item.id}}" bindtap="handlerNavItemClick">
+    <view>{{item.text}}</view>
+  </view> -->
+  <!-- <view class="flex-sub flex justify-center nav-item {{feedParams.type === item.id ? 'header-nav-active' : ''}} " wx:for="{{navigationMenuList1}}" wx:key="text" data-id="{{item.id}}" bindtap="handlerNavItemClick">
+    <image src='{{item.url}}' mode="widthFix" style="width: 50rpx;" data-id="{{item.id}}"></image>
+  </view> -->
+  <view class="flex-sub flex justify-center nav-item  " wx:for="{{navigationMenuList}}" wx:key="text" data-id="{{item.id}}" bindtap="handlerNavItemClick">
+    <image hidden="{{feedParams.type !== item.id }}" src='{{item.url}}' mode="widthFix" style="width: 94rpx;height: 62rpx;" data-id="{{item.id}}"></image>
+    <view hidden="{{feedParams.type === item.id }}">{{item.text}}</view>
+  </view>
+</hk-custom-nav>
+
+<!-- 动态列表区域 -->
+<hk-scroller id="scroller" bind:scroll="onScroll" bind:loadmore="bindScrollToLower" bind:refresh="bindRefresh" class="hk-community" style="--height--:{{customBarHeight}}px" wx:if="{{feedParams.type !== 'topic'}}">
+  <hk-refresh slot="refresh" type="default" config="{{elmSetting}}"></hk-refresh>
+  <!-- 排行榜 -->
+  <block wx:if="{{feedParams.type==='hot'}}">
+    <scroll-view scroll-x="{{true}}" class="flex scroll-box" style="height:120rpx;overflow: scroll;width: 100%;white-space: nowrap;">
+      <!-- <image src="../../../images/tongChengBang.png" class="rank-image" wx:for="{{rankList}}" bindtap="clickRank" data-slug='{{item.slug}}' data-name='{{item.name}}'></image> -->
+      <view class="rank-item " wx:for="{{rankList}}" wx:key="index" bindtap="clickRank" data-slug='{{item.slug}}' data-name='{{item.name}}' style="display: inline-block;">
+        <view class="flex flex-direction justify-center  margin-left-sm" style="height: 100%;">
+          <viwe class="text-bold rank-cn-name text-white">{{item.name}}</viwe>
+          <viwe class="text-white rank-en-name">{{item.en}}</viwe>
+        </view>
+      </view>
+    </scroll-view>
+  </block>
+  <hk-feed-item bind:comment="onFeedCommentClick" bind:more="onFeedMore" bind:userinfo="onFeedUserinfoClick" bind:details="onFeedDetailsClick" bind:link="onGiveALikeClick" bind:topic="onTopicClick" item="{{item}}" wx:for="{{feedList}}" wx:key="item" />
+
+  <view class="" style='height: calc(100vh - ({{customBarHeight}}px + 48px + env(safe-area-inset-bottom)));display: flex;align-items: center;justify-content: center;' wx:if="{{isLoaded&&feedList.length===0}}">
+    <hk-empty>暂无数据</hk-empty>
+  </view>
+
+  <view slot="loadmore" class="flex align-center justify-center padding-tb-sm" wx:if="{{!(isLoaded&&feedList.length===0)}}">
+    <hk-loadmore isMore="{{isMore}}" />
+  </view>
+
+</hk-scroller>
+
+<!-- 话题列表 -->
+<!-- <hk-topic-list wx:else style="height: calc(100vh - ({{customBarHeight}}px + 48px + env(safe-area-inset-bottom)));"></hk-topic-list> -->
+
+
+<!-- 动态更多 -->
+<hk-feed-more-popup id="feedMore" bind:follow="onFollowClickCallback"></hk-feed-more-popup>
+
+
+<!-- 动态评论 -->
+<hk-comment-list id="commentList" isPopup></hk-comment-list>
+
+
+<!-- <button wx:if="{{feedParams.type === 'hot' || feedParams.type === 'new'}}" bindtap="toFeedPulishPage" class="hk-btn bg-black add-feed-btn flex align-center radius  animation-slide-bottom {{publishFeedHide ? 'hide' : ''}}" style="position: fixed;left: 0;right: 0;bottom: calc(48px + env(safe-area-inset-bottom) + 40rpx);">
+	<view class="add-icon">+</view>
+	<view>发布动态</view>
+</button> -->
+<view wx:if="{{feedParams.type === 'hot' || feedParams.type === 'new'}}" bindtap="toFeedPulishPage" class="hk-btn bg-black add-feed-btn flex align-center radius  animation-slide-bottom {{publishFeedHide ? 'hide' : ''}}" style="position: fixed;left: 0;right: 0;bottom: calc(48px + env(safe-area-inset-bottom) + 40rpx);">
+  <view class="add-icon">+</view>
+  <view>发布动态</view>
+</view>

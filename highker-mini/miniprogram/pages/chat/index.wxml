@@ -1,0 +1,121 @@
+<hk-custom-nav isBack>
+  <view slot="content">{{name}}</view>
+</hk-custom-nav>
+
+<!-- 动态列表区域 -->
+<!-- <scroll-view id="scroller" refresher-enabled='{{true}}' bindrefresherrefresh="bindRefresh" style="height: calc(100vh - ({{customBarHeight}}px + env(safe-area-inset-bottom) + 76rpx )  - {{(isFocus&&(inputType===INPUTTYPE[0]) ||inputType===INPUTTYPE[2] ) ?keyboardHeight:0}}px);" scroll-with-animation='{{true}}' scroll-anchoring='{{true}}' refresher-triggered='{{refreshStatus}}' scroll-y bindscroll='bindscroll' scroll-into-view='{{scrollId}}'> -->
+<scroll-view id="scroller" refresher-enabled='{{true}}' bindrefresherrefresh="bindRefresh" style="height: calc(100vh - ( {{customBarHeight}}px + {{(isFocus&&(inputType===INPUTTYPE[0]) ||inputType===INPUTTYPE[2] )? '0px' : 'env(safe-area-inset-bottom)'}} + 96rpx )  - {{(isFocus&&(inputType===INPUTTYPE[0]) ||inputType===INPUTTYPE[2] ) ?keyboardHeight:0}}px);" scroll-with-animation='{{true}}' scroll-anchoring='{{true}}' refresher-triggered='{{refreshStatus}}' scroll-y bindscroll='bindscroll' scroll-into-view='{{scrollId}}' bindtouchstart="clickChatView">
+  <hk-refresh slot="refresh" type="default" config="{{elmSetting}}"></hk-refresh>
+  <view class="hk-chat" style="padding-bottom: 20rpx;">
+    <!-- <view class="hk-item {{currentUserId === item.sender ? 'self' : ''}}" wx:for="{{messageList}}" wx:key="id"> -->
+    <block wx:for="{{messageList}}" wx:key="id">
+      <!-- 显示时间 -->
+      <view class="flex justify-center created_at" style="height: 32rpx;font-size: 24rpx;font-family:PingFangSC-Regular, PingFang SC;font-weight: 400;color: #CECECE;line-height: 32rpx;" wx:if="{{item._created_at}}">{{item._created_at}}</view>
+      <!-- 聊天记录内容 -->
+      <view class="hk-item  {{currentUserId == item.sender ? 'self' : 'his'}}" id="chat_{{item.id}}">
+        <!-- 对方的头像 -->
+        <view class="hk-avatar bg-grey" style="background-image:url({{item.secret_user.avatar||item.sender_user.avatar}});border-radius: 50%;" wx:if="{{currentUserId != item.sender}}" catchtap="clickAvatar" data-id='{{item}}'></view>
+        <view class="main">
+          <!-- 图片信息 -->
+          <image mode="{{item.isWidthMode?'widthFix':'heightFix'}}" wx:if="{{item.type === 2}}" :style="{{ item.isWidthMode ? 'width: 270rpx;' : 'height: 270rpx;'}}" src="{{item.content}}" catchtap="previewImage" data-src='{{item.content}}'> </image>
+          <!-- 文字/表情信息 -->
+          <view class="content " style="display:flex;flex-wrap: wrap; word-break: break-all;" wx:if="{{item.type === 1}}">
+            <block wx:for="{{item.emojiArray}}" wx:key="index">
+              <!-- <view wx:if="{{item.type === 1}}">{{item.content}}</view> -->
+              <block wx:if="{{item.type === 1}}">{{item.content}}</block>
+              <!-- <view wx:if="{{item.type === 2}}" style="display: inline-block; width: {{24}}px; height: {{24}}px"> -->
+              <view wx:if="{{item.type === 2}}" style="display: inline-block; width: {{24}}px; height: {{24}}px">
+                <view class="{{item.imageClass}}" style="background-image: url({{emojiURL}});transform-origin: 0 0; transform: scale({{24 / 64}});"></view>
+              </view>
+            </block>
+            <!-- <text> {{item.content}}</text> -->
+          </view>
+          <!-- 语音消息 -->
+          <view wx:if="{{item.type === 3}}" style="height: 76rpx;width: {{item.extra.width}}rpx; box-sizing: border-box;" class=" content flex align-center justify-start text-white padding-lr-sm {{currentUserId === item.sender?'row-reverse' : ' '}}  voice" bindtap="clickVoice" data-item='{{item}}' data-index='{{index}}'>
+            <view class="start-taste-line" wx:if="{{voiceData.playingUrl===item.content&&voiceData.isPlaying}}">
+              <view class="hr1 hr"></view>
+              <view class="hr2 hr"></view>
+              <view class="hr3 hr"></view>
+              <view class="hr4 hr"></view>
+              <view class="hr5 hr"></view>
+
+            </view>
+            <view class="spinner" wx:else>
+              <view class="spinner-item rect{{index + 1}}" wx:for="{{5}}" wx:key="key"></view>
+            </view>
+
+            <text class="margin-lr-xs"> {{item.extra._duration}}″</text>
+          </view>
+        </view>
+        <!-- 自己的头像 -->
+        <view class="hk-avatar bg-grey" style="background-image:url({{item.secret_user.avatar||item.sender_user.avatar}});border-radius: 50%;" wx:if="{{currentUserId == item.sender}}"></view>
+      </view>
+
+
+    </block>
+    <!-- 送礼物提示 -->
+    <view style='margin:auto;margin-bottom: 24rpx;margin-top:34rpx;width: 482rpx;background: #f5f7f9;border-radius: 8px;color: #666666;padding: 16rpx 24rpx;font-size: 24rpx; ' class="text-center" wx:if="{{limitMsg}}">
+      <view> {{limitMsg}}</view>
+      <!-- <view class="text-left">送礼物</view> -->
+    </view>
+  </view>
+
+  <!-- </hk-scroller> -->
+</scroll-view>
+
+<!-- 输入栏 -->
+
+<!-- <view style="position: fixed;left: 0;right: 0;bottom: env(safe-area-inset-bottom);height: calc(76rpx + {{(isFocus&&(inputType===INPUTTYPE[0]) ||inputType===INPUTTYPE[2] )  ? keyboardHeight:0}}px) ;" class="input-bar"> -->
+<!-- <view style="height: calc(76rpx + {{(isFocus&&(inputType===INPUTTYPE[0]) ||inputType===INPUTTYPE[2] )  ? keyboardHeight:0}}px) ;" class="input-bar"> -->
+<view class="input-bar ">
+  <view class="flex align-center ">
+    <!-- 语音按钮 -->
+    <view class="flex align-center padding-lr-sm" bindtap="switchVoice">
+      <image src="{{inputType===INPUTTYPE[1] ?  './icon-jinapan.svg' :'./icon-yuying.svg'}} " style="width: 54rpx;height:54rpx"></image>
+    </view>
+    <!-- 输入框 -->
+    <input wx:if="{{inputType!==INPUTTYPE[1]}}" id="input" class="bg-gray flex-sub padding-lr-sm" style="height: 80rpx;line-height: 40rpx;" cursor-spacing="8px" focus='{{isFocus}}' confirm-type="send" confirm-hold value="{{content}}" cursor="{{cursor}}" show-confirm-bar="{{false}}" bindconfirm="onConfirm" bindblur="onBlur" bindfocus='bindfocus' adjust-position="{{false}}" bind:keyboardheightchange="onkeyboardHeightChange" bindinput="onInput" hold-keyboard />
+    <!-- 变成语音条 -->
+    <view wx:if='{{inputType===INPUTTYPE[1]}}' class="bg-gray flex-sub flex align-center justify-center padding-lr-sm" style="height: 80rpx;line-height: 40rpx;font-size: 32rpx;font-family: PingFangSC-Medium, PingFang SC;font-weight: 500;" bindtouchmove="handleTouchMove" bindtouchend="bindTouchend" bindlongpress="handleRecordStart">
+      {{recording?' 松开 发送':'按住 说话'}}
+    </view>
+    <!-- 表情按钮 -->
+    <view class="flex align-center padding-lr-sm" bindtap="switchEmoji">
+      <!-- <image src="./icon-biaoqing-24x24.svg" style="width: 54rpx;height:54rpx" wx:if="{{inputType!==INPUTTYPE[2]}}"></image> -->
+      <image src="./biaoqing.png" style="width: 54rpx;height:54rpx" wx:if="{{inputType!==INPUTTYPE[2]}}"></image>
+      <image src="./icon-jinapan.svg" style="width: 54rpx;height:54rpx" wx:if="{{inputType===INPUTTYPE[2]}}"></image>
+
+    </view>
+
+    <!-- 有输入内容的情况下 显示发送按钮 -->
+    <!-- <button class="hk-btn bg-black" style="height: 52rpx;" bindtap="handleSendMsg" wx:if="{{inputType!==INPUTTYPE[1]&&content!==''}}">发送1</button> -->
+    <!-- 加号按钮 -->
+    <!-- <view class="flex align-center padding-right-sm" bindtap="uploadeFile" wx:else>
+      <image src="./icon-add-file.svg" style="width: 54rpx;height:54rpx"></image>
+    </view> -->
+    <view class="flex align-center padding-right-sm" bindtap="uploadeFile">
+      <image src="./icon-add-file.svg" style="width: 54rpx;height:54rpx"></image>
+    </view>
+  </view>
+  <!-- 表情选择器 -->
+  <!-- <view style="padding-top: 20rpx;"> -->
+  <view style="margin-top: 10rpx;">
+    <!-- <view hidden="{{inputType!==INPUTTYPE[2]}}"> -->
+    <view wx:if="{{inputType==INPUTTYPE[2]}}">
+      <hk-emoji id="hk-emoji" height="{{keyboardHeight}}" showHistory="{{false}}" bindinsertemoji="insertEmoji" bindemojiSend='emojiSend' bindemojiDelete='bindemojiDelete' />
+    </view>
+  </view>
+
+</view>
+
+
+<view class="recorder-box flex align-center justify-center text-white" wx:if="{{recording}}">
+  <view class="text-center">
+    <view>{{recordTime}}s</view>
+    <!-- <image src="./icon-biaoqing-24x24.svg" class="text-white" style="width: 54rpx;height:54rpx"></image> -->
+    <image src="{{sendLock?'./songKai' :'./luYin'}}.png" class="text-white" style="width: 104rpx;height:104rpx"></image>
+    <!-- <view>{{sendLock?'手指上划 取消发送':'手指松开 发送信息'}} </view> -->
+    <view wx:if="{{sendLock}}" class="give-up luyin-text">松开手指 取消发送 </view>
+    <view wx:else class="luyin-text"> 手指上划 取消发送 </view>
+  </view>
+</view>

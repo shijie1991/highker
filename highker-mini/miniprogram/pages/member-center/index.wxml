@@ -1,0 +1,70 @@
+<!--pages/member-center/index.wxml-->
+<wxs module="utils" src="/wxs/index.wxs"></wxs>
+<hk-custom-nav isBack class="member-custom-nav">
+  <view slot="content">会员中心</view>
+</hk-custom-nav>
+<scroll-view scroll-y style="height: calc(100vh - {{customBarHeight}}px);">
+  <block wx:if="{{userInfo}}">
+
+    <view class="member-center__header padding-top padding-lr">
+      <view class="vip-box flex align-center padding-left-lg">
+        <image class="vip-img" src="https://hk-resources.oss-cn-beijing.aliyuncs.com/images/vip-card.png"></image>
+        <view class="flex" style="position: relative;">
+          <view class="hk-avatar round bg-grey" style="width: 112rpx; height: 112rpx ;background-image:url({{userInfo.avatar}});">
+          </view>
+          <view class="padding-left-sm">
+            <view class="flex align-center ">
+              <text class="nickname">{{userInfo.name}}</text>
+            </view>
+            <!-- <view class="open-member-btn margin-top-xs">开通会员后享多项权益</view> -->
+            <view class="open-member-btn margin-top-xs" wx:if="{{userInfo.is_vip}}">将于 {{utils.subStrSomething(userInfo.vip_expired_at,0,10) }} 到期</view>
+            <view class="open-member-btn margin-top-xs" wx:else>开通会员后享多项权益</view>
+
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 购买/续费会员栏 -->
+    <view class="margin-top-lg padding-top-lg">
+      <view class="hk-list grid  no-border member-center__pay-list">
+        <view wx:for="{{payList}}" wx:key="id" class="hk-item pay-item {{item.slug === slug ? 'active' : ''}}" data-id="{{item.slug}}" bindtap="payItemClick">
+          <view class="active-checkbox" wx:if="{{item.slug === slug}}"></view>
+
+          <view class="item-title">{{item.name}}</view>
+          <view class="item-price flex justify-center align-center">
+            <view style="font-size: 40rpx;margin-top: 10rpx;">¥</view>
+            <view>{{item.price}}</view>
+          </view>
+          <text class="item-doc">{{item.day}}</text>
+          <view class="item-discount" wx:if="{{item.discount}}">{{item.discount}}</view>
+        </view>
+      </view>
+      <view class="padding-top-lg margin-lr">
+        <!-- 安卓 -->
+        <button class="hk-btn block bg-black  member-center__pay-btn" bindtap="requestPayment" wx:if="{{isIos=== false }}">
+          <text class="padding-left-sm text-xl"> {{userInfo.is_vip?'续费会员':'开通会员'}} </text>
+        </button>
+        <!-- ios -->
+        <button class="hk-btn block bg-black  member-center__pay-btn" wx:else open-type='contact'>
+          <!-- <text class="padding-left-sm text-xl">联系客服</text> -->
+          <text class="padding-left-sm text-xl">{{userInfo.is_vip?'续费会员':'开通会员'}}</text>
+        </button>
+      </view>
+    </view>
+    <view class=" member-center__footer">
+      <view class="title">会员特权</view>
+      <view class="hk-list grid  no-border">
+        <view class="hk-item" wx:for="{{thememberCenterPrivilegeList}}" wx:key="id">
+          <image class="item-bg" src="{{item.src}}"></image>
+          <view class="content">
+            <view class="item-title">{{item.text}}</view>
+            <view class="item-doc" wx:if="{{item.doc}}">{{item.doc}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <view wx:else class="flex  align-center justify-center" style="height: 100%;">
+    <hk-loading />
+  </view>
+</scroll-view>

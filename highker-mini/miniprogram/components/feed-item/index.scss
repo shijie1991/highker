@@ -1,0 +1,88 @@
+/* components/feed-item/index.wxss */
+.hk-card {
+  margin: 16rpx 32rpx;
+}
+.hk-card > .hk-item {
+  margin: 0;
+}
+
+.vip-member-diamond {
+  height: 34rpx;
+  width: 34rpx;
+  flex: 0 0 34rpx;
+  padding-left: 6rpx;
+}
+.hk-avatar {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex: 0 0 68rpx;
+  .gender-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 24rpx;
+    height: 24rpx;
+  }
+}
+
+.nickname {
+  font-size: 28rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: var(--black);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.more {
+  height: 60rpx;
+  width: 60rpx;
+  color: #ccc;
+  font-size: 44rpx;
+}
+.text-info {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: var(--black);
+  padding-bottom: 4rpx;
+}
+.img-item {
+  margin: 0 4rpx 4rpx 0;
+  border-radius: 4rpx;
+}
+.fill-image-icom {
+  & + .fill-image-icom {
+    margin-top: 40rpx;
+  }
+}
+.topic-list {
+  padding-top: 14rpx;
+  .topic-item {
+    padding: 4rpx 16rpx;
+    font-size: 24rpx;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: var(--black);
+    border-radius: 2rpx;
+    & > text {
+      padding-left: 8rpx;
+    }
+  }
+}
+.footer {
+  padding-top: 30rpx;
+  .text-num {
+    font-size: 24rpx;
+    font-family: D-DIN-Bold, D-DIN;
+    font-weight: bold;
+    color: var(--black);
+    padding-left: 12rpx;
+  }
+  .post-address {
+    font-size: 20rpx;
+    font-weight: 500;
+    color: #999999;
+  }
+}

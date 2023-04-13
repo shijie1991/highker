@@ -1,0 +1,4 @@
+<!--components/tabs/index.wxml-->
+<view class="tabs flex" style="z-index: 90;position: relative;align-items: start;">
+  <view bindtap="switchTab" data-index="{{index}}" class="tab {{item.id=== selected ? 'selected' :''}}" wx:for="{{data}}" wx:key="id">{{item.text}}</view>
+</view>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "hk-scroller": "coolui-scroller/scroller/index",
+    "hk-refresh": "coolui-scroller/refresh/index",
+    "hk-emoji": "/components/emoji/index"
+  },
+  "navigationStyle": "custom",
+  "disableScroll":true
+}

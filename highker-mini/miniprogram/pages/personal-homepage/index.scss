@@ -1,0 +1,77 @@
+/* pages/personal-homepage/index.wxss */
+page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 1346rpx;
+
+  background: linear-gradient(180deg, #ffffff 0%, #f5f7f9 100%);
+}
+
+.avatar {
+  width: 184rpx;
+  height: 184rpx;
+  flex: 0 0 184rpx;
+  .gender-icon {
+    width: 40rpx;
+    height: 40rpx;
+    right: 10rpx;
+    bottom: 10rpx;
+  }
+}
+.num-text {
+  height: 56rpx;
+  font-size: 40rpx;
+  font-family: PingFangTC-Semibold, PingFangTC;
+  font-weight: 600;
+  color: var(--black);
+  line-height: 56rpx;
+}
+.num-lable {
+  height: 32rpx;
+  font-size: 24rpx;
+  font-family: PingFangTC-Regular, PingFangTC;
+  font-weight: 400;
+  color: #999999;
+  line-height: 32rpx;
+}
+.signs {
+  font-size: 28rpx;
+  font-family: PingFangTC-Regular, PingFangTC;
+  font-weight: 400;
+  color: var(--darkGray);
+  line-height: 40rpx;
+}
+.info-title {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: var(--black);
+  line-height: 40rpx;
+}
+.hk-list {
+  margin: 0 -12rpx;
+}
+.hk-list.grid.no-border > .hk-item,
+.hk-list.grid > .hk-item {
+  padding: 6rpx;
+}
+.item-lable {
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #999999;
+  line-height: 34rpx;
+}
+
+.item-value {
+  height: 50rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #220000;
+  line-height: 50rpx;
+  padding-top: 8rpx;
+}

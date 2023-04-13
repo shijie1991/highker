@@ -1,0 +1,108 @@
+/* pages/my-score/index.wxss */
+page {
+  background: #fff;
+}
+.hk-custom {
+  background-color: #222222;
+}
+.common__nav-bg {
+  position: static;
+  height: 298rpx;
+}
+.my-score {
+  position: relative;
+  z-index: 11;
+  top: -260rpx;
+  padding-bottom: env(safe-area-inset-bottom);
+  &__header {
+    padding-top: 56rpx;
+    padding-left: 48rpx;
+    padding-bottom: 58rpx;
+    padding-right: 48rpx;
+    .header-title {
+      height: 40rpx;
+      font-size: 28rpx;
+      font-family: PingFangSC-Semibold, PingFang SC;
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 40rpx;
+    }
+    .coin-num {
+      background: #f5f7f9;
+      border-radius: 32rpx;
+      display: inline-flex;
+      align-items: center;
+      padding: 8rpx 20rpx;
+      margin-top: 30rpx;
+
+      .coin-num-text {
+        height: 56rpx;
+        font-size: 40rpx;
+        font-family: PingFangSC-Semibold, PingFang SC;
+        font-weight: 600;
+        color: #d56128;
+        line-height: 56rpx;
+        padding-left: 10rpx;
+      }
+    }
+  }
+  &__btns {
+    font-size: 28rpx;
+    font-family: PingFangSC-Semibold, PingFang SC;
+    font-weight: 600;
+    color: #222222;
+    .hk-btn {
+      height: 88rpx;
+      background: #f5f7f9;
+      border: 1px solid #000000;
+    }
+  }
+  &__list {
+    .hk-item {
+      padding: 0 !important;
+      height: 132rpx;
+    }
+    .title {
+      height: 34rpx;
+      font-size: 24rpx;
+      font-family: PingFangSC-Semibold, PingFang SC;
+      font-weight: 600;
+      color: #999999;
+      line-height: 34rpx;
+    }
+    .sign {
+      height: 40rpx;
+      font-size: 28rox;
+      font-family: PingFangSC-Semibold, PingFang SC;
+      font-weight: 600;
+      color: #222222;
+      line-height: 40rpx;
+    }
+    .date {
+      height: 28rpx;
+      font-size: 24rpx;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #666666;
+      line-height: 24rpx;
+      margin-top: 16rpx;
+    }
+    .val {
+      height: 44rpx;
+      font-size: 40rpx;
+      font-family: PingFangSC-Semibold, PingFang SC;
+      font-weight: 600;
+      color: #ff8d00;
+      line-height: 44rpx;
+    }
+  }
+
+  .score-42 {
+    width: 42rpx;
+    height: 42rpx;
+  }
+  .score-40 {
+    width: 40rpx;
+    height: 40rpx;
+  }
+}

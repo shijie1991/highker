@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mp-slideview": "weui-miniprogram/slideview/slideview",
+    "mp-cell": "weui-miniprogram/cell/cell",
+    "hk-tabs": "/components/tabs/index",
+    "hk-loadmore": "/components/loadmore/index"
+  },
+  "navigationStyle": "custom",
+  "disableScroll": true
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="16px" viewBox="0 0 12 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>形状结合</title>
+    <defs>
+        <linearGradient x1="74.6569225%" y1="94.3586064%" x2="27.1008699%" y2="8.72467346%" id="linearGradient-1">
+            <stop stop-color="#4DB8FF" offset="0%"></stop>
+            <stop stop-color="#C183F2" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="我的等级-特权" transform="translate(-329.000000, -784.000000)" fill="url(#linearGradient-1)">
+            <g id="锁定" transform="translate(329.000000, 784.000000)">
+                <path d="M12,16 L0,16 L0,6 L2,6 L2,4 C2,1.79999998 3.8,0 6,0 C8.20000001,0 10,1.8 10,4 L10,6 L12,6 L12,16 Z M9.99999999,7.99999999 L1.99999999,7.99999999 L1.99999999,14 L9.99999999,14 L9.99999999,7.99999999 Z M6,9.99999999 C6.6,9.99999999 7,10.4 7,11 C7,11.6 6.6,12 6,12 C5.4,12 5,11.6 5,11 C5,10.4 5.4,9.99999999 6,9.99999999 Z M6,2 C4.90000001,2 4,2.89999999 4,4 L4,6 L8,6 L8,4 C8,2.89999999 7.1,2 6,2 Z" id="形状结合"></path>
+            </g>
+        </g>
+    </g>
+</svg>

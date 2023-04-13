@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>touxiang</title>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="完善信息" transform="translate(-138.000000, -128.000000)">
+            <g id="touxiang" transform="translate(138.000000, 128.000000)">
+                <rect id="矩形" fill="#EEEEEE" x="0" y="0" width="100" height="100" rx="50"></rect>
+                <circle id="椭圆形" fill="#D8D8D8" cx="40" cy="42" r="4"></circle>
+                <circle id="椭圆形备份-2" fill="#D8D8D8" cx="60" cy="42" r="4"></circle>
+                <path d="M27.0461382,51.8931035 C28.3841403,53.6717192 29.0531414,55.1049179 29.0531414,56.1926995 C29.0531414,57.2804812 28.3841403,58.7136799 27.0461382,60.4922956" id="路径-21" stroke="#D8D8D8" stroke-width="2" stroke-linecap="round"></path>
+                <path d="M71.0461382,51.8931035 C72.3841403,53.6717192 73.0531414,55.1049179 73.0531414,56.1926995 C73.0531414,57.2804812 72.3841403,58.7136799 71.0461382,60.4922956" id="路径-21备份" stroke="#D8D8D8" stroke-width="2" stroke-linecap="round" transform="translate(72.049640, 56.192700) scale(-1, 1) translate(-72.049640, -56.192700) "></path>
+                <line x1="29.0531414" y1="56.1926995" x2="70.0267206" y2="56.1926995" id="路径-22" stroke="#D8D8D8" stroke-width="2"></line>
+            </g>
+        </g>
+    </g>
+</svg>

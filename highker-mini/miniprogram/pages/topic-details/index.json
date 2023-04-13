@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "hk-tabs": "/components/tabs/index",
+    "hk-scroller": "coolui-scroller/scroller/index",
+    "hk-feed-item": "/components/feed-item/index",
+    "hk-loadmore": "/components/loadmore/index",
+    "hk-feed-more-popup": "/components/feed-more-popup/index",
+    "hk-comment-list": "/components/comment-list/index"
+  },
+  "navigationStyle": "custom"
+}

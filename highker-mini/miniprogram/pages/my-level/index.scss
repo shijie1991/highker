@@ -1,0 +1,195 @@
+/* pages/my-level/index.wxss */
+page {
+  background: #fff;
+}
+
+.my-level {
+  position: relative;
+  z-index: 100;
+  &__header {
+    &-card {
+      position: relative;
+      height: 316rpx;
+      z-index: 100;
+      width: 100%;
+      .level-text {
+        font-size: 28rpx;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #ffffff;
+      }
+      .level-num {
+        font-size: 56rpx;
+        font-family: Roboto-BoldItalic, Roboto;
+        font-weight: normal;
+        color: #ffffff;
+        padding-top: 16rpx;
+      }
+      .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+      }
+      .card-footer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 120rpx;
+        width: 100%;
+        .footer-bg {
+          position: absolute;
+          width: 100%;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 100%;
+        }
+        .levelup-btn {
+          width: 156rpx;
+          height: 56rpx;
+          background: #fff;
+          padding-right: 14rpx;
+          border-radius: 12rpx;
+        }
+        .progress-bar {
+          position: relative;
+          width: 100%;
+          height: 3px;
+          background: rgba($color: #ffffff, $alpha: 0.1);
+          .progress-val {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 34%;
+            height: 100%;
+            background: #fff;
+          }
+        }
+        .progress-tips {
+          margin-top: 12rpx;
+          height: 34rpx;
+          font-size: 24rpx;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #ffffff;
+          line-height: 34rpx;
+          text:first-child {
+            height: 40rpx;
+            font-size: 28rpx;
+            font-weight: 600;
+            font-family: PingFangSC-Semibold, PingFang SC;
+            line-height: 40rpx;
+          }
+        }
+      }
+    }
+    &-list {
+      .hk-list {
+        background-color: var(--gray);
+        padding: 14rpx 0 !important;
+        border-radius: 6rpx;
+        .num {
+          height: 66rpx;
+          font-size: 32rpx;
+          font-family: PingFangSC-Semibold, PingFang SC;
+          font-weight: 600;
+          color: #000000;
+          line-height: 66rpx;
+        }
+        .text {
+          height: 32rpx;
+          font-size: 22rpx;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #999999;
+          line-height: 32rpx;
+        }
+      }
+    }
+  }
+  &__main {
+    .title {
+      height: 34rpx;
+      font-size: 24rpx;
+      font-family: PingFangSC-Semibold, PingFang SC;
+      font-weight: 600;
+      color: #999999;
+      line-height: 34rpx;
+    }
+    .experience-detail-list {
+      .hk-item {
+        padding: 0;
+        height: 132rpx;
+      }
+
+      .sign {
+        height: 40rpx;
+        font-size: 28rox;
+        font-family: PingFangSC-Semibold, PingFang SC;
+        font-weight: 600;
+        color: #222222;
+        line-height: 40rpx;
+      }
+      .date {
+        height: 28rpx;
+        font-size: 24rpx;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #666666;
+        line-height: 24rpx;
+        margin-top: 16rpx;
+      }
+      .val {
+        height: 44rpx;
+        font-size: 40rpx;
+        font-family: PingFangSC-Semibold, PingFang SC;
+        font-weight: 600;
+        color: #ff8d00;
+        line-height: 44rpx;
+      }
+    }
+    .privilege-list {
+      .card-item-header {
+        position: relative;
+        height: 72rpx;
+        line-height: 72rpx;
+        width: 100%;
+        image {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+        }
+        .card-item-title {
+          font-size: 28rpx;
+          font-family: PingFangSC-Semibold, PingFang SC;
+          font-weight: 600;
+          color: #222222;
+          z-index: 11;
+        }
+        .card-item-r-title {
+          font-size: 24rpx;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #666666;
+          z-index: 11;
+        }
+      }
+      .card-item-content {
+        font-size: 28rpx;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 600;
+        color: #222222;
+        :first-child {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>关于icon</title>
+    <defs>
+        <linearGradient x1="51.4995866%" y1="85.8506944%" x2="48.459648%" y2="24.5985243%" id="linearGradient-1">
+            <stop stop-color="#A991F6" offset="0%"></stop>
+            <stop stop-color="#75C1FD" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="个人主页" transform="translate(-51.000000, -532.000000)">
+            <g id="关于icon" transform="translate(51.000000, 532.000000)">
+                <path d="M12,23 C5.9247,23 1,18.0753 1,12 C1,5.9247 5.9247,1 12,1 C18.0753,1 23,5.9247 23,12 C23,18.0753 18.0753,23 12,23 Z M12,20.8 C14.33387,20.8 16.57226,19.87281 18.22259,18.22259 C19.87281,16.57226 20.8,14.33387 20.8,12 C20.8,9.666097 19.87281,7.427784 18.22259,5.777465 C16.57226,4.127135 14.33387,3.2 12,3.2 C9.666097,3.2 7.427784,4.127135 5.777465,5.777465 C4.127135,7.427784 3.2,9.666097 3.2,12 C3.2,14.33387 4.127135,16.57226 5.777465,18.22259 C7.427784,19.87281 9.666097,20.8 12,20.8 Z" id="形状" fill="#222222" fill-rule="nonzero"></path>
+                <rect id="矩形" fill-opacity="0" fill="#D8D8D8" x="0" y="0" width="24" height="24"></rect>
+                <path d="M13.1,15.3 L13.1,17.5 L10.9,17.5 L10.9,15.3 L13.1,15.3 Z M13.1,6.03681348 L13.1,14.2 L10.9,14.2 L10.9,6.03681348 L13.1,6.03681348 Z" id="形状结合" fill="url(#linearGradient-1)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

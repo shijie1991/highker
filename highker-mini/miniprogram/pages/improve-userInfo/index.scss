@@ -1,0 +1,117 @@
+/* pages/improveUserInformation/index.wxss */
+page {
+  background-color: #fff;
+}
+.hk-user-info {
+  &__avatar {
+    position: relative;
+    width: 200rpx;
+    height: 200rpx;
+    margin: 80rpx auto 0;
+  }
+
+  &__camera {
+    position: absolute;
+    width: 56rpx;
+    height: 56rpx;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__form {
+    padding: 0 96rpx;
+    padding-top: 90rpx;
+
+    .hk-form-group {
+      padding: 0;
+      min-height: 60rpx;
+      line-height: 60rpx;
+    }
+
+    &_input {
+      display: flex;
+      margin-left: 26rpx;
+      border-bottom: 1px solid #eeeeee;
+      height: 60rpx;
+      padding-right: 0;
+    }
+
+    &_title {
+      font-size: 36rpx;
+      font-family: PingFangSC-Semibold, PingFang SC;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 8rpx;
+    }
+
+    &_gender {
+      padding-top: 90rpx;
+      font-size: 28rpx;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #999999;
+      line-height: 40rpx;
+
+      .gender-item {
+        height: 240rpx;
+        border-radius: var(--borderRadius);
+        border: 2px solid #fff;
+        margin-top: 24rpx;
+
+        image {
+          width: 56rpx;
+          height: 56rpx;
+        }
+
+        .gender-zh-text {
+          padding-top: 20rpx;
+          font-size: 28rpx;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+        }
+      }
+
+      .active {
+        width: 133px;
+        height: 240rspx;
+        border: 2px solid #000000;
+        position: relative;
+        &::before {
+          font-family: hk-icon;
+          display: flex;
+          position: absolute;
+          content: "\e688";
+          color: #fff;
+          font-size: 30px;
+          top: 0;
+          right: 0;
+          z-index: 1;
+          width: 56rpx;
+          font-size: 40rpx;
+          justify-content: center;
+        }
+
+        &::after {
+          position: absolute;
+          content: "";
+          top: 0;
+          right: 0;
+          width: 56rpx;
+          height: 40rpx;
+          background: linear-gradient(315deg, #4db8ff 0%, #c183f2 100%) #f5f7f9;
+          border-left: 2px solid #000000;
+          border-bottom: 2px solid #000000;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    min-height: 96rpx;
+    width: 100% !important;
+    font-size: 36rpx;
+    font-family: PingFangSC-Semibold, PingFang SC;
+    font-weight: 600;
+    margin-top: 200rpx;
+  }
+}

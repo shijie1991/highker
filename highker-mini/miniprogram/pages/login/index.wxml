@@ -1,0 +1,61 @@
+<hk-custom-nav >
+	<!-- <view slot="content">关于HighKer</view> -->
+	<view slot="content">
+		<view class="icon-close hk-icon flex justify-sart" style="position:fixed;left: 40rpx;font-size: 50rpx;" bindtap="backPage"></view>
+		<!-- <view class="icon-close hk-icon flex justify-sart" ></view> -->
+	</view>
+</hk-custom-nav>
+<!-- <view class="icon-close hk-icon flex justify-sart" ></view> -->
+
+<view class="hk-login">
+	<image class="common__nav-bg" src="https://hk-resources.oss-cn-beijing.aliyuncs.com/images/nav-top-bg-1.png"></image>
+	<view style="width: 100%; margin-top: -150rpx;">
+	<view class="hk-login__top-avatar">
+      <view class="hk-login__logo">
+			<!-- <image src="/images/highker-logo.svg"></image> -->
+          <image src="/images/logo.png"></image>
+	  </view>
+	</view>
+		<text class="hk-login__info">有趣的人在这里等你</text>
+		<!-- <button bindtap="goBack" class="back">返回上一页</button> -->
+		<!-- <view class="hk-icon icon-arrow-left-bold" bindtap="backPage" ></view> -->
+	</view>
+
+	<!-- 微信登陆的按钮 -->
+	<button class="hk-btn block bg-black  hk-login__btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" wx:if="{{isAgreement}}">
+		<image style="width: 60rpx; height: 60rpx;" src="/images/icon-wechat.svg"></image>
+		<text class="padding-left-sm text-xl">微信登录</text>
+	</button>
+	<button class="hk-btn block bg-black  hk-login__btn" bindtap="getPhoneNumber" wx:else>
+		<image style="width: 60rpx; height: 60rpx;" src="/images/icon-wechat.svg"></image>
+		<text class="padding-left-sm text-xl">微信登录</text>
+	</button>
+	<!-- 用户协议 -->
+	<!-- <view class="flex margin-top-xl align-center justify-center" bindtap="onAgreement">
+		<image style="width: 32rpx; height: 32rpx;" src="/images/icon-circle-fill.svg" wx:if="{{isAgreement}}"></image>
+		<image style="width: 32rpx; height: 32rpx;" src="/images/icon-radio-16x16.svg" wx:else></image>
+		<view class="hk-login__agreement padding-left-sm flex align-center">
+			<view>阅读并同意</view>
+			<view style="text-decoration: underline;" catchtap="checkTheAgreement">《用户协议》</view>
+		</view>
+	</view> -->
+</view>
+
+<view bindtap="hideModal" class="hk-modal {{isModalShow ? 'show' : ''}}">
+	<view class="hk-dialog bg-white padding-lr-lg" catchtap="true">
+		<view class="flex padding-top padding-bottom-lg">
+			<view class="flex-sub " style="font-weight: 500;font-size: 32rpx;">
+				差一步就完成啦！
+			</view>
+			<view class="action" bindtap="hideModal" style="font-size: 32rpx;">
+				<view class="icon-close hk-icon" style="font-size: 32rpx;"></view>
+			</view>
+		</view>
+		<view class="hk-bar flex margin-tb">
+			<button class="hk-btn block bg-black flex-sub" style="height: 64rpx;" bindtap="getUserProfile">
+				<image style="width: 40rpx; height: 40rpx;" src="/images/icon-wechat.svg"></image>
+				<text class="padding-left-sm text-sm">微信授权</text>
+			</button>
+		</view>
+	</view>
+</view>

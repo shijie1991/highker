@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="156px" height="18px" viewBox="0 0 156 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>成为HighKer会员</title>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="YouSheBiaoTiHei" font-size="20" font-weight="normal">
+        <g id="个人主页-未开通" transform="translate(-37.000000, -255.000000)" fill="#110F27">
+            <g id="会员" transform="translate(16.000000, 240.000000)">
+                <text id="成为HighKer会员">
+                    <tspan x="21" y="30">成为</tspan>
+                    <tspan x="57.8" y="30" letter-spacing="-0.5">H</tspan>
+                    <tspan x="72.74" y="30" letter-spacing="-0.9">ig</tspan>
+                    <tspan x="91.24" y="30" letter-spacing="-0.5">h</tspan>
+                    <tspan x="103.48" y="30" letter-spacing="-1.5">K</tspan>
+                    <tspan x="117.02" y="30" letter-spacing="-0.6">e</tspan>
+                    <tspan x="128.96" y="30">r会员</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

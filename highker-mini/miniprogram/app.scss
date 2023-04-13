@@ -1,0 +1,104 @@
+/**app.wxss**/
+@import "styles/common.scss";
+@import "styles/emoji.scss";
+@import "styles/icon.scss";
+@import "styles/animation.scss";
+page {
+  background-color: var(--gray);
+}
+.header-nav-active {
+  position: relative;
+  font-size: 40rpx;
+  font-weight: 500;
+  transition: all 0.3;
+
+  &::after {
+    position: absolute;
+    left: 50%;
+    height: 30rpx;
+    top: 50%;
+    width: 65%;
+    transform: translateY(-50%) translateX(-50%) rotateZ(6deg);
+    content: "";
+    background: linear-gradient(307deg, #a991f6 0%, #75c1fd 100%);
+    opacity: 0.5;
+  }
+}
+.common__nav-bg {
+  height: 500rpx;
+  width: 750rpx;
+  left: 0rpx;
+  top: 0rpx;
+  position: fixed;
+  background-size: cover;
+  background-position: top center;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.common__nickname {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangTC-Semibold, PingFangTC;
+  font-weight: 600;
+  color: var(--black);
+  line-height: 40rpx;
+}
+.common__vip-level {
+  height: 28rpx;
+  width: 76rpx;
+  padding-left: 6rpx;
+  flex: 0 0 76rpx;
+}
+.common-vip-member-diamond {
+  height: 34rpx;
+  width: 34rpx;
+  flex: 0 0 34rpx;
+  padding-left: 6rpx;
+}
+.common__avatar {
+  position: relative;
+  width: 88rpx;
+  height: 88rpx;
+  image {
+    border-radius: 50%;
+  }
+  .gender-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 24rpx;
+    height: 24rpx;
+  }
+}
+.common-gradient-add-icon {
+  margin-top: -6rpx;
+  display: flex;
+  background: linear-gradient(315deg, #4db8ff 0%, #c183f2 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 34rpx;
+  font-weight: bold;
+  margin-right: 8rpx;
+}
+@keyframes hk-icon-spin {
+  0% {
+    -webkit-transform: rotate3d(0, 0, 1, 0);
+    transform: rotate3d(0, 0, 1, 0);
+  }
+
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 359deg);
+    transform: rotate3d(0, 0, 1, 359deg);
+  }
+}
+
+.iconfont-spin {
+  -webkit-animation: hk-icon-spin 1s infinite linear;
+  animation: hk-icon-spin 1s infinite linear;
+  display: inline-block;
+  color: var(--grey);
+  font-size: 50rpx;
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}

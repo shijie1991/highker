@@ -1,0 +1,71 @@
+<!--pages/topic-details/index.wxml-->
+<hk-custom-nav isBack>
+  <view slot="content" class="flex-sub flex justify-center">
+    <hk-tabs selected="{{type}}" data="{{tabs}}" bind:click="onSwitchTab" />
+  </view>
+</hk-custom-nav>
+<view class="nav-bg"></view>
+
+<hk-scroller id="scroller" bind:loadmore="bindScrollToLower" style="height: calc(100vh - ({{customBarHeight}}px + env(safe-area-inset-bottom)));">
+  <view wx:if="{{topicInfo}}">
+    <view class="flex padding-lr padding-tb-sm align-center margin-top-sm">
+      <view class="cover" style="background-image: url({{topicInfo.cover}});"></view>
+      <view class="flex-sub padding-left">
+        <view class="topic-title flex align-center">
+          <view>#</view>
+          <view class="padding-left-sm">{{topicInfo.name}}</view>
+        </view>
+        <view class="flex align-center count " style="flex-wrap: nowrap;">
+          <view class="flex" style="flex-wrap: nowrap;">
+            <text>关注数 </text>
+            <view class="padding-left-xs">{{topicInfo.follow_count}}</view>
+          </view>
+          <view class="margin-left-lg flex" style="flex-wrap: nowrap;">
+            <text>动态数 </text>
+            <view class="padding-left-xs">{{topicInfo.feed_count}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="action">
+        <button class="hk-btn  bg-gray radius" style="height: 56rpx;" bindtap="topicFollow" wx:if="{{topicInfo.has_subscribed}}">
+          <view>取消关注</view>
+        </button>
+        <button class="hk-btn  bg-black radius" style="height: 56rpx;" bindtap="topicFollow" wx:else>
+          <view class="add-icon">+</view>
+          <view>关注</view>
+        </button>
+      </view>
+    </view>
+    <view class="desc padding-lr">{{topicInfo.description}}</view>
+    <block wx:if="{{feedList.length}}">
+      <view class="margin-top-xl padding-top-sm">
+        <hk-feed-item item="{{item}}" wx:for="{{feedList}}" wx:key="item" bind:more="onFeedMoreClick" bind:details="onFeedDetailsClick" bind:topic="onTopicClick" bind:more="onFeedMore" bind:comment="onFeedCommentClick" bind:link="onGiveALikeClick" />
+      </view>
+      <view slot=" loadmore" class="flex align-center justify-center padding-tb-sm">
+        <hk-loadmore isMore="{{isMore}}" />
+      </view>
+    </block>
+    <view wx:elif="{{!isInitFeedList}}" class="margin-top-xl">
+      <hk-empty>暂无数据</hk-empty>
+    </view>
+  </view>
+  <view wx:else class="flex  align-center justify-center" style="height: calc(100vh - ({{customBarHeight}}px + env(safe-area-inset-bottom)));">
+    <hk-loading />
+  </view>
+</hk-scroller>
+<!-- 动态更多 -->
+<hk-feed-more-popup id="feedMore" bind:follow="onFollowClickCallback"></hk-feed-more-popup>
+
+<!-- 动态评论 -->
+<hk-comment-list id="commentList" isPopup></hk-comment-list>
+
+
+<!-- <button  bindtap="toFeedPulishPage" class="hk-btn bg-black add-feed-btn flex align-center radius  animation-slide-bottom {{publishFeedHide ? 'hide' : ''}}" style="position: fixed;left: 0;right: 0;bottom: calc(10px + env(safe-area-inset-bottom) );">
+  <view class="add-icon">+</view>
+  <view>发布话题动态</view>
+</button> -->
+
+<view  bindtap="toFeedPulishPage" class="hk-btn bg-black add-feed-btn flex align-center radius  animation-slide-bottom {{publishFeedHide ? 'hide' : ''}}" style="position: fixed;left: 0;right: 0;bottom: calc(10px + env(safe-area-inset-bottom) );">
+  <view class="add-icon">+</view>
+  <view>发布话题动态</view>
+</view>

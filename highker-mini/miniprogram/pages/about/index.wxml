@@ -1,0 +1,28 @@
+<!--pages/about/index.wxml-->
+
+<hk-custom-nav isBack="{{true}}">
+  <view slot="content">关于HighKer</view>
+</hk-custom-nav>
+<view class="hk-about margin padding radius">
+  <view class="hk-about__logo text-center">
+    <view class="avatar">
+      <image class="logo" src="/images/logo.png"> 
+      </image>
+    </view>
+    <view class="text margin-top">HighKer</view>
+  </view>
+  <view class="hk-list menu hk-about__list">
+    <!-- <view class="hk-item arrow" data-type="user" bindtap="toAgreementPage">
+      <view class="content">用户服务协议</view>
+      <view class="icon-arrow-right-bold hk-icon text-grey light"></view>
+    </view>
+    <view class="hk-item" data-type="privacy" bindtap="toAgreementPage">
+      <view class="content">隐私协议</view>
+      <view class="icon-arrow-right-bold hk-icon text-grey light"></view>
+    </view>
+    <view class="hk-item arrow">
+      <view class="content">版本号</view>
+      <view class="text-grey light">1.01</view>
+    </view> -->
+  </view>
+</view>

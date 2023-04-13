@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon_Zan_20x20</title>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="社区-关注" transform="translate(-304.000000, -335.000000)">
+            <g id="编组" transform="translate(16.000000, 100.000000)">
+                <g id="编组-9" transform="translate(0.000000, 231.000000)">
+                    <g id="icon_Zan_20x20" transform="translate(288.000000, 4.000000)">
+                        <rect id="矩形备份-5" fill-opacity="0" fill="#D8D8D8" x="0" y="0" width="20" height="20"></rect>
+                        <path d="M13.5,3 C15.9852814,3 18,5.01471863 18,7.5 C18,8.95589095 17.3086134,10.2502999 16.2362611,11.0728059 L10,17.2781746 L3.42195024,10.7826422 C2.54674989,9.96166137 2,8.79468083 2,7.5 C2,5.01471863 4.01471863,3 6.5,3 C7.91357726,3 9.17492267,3.65178201 9.99990231,4.67121211 C10.8250773,3.65178201 12.0864227,3 13.5,3 Z" id="路径" stroke="#222222" stroke-width="1.5"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

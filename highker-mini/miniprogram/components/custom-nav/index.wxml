@@ -1,0 +1,13 @@
+<!--components/custom-nav/index.wxml-->
+
+<view class="hk-custom " style="height:{{customBarHeight}}px">
+  <view class="hk-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}" style="height:{{customBarHeight}}px;padding-top:{{statusBarHeight}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
+    <slot wx:if="{{isCustom}}"></slot>
+    <view class="action" wx:else>
+      <view class="hk-icon icon-arrow-left-bold" bindtap="backPage" wx:if="{{isBack}}"></view>
+      <view class="content" style="top:{{statusBarHeight}}px">
+        <slot name="content"></slot>
+      </view>
+    </view>
+  </view>
+</view>

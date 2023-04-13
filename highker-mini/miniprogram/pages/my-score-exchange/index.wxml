@@ -1,0 +1,49 @@
+<!--pages/my-score-exchange/index.wxml-->
+<hk-custom-nav isBack style="color: #fff;">
+  <view slot="content">兑换金币</view>
+</hk-custom-nav>
+<view class="nav-bg" style="height: 242rpx; top: {{customBarHeight}}px;" wx:if="{{list}}"></view>
+<scroll-view scroll-y style="height: calc(100vh - {{customBarHeight}}px);">
+  <view class="my-score-exchenge" wx:if="{{list}}">
+    <view class="padding">
+      <view class="my-score-exchenge__header padding margin-top-xs" bindtap="toTaskPage">
+        <view class="header-title">我的金币</view>
+        <view class="flex margin-top-xs">
+          <view class="flex-sub flex align-center">
+            <image class="score-48" src="/images/my-score/icon-score.svg"></image>
+            <view class="score-num margin-left-sm">{{score}}</view>
+          </view>
+          <view class="flex align-center header-right">
+            <view class="margin-right-xs">赚金币</view>
+            <view class="icon-arrow-right-bold hk-icon"></view>
+          </view>
+        </view>
+      </view>
+      <view class="my-score-exchenge__list">
+        <view class="list-title">兑换权益</view>
+        <view class="hk-list grid col-3 no-border">
+          <view class="hk-item" wx:for="{{list}}" wx:key="item">
+            <view class="bg-gray padding-tb">
+              <view class="text-center">
+                <image src="/images/my-score/icon-box.svg" style="width: 72rpx;height: 100rpx;" wx:if="{{index < 4}}"></image>
+                <image src="/images/my-score/icon-box-3.svg" style="width: 120rpx;height: 100rpx;" wx:elif="{{index === 4 || index === 5}}"></image>
+                <image src="/images/my-score/icon-box-2.svg" style="width: 96rpx;height: 90rpx;" wx:else></image>
+              </view>
+              <view class="item-text">{{item.name}}</view>
+              <view>
+                <button bindtap="bindExchangeScore" data-id="{{item.slug}}" class="hk-btn radius {{score >= item.score ? 'bg-black' : 'disable-btn'}} bg-black" style="height: 52rpx;width: 98rpx;padding: 0;">兑换</button>
+              </view>
+            </view>
+            <view class="score-value flex align-center">
+              <image class="score-28" src="/images/my-score/icon-score.svg"></image>
+              <view class="val-text">{{item.score}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:else class="flex align-center justify-center" style="height: calc(100vh - {{customBarHeight}}px);">
+    <hk-loading></hk-loading>
+  </view>
+</scroll-view>

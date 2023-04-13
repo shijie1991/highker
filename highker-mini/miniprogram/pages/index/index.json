@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "hk-custom-tab-bar": "../../components/custom-tab-bar/index",
+    "hk-community": "../index/community/index",
+    "hk-mystery-box": "../index/mystery-box/index",
+    "hk-message": "../index/message/index",
+    "hk-my": "../index/my/index"
+  },
+  "navigationStyle": "custom",
+  "disableScroll": true
+}

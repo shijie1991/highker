@@ -1,0 +1,188 @@
+<!--pages/index/message.wxml-->
+<wxs src="./util.wxs" module="utils" />
+<hk-custom-nav style="background-color: #fff;" isCustom>
+  <!-- <view class="flex-sub flex justify-center nav-item {{conversationType === item.id ? 'header-nav-active' : ''}} " wx:for="{{navigationMenuList}}" wx:key="text" data-id="{{item.id}}" bindtap="handlerNavItemClick"> -->
+  <view class="flex-sub flex justify-center nav-item " style="position: relative;" wx:for="{{navigationMenuList}}" wx:key="text" data-id="{{item.id}}" bindtap="handlerNavItemClick">
+    <image hidden="{{conversationType !== item.id }}" src='{{item.url}}' mode="widthFix" style="width: 94rpx;height: 62rpx;" data-id="{{item.id}}">
+    </image>
+    <view hidden="{{conversationType === item.id}}">{{item.text}}</view>
+    <block wx:if="{{conversationType ==='box'}}">
+      <view class="hk-tag badge" wx:if="{{item.id==='private'&&redDotCount.private_count>0}}"></view>
+    </block>
+    <block wx:else>
+      <view class="hk-tag badge" wx:if="{{item.id==='box'&&redDotCount.box_count>0}}"></view>
+    </block>
+  </view>
+  <view class="flex-sub flex justify-center nav-item">
+  </view>
+  <view class="flex-sub flex justify-center nav-item">
+  </view>
+</hk-custom-nav>
+<scroll-view class=" hk-vertical-nav" scroll-y style="height: calc(100vh - ({{customBarHeight}}px + 48px + env(safe-area-inset-bottom)));background-color: #fff;" refresher-enabled='{{true}}' bindrefresherrefresh="bindRefresh" refresher-triggered='{{refreshStatus}}'>
+  <view style="height: 100%;" class="flex align-center justify-center" wx:if="{{conversationLoading}}">
+    <hk-loading></hk-loading>
+  </view>
+  <view class="message__list " wx:else style="min-height: 100%;">
+    <block wx:if="{{conversationList.length}}">
+      <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slideButtonTap" wx:for="{{conversationList}}" wx:key="item">
+        <view class="flex item" data-userid="{{item.sender_user.id}}" data-name="{{item.sender_user.name}}" data-unread="{{item.unread_count}}" data-cid="{{item.conversation_id}}" bindtap="userItemClick">
+          <view class="avatar round lg" style="background-image:url({{item.sender_user.avatar}});background-size: cover;"></view>
+          <view class="content text-cut">
+            <view class="flex align-center">
+              <view class="flex-sub nickname">{{item.sender_user.name}}</view>
+              <view class="time">{{item.updated_at}}</view>
+            </view>
+            <view class="flex align-center">
+              <view class="flex-sub describe text-cut">{{item.last_message.format_content}}</view>
+              <view class="tag-box" wx:if="{{item.unread_count > 0}}">
+                <view class="hk-tag round bg-red sm">{{item.unread_count}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+      </mp-slideview>
+    </block>
+    <view style="height: calc(100vh - ({{customBarHeight}}px + 48px + env(safe-area-inset-bottom)));" class="flex align-center justify-center" wx:else>
+      <hk-empty>暂无数据</hk-empty>
+    </view>
+  </view>
+</scroll-view>
+<!-- 悬浮的消息按钮 -->
+<view class="inform" bindtap="onPopupShow">
+  <image style="width: 100%;height: 100%;" src="./images/icon-inform.svg"></image>
+  <view class="hk-tag badge" wx:if="{{(redDotCount.system_count + redDotCount.interactive_count)>0}}">{{(redDotCount.system_count + redDotCount.interactive_count)}}
+    <block wx:if="{{(redDotCount.system_count + redDotCount.interactive_count)>99}}"> +</block>
+  </view>
+</view>
+
+<!-- 通知  -->
+<view class="hk-modal bottom-modal  notification {{notificationShow ? 'show' : ''}}" bindtap="onPopupClose">
+  <view class="hk-dialog text-left" catchtap style="height: calc(100vh - ({{customBarHeight}}px + 20rpx));padding-bottom: env(safe-area-inset-bottom)">
+    <view class="padding-top padding-lr">
+      <view class="flex align-center">
+        <view class="flex-sub">
+          <hk-tabs selected="{{notificationTab}}" data="{{tabs}}" bind:click="onSwitchTab" />
+        </view>
+        <view style="flex: 0 0  80rpx;" class="icon-close hk-icon flex justify-end" catchtap="onPopupClose"></view>
+      </view>
+    </view>
+    <scroll-view class="padding-lr" style="height: calc(100% - 118rpx);" scroll-y scroll-with-animation bindscrolltolower='bindscrolltolower'>
+      <!-- 系统通知 -->
+      <block wx:if="{{notificationTab === 'system'}}">
+        <view style="height: 100%;" class="flex align-center justify-center" wx:if="{{notificationSystemLoading}}">
+          <hk-loading></hk-loading>
+        </view>
+        <block wx:else>
+          <view wx:if="{{notificationSystemList.length}}">
+            <block wx:for="{{notificationSystemList}}" wx:key="id">
+              <view class="flex " style="padding:24rpx 0;overflow: scroll;word-wrap:break-word;word-break:break-all;">
+                <view class="" style="width: 68rpx;height: 68rpx;">
+                  <view class="bg-grey" style="background-image: url({{item.data.trigger.users[0].avatar}});width: 68rpx;height: 68rpx;border-radius: 50%;background-repeat: no-repeat;background-size: cover;"></view>
+                </view>
+                <view class=" flex margin-left-xs">
+                  <view class="">
+                    <view class="">
+                      <text class="notification__nickname margin-right-xs" style="height:unset;">{{item.data.trigger.users[0].name}}</text>
+                      <!-- <view class="notification__content">{{utils.parsingContent(item)}}</view> -->
+                      <text class="notification__content">{{item.data.resource.body.content}}</text>
+                    </view>
+                    <view class="notification__time" style="height:unset;">{{item.createdTime}}</view>
+                  </view>
+
+                  <view class="notification__target">
+                    <view wx:if="{{item.data.target.body.image}}" style="width: 84rpx;height: 84rpx;background-image: url({{item.data.target.body.image}});background-repeat: no-repeat;background-size: cover;"></view>
+                    <view wx:else style="width: 84rpx;height: 84rpx;" class="flex content">
+                      <block wx:for="{{item.data.target.body.emojiArray}}" wx:key="index" wx:for-item="o">
+                        <text wx:if="{{o.type === 1}}">{{o.content}}</text>
+                        <view wx:if="{{o.type === 2}}" style="display: inline-block; width: 40rpx; height: 40rpx">
+                          <view class="{{o.imageClass}}" style="background-image: url({{emojiURL}});transform-origin: 0 0; transform: scale({{20 / 64}});"></view>
+                        </view>
+                      </block>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </block>
+            <view slot="loadmore" class="flex align-center justify-center padding-tb-sm">
+              <hk-loadmore isMore="{{xiTong.isMore}}" />
+            </view>
+          </view>
+          <view style="height: 100%;" class="flex align-center justify-center" wx:else>
+            <hk-empty>暂无数据</hk-empty>
+          </view>
+        </block>
+      </block>
+      <!-- 互动通知 -->
+      <block wx:else>
+        <view style="height: 100%;" class="flex align-center justify-center" wx:if="{{notificationInteractiveLoading}}">
+          <hk-loading></hk-loading>
+        </view>
+        <block wx:else>
+          <view wx:if="{{notificationInteractiveList.length}}">
+            <view class="flex  margin-bottom-sm" style="min-height:132rpx;padding-top:24rpx;padding-bottom:24rpx;" wx:for="{{notificationInteractiveList}}" wx:key="id">
+              <!-- 头像 -->
+              <view class="" style="width: 68rpx;height: 68rpx;" bindtap="onUserInfoClick" data-id='{{item.data.trigger.users[0].id}}'>
+                <view class="bg-grey" style="background-image: url({{item.data.trigger.users[0].avatar}});width: 68rpx;height: 68rpx;border-radius: 50%;background-repeat: no-repeat;background-size: cover;"></view>
+              </view>
+              <view class="flex-sub flex margin-left-sm align-center">
+                <view class="flex-sub" style="width:460rpx;">
+                  <view class="flex">
+                    <view class="notification__nickname margin-right-xs" bindtap="onUserInfoClick" data-id='{{item.data.trigger.users[0].id}}'>{{item.data.trigger.users[0].name}}</view>
+                    <view class="notification__content">{{utils.parsingContent(item)}}</view>
+                  </view>
+
+                  <!-- 回复/评论的内容  resource -->
+                  <view class="notification__reply-content " wx:if="{{item.data.resource}}">
+                    <view class="  padding-right-sm flex align-center">
+                      <block wx:for="{{item.data.resource.body.emojiArray}}" wx:key="index">
+                        <view wx:if="{{item.type === 1}}" class="text-black">{{item.content}}</view>
+                        <view wx:if="{{item.type === 2}}" style="display: inline-block; width: {{24}}px; height: {{24}}px">
+                          <view class="{{item.imageClass}}" style="background-image: url({{emojiURL}});transform-origin: 0 0; transform: scale({{24 / 64}});"></view>
+                        </view>
+                      </block>
+                    </view>
+                  </view>
+
+                  <!-- 被评论/点赞的内容 目标内容  target-->
+                  <view class="target-content " wx:if="{{item.event==3}}">
+                    <view class="padding-lr-sm flex align-center" style="font-size: 28rpx;">
+                      <text class="" style="color: #80A0FF;">{{item.data.target.users?item.data.target.users[0].name:'匿名用户'}} :</text>
+                      <!-- <text class="margin-left-xs" style="color: #999;">{{item.data.target.body.content}}</text> -->
+                      <block wx:for="{{item.data.target.body.emojiArray}}" wx:key="index">
+                        <view wx:if="{{item.type === 1}}" class="text-black">{{item.content}}</view>
+                        <view wx:if="{{item.type === 2}}" style="display: inline-block; width: {{24}}px; height: {{24}}px">
+                          <view class="{{item.imageClass}}" style="background-image: url({{emojiURL}});transform-origin: 0 0; transform: scale({{24 / 64}});"></view>
+                        </view>
+                      </block>
+                    </view>
+                  </view>
+
+                  <view class="notification__time">{{item.createdTime}}</view>
+                </view>
+                <!-- 最右边显示的内容 target -->
+                <view class="notification__target" wx:if="{{item.event!=3}}">
+                  <view wx:if="{{item.data.target.body.image}}" style="width: 84rpx;height: 84rpx;background-image: url({{item.data.target.body.image}});background-repeat: no-repeat;background-size: cover;"></view>
+                  <view wx:else style="width: 84rpx;height: 84rpx;" class="flex content">
+                    <block wx:for="{{item.data.target.body.emojiArray}}" wx:key="index" wx:for-item="o">
+                      <text wx:if="{{o.type === 1}}">{{o.content}}</text>
+                      <view wx:if="{{o.type === 2}}" style="display: inline-block; width: 40rpx; height: 40rpx">
+                        <view class="{{o.imageClass}}" style="background-image: url({{emojiURL}});transform-origin: 0 0; transform: scale({{20 / 64}});"></view>
+                      </view>
+                    </block>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view slot="loadmore" class="flex align-center justify-center padding-tb-sm">
+              <hk-loadmore isMore="{{huDong.isMore}}" />
+            </view>
+          </view>
+          <view style="height: 100%;" class="flex align-center justify-center" wx:else>
+            <hk-empty>暂无数据</hk-empty>
+          </view>
+        </block>
+      </block>
+    </scroll-view>
+  </view>
+</view>

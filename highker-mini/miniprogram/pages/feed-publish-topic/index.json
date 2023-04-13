@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "hk-topic-list": "/components/topic-list/index"
+  },
+  "navigationStyle": "custom"
+}

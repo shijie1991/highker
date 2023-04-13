@@ -1,0 +1,115 @@
+<!--pages/my-gralevelde/index.wxml-->
+<hk-custom-nav isBack>
+  <view slot="content">我的等级</view>
+</hk-custom-nav>
+<scroll-view scroll-y style="height: calc(100vh - {{customBarHeight}}px);" bindscrolltolower='bindscrolltolower'>
+  <image class="common__nav-bg" src="https://hk-resources.oss-cn-beijing.aliyuncs.com/images/nav-top-bg-1.png"></image>
+  <view class="my-level padding" wx:if="{{levelInfo}}">
+    <view class="my-level__header">
+      <view class="my-level__header-card">
+        <image class="bg" src="/images/my-level/header-bg.svg"></image>
+        <view class="padding-lg">
+          <view class="level-text">当前等级</view>
+          <view class="level-num">LV.{{levelInfo.level}}</view>
+        </view>
+
+        <view class="card-footer flex align-center padding-lr-lg">
+          <image class="footer-bg" src="/images/my-level/header-juxing-bg.svg"></image>
+          <view class="flex-sub  margin-right-lg">
+            <view class="progress-bar">
+              <view class="progress-val"></view>
+            </view>
+            <view class="progress-tips">
+              <text>{{levelInfo.exp}}</text>
+              <text>/{{levelInfo.exp + levelInfo.next_exp}} 距下一级还需{{levelInfo.next_exp}}</text>
+            </view>
+          </view>
+          <image class="levelup-btn" src="/images/my-level/tishengjingyzhi-btn.svg" bindtap="toTaskPage">
+          </image>
+
+        </view>
+      </view>
+      <view class="my-level__header-list margin-top-lg">
+        <view class="hk-list grid col-3 no-border">
+          <view class="hk-item">
+            <view class="num">{{prerogative.used.get_box_count}} / {{prerogative.all.get_box_count}}</view>
+            <view class="text">拆盲盒次数</view>
+          </view>
+          <view class="hk-item">
+            <view class="num">{{prerogative.used.add_box_count}} / {{prerogative.all.add_box_count}}</view>
+            <view class="text">已放盲盒次数</view>
+          </view>
+          <view class="hk-item">
+            <view class="num">{{prerogative.used.message_count}} / {{prerogative.all.message_count}}</view>
+            <view class="text">私信次数</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="my-level__main padding-bottom-lg"> -->
+    <view class="my-level__main ">
+      <view class="margin-top-lg">
+        <hk-tabs selected="{{tab}}" data="{{tabs}}" bind:click="onSwitchTab" />
+      </view>
+      <view class="margin-top">
+        <!-- 经验明细 -->
+        <view class="hk-list menu experience-detail-list" wx:if="{{tab === 'experienceInDetail'}}">
+          <block wx:if="{{taskLogList}}">
+            <view class="title">近30天记录</view>
+            <block wx:if="{{taskLogList.length}}">
+              <view class="hk-item border" wx:for="{{taskLogList}}" wx:key="item">
+                <view class="content">
+                  <view class="sign">{{item.description}}</view>
+                  <view class="date">{{item.created_at}}</view>
+                </view>
+                <view class="val">+{{item.exp}}</view>
+              </view>
+              <view slot="loadmore" class="flex align-center justify-center ">
+                <hk-loadmore isMore="{{isMore}}" />
+              </view>
+            </block>
+            <view wx:else class="margin-top-xl">
+              <hk-empty>暂无记录</hk-empty>
+            </view>
+          </block>
+          <view wx:else class="flex  align-center justify-center" style="height: 400rpx">
+            <hk-loading />
+          </view>
+        </view>
+        <!-- 等级权限 -->
+        <view wx:else class="privilege-list">
+          <view wx:for="{{levelList}}" wx:key="item" style="margin-bottom: 56rpx;">
+            <view class="title">{{item.text}}</view>
+            <block wx:for="{{item.nodes}}" wx:key="o" wx:for-item="o">
+              <view>
+                <view class="card-item margin-top-sm bg-gray">
+                  <view class="flex card-item-header align-center padding-lr">
+                    <image src="/images/my-level/tequan-list-bg.svg"></image>
+                    <view class="flex-sub card-item-title">LV.{{o.level}}</view>
+                    <view class="card-item-r-title" wx:if="{{o.exp && !o.unlocked}}">需要{{o.exp}}经验值</view>
+
+                  </view>
+                  <view class="padding-lr padding-tb-sm">
+                    <view class="flex align-center padding-top-xs" wx:for="{{o.award}}" wx:for-item="k" wx:key="k">
+                      <image style=" width: 24rpx;height: 24rpx;" src="/images/my-task/zhuiyuanxing-icon.svg"></image>
+                      <view class="flex-sub flex align-center card-item-content ">
+                        <view>解锁</view>
+                        <view class="padding-left-sm">{{k.name}}</view>
+                      </view>
+                      <view wx:if="{{!o.unlocked}}">
+                        <image style="width: 24rpx;;height: 32rpx;" src="/images/my-level/suo-icon.svg"> </image>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:else class="flex  align-center justify-center" style="height: 100%;">
+    <hk-loading />
+  </view>
+</scroll-view>

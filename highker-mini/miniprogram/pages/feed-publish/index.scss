@@ -1,0 +1,48 @@
+/* pages/feed-publish/index.wxss */
+page {
+  background-color: #fff;
+}
+textarea {
+  height: 240rpx;
+}
+.img-list {
+  display: flex;
+  flex-wrap: wrap;
+  .img-item,
+  image {
+    margin: 6rpx;
+    width: 204rpx;
+    height: 204rpx;
+    flex: 0 0 204rpx;
+  }
+  .img-item {
+    position: relative;
+  }
+  .icon-close {
+    position: absolute;
+    top: 6rpx;
+    right: -6rpx;
+    background-color: var(--grey);
+    width: 32rpx;
+    font-size: 26rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32rpx;
+    color: #fff;
+  }
+}
+.topic-list {
+  padding-top: 60rpx;
+  .topic-item {
+    padding: 4rpx 16rpx;
+    font-size: 24rpx;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: var(--black);
+    border-radius: 2rpx;
+    & > text {
+      padding-left: 8rpx;
+    }
+  }
+}

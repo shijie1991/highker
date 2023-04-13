@@ -1,0 +1,61 @@
+<!--pages/my-score/index.wxml-->
+<hk-custom-nav isBack style="color: #fff;background-color: red;">
+  <view slot="content" >我的金币</view>
+</hk-custom-nav>
+<scroll-view scroll-y style="height: calc(100vh - {{customBarHeight}}px);" bindscrolltolower='bindscrolltolower'>
+
+  <image class="common__nav-bg" src="/images/my-score/header-bg.png"></image>
+  <view class="my-score">
+    <view class="my-score__header">
+      <view class="header-title" bindtap="clickMyGold">我的金币</view>
+      <view class="coin-num">
+        <image class="score-42" src="/images/my-score/icon-score.svg"></image>
+        <view class="coin-num-text">{{score}}</view>
+      </view>
+    </view>
+    <view class="my-score__btns flex margin">
+      <view class="flex-sub flex  flex-direction padding-right-xs">
+        <button class="hk-btn radius" bindtap="toTaskPage">
+          <image class="score-42" src="/images/my-score/icon-score.svg"></image>
+          <text class="margin-left-sm">赚金币</text>
+        </button>
+      </view>
+      <view class="flex-sub flex flex-direction padding-left-sm">
+        <button class="hk-btn radius" bindtap="toMyScoreExchangePage">
+          <image class="score-42" src="/images/my-score/icon-score.svg"></image>
+          <text class="margin-left-sm">去使用</text>
+        </button>
+      </view>
+
+    </view>
+    <view class="padding">
+      <view class="hk-list menu my-score__list ">
+        <block wx:if="{{scoreList}}">
+          <view class="title">近30天记录</view>
+          <block wx:if="{{scoreList.length}}">
+            <view class="hk-item border" wx:for="{{scoreList}}" wx:key="item">
+              <view class="content">
+                <view class="sign">{{item.description}}</view>
+                <view class="date">{{item.created_at}}</view>
+              </view>
+              <view class="val flex align-center" style="color: {{item.score > 0 ? '' : '#222'}};">
+                <image class="score-40" src="/images/my-score/icon-score.svg"></image>
+                <view class="margin-left-sm">+{{item.score}}</view>
+              </view>
+            </view>
+          </block>
+          <view wx:else class="margin-top-xl">
+            <hk-empty>暂无数据</hk-empty>
+          </view>
+        </block>
+        <view wx:else class="flex  align-center justify-center" style="height: 400rpx">
+          <hk-loading />
+        </view>
+      </view>
+    </view>
+    <view slot="loadmore" class="flex align-center justify-center padding-tb-sm">
+      <hk-loadmore isMore="{{isMore}}" />
+    </view>
+  </view>
+
+</scroll-view>

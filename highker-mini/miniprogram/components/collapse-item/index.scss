@@ -1,0 +1,56 @@
+/* components/collapse-item/index.wxss */
+.hk-collapse-item {
+  &__title {
+    .hk-cell__right-icon {
+      transform: rotate(90deg);
+      transition: transform 0.3s;
+    }
+
+    &--expanded {
+      .hk-cell__right-icon {
+        transform: rotate(-90deg);
+      }
+    }
+
+    &--disabled {
+      .hk-cell,
+      .hk-cell__right-icon {
+        color: var(--grey) !important;
+      }
+
+      .hk-cell--hover {
+        background-color: white !important;
+      }
+    }
+  }
+
+  &__wrapper {
+    overflow: hidden;
+  }
+
+  &__content {
+    padding: 20rpx 24rpx;
+    color: var(--grey);
+    font-size: 26rpx;
+    line-height: 1.5;
+    background-color: var(--gray);
+  }
+}
+.hk-collapse-item-cell {
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 24rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 400;
+  color: #222222;
+}
+.icon-arrow-right-bold {
+  display: flex;
+  transform: rotate3d(0, 0, 1, 90deg);
+  transition: transform 0.3s;
+  &.expanded {
+    transform: rotate3d(0, 0, 1, -90deg);
+  }
+}

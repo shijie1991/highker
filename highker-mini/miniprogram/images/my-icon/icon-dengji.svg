@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon_Dengji_24x24</title>
+    <defs>
+        <linearGradient x1="90.7133557%" y1="50.3585069%" x2="8.17987351%" y2="49.7459852%" id="linearGradient-1">
+            <stop stop-color="#A991F6" offset="0%"></stop>
+            <stop stop-color="#75C1FD" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="个人主页" transform="translate(-51.000000, -332.000000)">
+            <g id="icon_Dengji_24x24" transform="translate(51.000000, 332.000000)">
+                <rect id="矩形" fill-opacity="0" fill="#D8D8D8" x="0" y="0" width="24" height="24"></rect>
+                <path d="M2,19 L22,19 L22,21 L2,21 L2,19 Z M2,5 L7,8.5 L12,2 L17,8.5 L22,5 L22,17 L2,17 L2,5 Z M4,15 L20,15 L20,8.841 L16.58,11.235 L12,5.28 L7.42,11.235 L4,8.84 L4,15 Z" id="形状" fill="#222222" fill-rule="nonzero"></path>
+                <polygon id="路径" fill="url(#linearGradient-1)" points="2 19 22 19 22 21 2 21"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,270 @@
+/* pages/chat/index.wxss */
+page {
+  // padding-bottom: 100rpx;
+  background-color: white;
+}
+
+.created_at {
+  margin-bottom: 16rpx;
+}
+
+.hk-chat .hk-item {
+  // padding-bottom: 20rpx;
+  // padding-top: 20rpx;
+  padding-bottom: 0rpx;
+  padding-top: 0rpx;
+  margin-bottom: 24rpx;
+}
+
+.hk-chat .main {
+  margin-right: 20rpx !important;
+  margin-left: 20rpx !important;
+}
+
+.hk-chat .hk-item .date {
+  bottom: -20rpx;
+}
+
+.hk-chat .hk-avatar {
+  width: 84rpx;
+  height: 84rpx;
+  border-radius: 50%;
+  font-size: 32rpx;
+}
+
+.hk-chat .main .content {
+  background: #f5f7f9;
+  border-radius: 4rpx 16rpx 16rpx 16rpx;
+  color: #222222;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  line-height: 44rpx;
+}
+
+.hk-chat .self > .main .content {
+  // background: #222222;
+  background: #7894fc;
+  border-radius: 16rpx 4rpx 16rpx 16rpx;
+  color: white;
+  font-size: 32rpx;
+}
+
+.hk-chat .his > .main .content {
+  border-radius: 4rpx 16rpx 16rpx 16rpx !important;
+}
+
+.recorder-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 280rpx;
+  height: 280rpx;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 4px;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.hk-chat .self {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.input-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1110;
+  padding-bottom: 10rpx;
+  padding-top: 10rpx;
+  // bottom:env(safe-area-inset-bottom);
+}
+
+/* not 表示不支持括号内的属性 */
+// @supports not(constant(safe-area-inset-bottom)) {
+//   .input-bar{
+//     bottom:20rpx;
+//   }
+// }
+
+.spinner {
+  // margin: 0 auto;
+  // text-align: center;
+  // border-radius: 16rpx;
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+}
+
+.his .start-taste-line .hr {
+  background: #131313;
+}
+
+.spinner .spinner-item {
+  background: #fff;
+  // width: 3px;
+  width: 6rpx;
+  // height: 6px;
+  height: 15rpx;
+  // margin: 0 0.03rem;
+  // margin-right: 8rpx;
+  margin-right: 4rpx;
+  margin-left: 4rpx;
+  display: inline-block;
+  border: none;
+}
+
+// .his .spinner .hr {
+//   background: #131313 !important;
+// }
+
+.spinner .rect1 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+  height: 10rpx;
+  // background: #c183f2;
+  background: #fff;
+}
+
+.his .spinner .rect1 {
+  background: #131313;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -2.1s;
+  animation-delay: -2.1s;
+  height: 18rpx;
+  // background: #c183f2;
+  background: #fff;
+}
+
+.his .spinner .rect2 {
+  background: #131313;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -2.1s;
+  animation-delay: -2.1s;
+  height: 30rpx;
+  // background: #c183f2;
+  background: #fff;
+}
+
+.his .spinner .rect3 {
+  background: #131313;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+  height: 16rpx;
+  // background: #c183f2;
+  background: #fff;
+}
+
+.his .spinner .rect4 {
+  background: #131313;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -3s;
+  animation-delay: -3s;
+  height: 10rpx;
+  // background: #c183f2;
+  background: #fff;
+}
+
+.his .spinner .rect5 {
+  background: #131313;
+}
+
+.start-taste-line .hr {
+  // background-color: red;
+  // background: #c183f2;
+  // background: #333;
+  background: #fff;
+  // width: 3px;
+  width: 6rpx;
+  // height: 6px;
+  height: 15rpx;
+  // margin: 0 0.03rem;
+  // margin-right: 8rpx;
+  margin-right: 4rpx;
+  margin-left: 4rpx;
+  display: inline-block;
+  border: none;
+}
+
+.hr {
+  animation: note 0.5s ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.hr1 {
+  animation-delay: -1s;
+}
+
+.hr2 {
+  // animation-delay: -0.9s;
+  animation-delay: -0.8s;
+}
+
+.hr3 {
+  // animation-delay: -0.8s;
+  animation-delay: -0.6s;
+}
+
+.hr4 {
+  // animation-delay: -0.7s;
+  animation-delay: -0.4s;
+}
+
+.hr5 {
+  // animation-delay: -0.6s;
+  animation-delay: -0.2s;
+}
+
+.hr6 {
+  animation-delay: -0.5s;
+}
+
+.hr7 {
+  animation-delay: -0.4s;
+}
+
+.hr8 {
+  animation-delay: -0.3s;
+}
+
+.hr9 {
+  animation-delay: -0.2s;
+}
+
+.hr10 {
+  animation-delay: -0.1s;
+}
+
+@keyframes note {
+  from {
+    transform: scaleY(1);
+  }
+
+  to {
+    transform: scaleY(2);
+  }
+}
+
+.give-up {
+  background: rgb(140, 46, 47);
+  color: #fff;
+}
+
+.luyin-text {
+  padding: 10rpx 15rpx;
+  border-radius: 10rpx;
+}

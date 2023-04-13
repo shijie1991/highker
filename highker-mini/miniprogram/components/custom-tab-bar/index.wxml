@@ -1,0 +1,15 @@
+<!--custom-tab-bar/index.wxml-->
+<view class="tab-bar" id="tabBar">
+    <view style="position: relative;" wx:for="{{list}}" wx:key="index" class="tab-bar-item " data-selected="{{item.selected}}" data-index="{{index}}" bindtap="switchTab">
+        <view style="position: relative;height: 48rpx;" >
+            <image class="tab-bar-item-img" src="{{ selected === item.selected ? item.selectedIconPath : item.iconPath}}">
+            </image>
+            <view class="hk-tag badge" wx:if="{{(redDotCount.interactive_count+redDotCount.box_count+redDotCount.private_count+redDotCount.system_count)>0&&item.selected==2}}">{{(redDotCount.interactive_count+redDotCount.box_count+redDotCount.private_count+redDotCount.system_count)}}
+            <block wx:if="{{(redDotCount.interactive_count+redDotCount.box_count+redDotCount.private_count+redDotCount.system_count)>99}}"> +</block>
+            </view>
+        </view>
+
+        <view class="tab-bar-item-text {{selected === item.selected ? 'active' : ''}}">{{ item.text }}</view>
+
+    </view>
+</view>

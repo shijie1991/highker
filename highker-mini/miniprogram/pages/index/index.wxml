@@ -1,0 +1,16 @@
+<!--pages/index/index.wxml-->
+<!-- 盲盒 -->
+<hk-mystery-box id="box" wx:if="{{selected === 1}}" />
+<!-- 消息 -->
+<hk-message redDotCount="{{redDotcount}}" bind:redDot="setRedDotCount" wx:elif="{{selected === 2}}" />
+<!-- 我的 -->
+<hk-my wx:elif="{{selected === 3}}" />
+<!-- 社区 -->
+<!-- <hk-community wx:else /> -->
+<!-- <hk-community hidden="{{selected !== 0}}" /> -->
+<view hidden="{{selected !== 0}}">
+  <hk-community />
+</view>
+
+<!-- 自定义tabbar -->
+<hk-custom-tab-bar redDotCount="{{redDotcount}}" selected="{{selected}} " bind:click="switchTab" />

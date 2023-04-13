@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="14px" viewBox="0 0 38 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>vip15</title>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="切图" transform="translate(-227.000000, -55.000000)">
+            <g id="vip15" transform="translate(227.000000, 55.000000)">
+                <rect id="矩形" fill-opacity="0" fill="#D8D8D8" opacity="0.319999993" x="0" y="0" width="38" height="14"></rect>
+                <g id="编组-4" transform="translate(0.000000, 0.881692)">
+                    <rect id="矩形" fill="#416DFF" x="0" y="0.118307802" width="16" height="12"></rect>
+                    <text id="Lv" font-family="D-DINCondensed-Bold, D-DIN Condensed" font-size="11.0769231" font-style="condensed" font-weight="bold" fill="#FFFFFF">
+                        <tspan x="2" y="10">LV</tspan>
+                    </text>
+                    <polygon id="v" fill="#000000" points="9.60730644 12.1183078 15.6938296 3.48235422 12.4658245 0.118307802 35 0.118307802 30.0204628 12.1183078"></polygon>
+                    <text id="15" font-family="Roboto-BoldItalic, Roboto" font-size="11.0769231" font-style="italic" font-weight="bold" fill="#FFFFFF">
+                        <tspan x="16.140512" y="10">15</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

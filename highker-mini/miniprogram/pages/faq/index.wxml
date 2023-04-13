@@ -1,0 +1,16 @@
+<!--pages/faq/index.wxml-->
+<hk-custom-nav isBack>
+  <view slot="content">常见问题</view>
+</hk-custom-nav>
+<scroll-view scroll-y style="height: calc(100vh - {{customBarHeight}}px);">
+  <view class="faq-main">
+    <view class="margin-bottom-lg" wx:for="{{list}}" wx:key="id">
+      <view class="title flex align-center">{{item.name}}</view>
+      <hk-collapse value="{{ activeNames }}" bind:change="onChange">
+        <hk-collapse-item title="{{o.title}}" name="{{o.id}}" wx:for="{{item.articles}}" wx:for-item="o" wx:key="o">
+          <rich-text nodes="{{o.content}}"></rich-text>
+        </hk-collapse-item>
+      </hk-collapse>
+    </view>
+  </view>
+</scroll-view>

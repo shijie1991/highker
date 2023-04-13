@@ -1,0 +1,16 @@
+/* pages/faq/index.wxss */
+page {
+  background-color: white;
+}
+.faq-main {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.title {
+  height: 80rpx;
+  font-size: 36rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #222222;
+  line-height: 50rpx;
+  padding: 0 24rpx;
+}

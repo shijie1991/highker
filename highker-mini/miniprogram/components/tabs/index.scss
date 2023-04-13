@@ -1,0 +1,27 @@
+/* components/tabs/index.wxss */
+.tabs {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  margin: 0 -24rpx;
+  height: 58rpx;
+  .tab {
+    margin: 0 24rpx;
+    &.selected {
+      color: #222222;
+      position: relative;
+      &::after {
+        position: absolute;
+        left: 50%;
+        bottom: -6rpx;
+        content: "";
+        width: 32rpx;
+        height: 6rpx;
+        background: linear-gradient(315deg, #4db8ff 0%, #c183f2 100%);
+        border-radius: 6rpx;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "hk-loadmore": "/components/loadmore/index",
+    "hk-tabs": "/components/tabs/index"
+  },
+  "navigationStyle": "custom"
+}

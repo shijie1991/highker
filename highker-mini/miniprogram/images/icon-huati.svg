@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-huati_16x16</title>
+    <defs>
+        <linearGradient x1="90.7133557%" y1="72.9444444%" x2="8.17987351%" y2="33.7430556%" id="linearGradient-1">
+            <stop stop-color="#A991F6" offset="0%"></stop>
+            <stop stop-color="#75C1FD" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="社区-推荐" transform="translate(-40.000000, -391.000000)">
+            <g id="编组" transform="translate(16.000000, 184.000000)">
+                <g id="编组-2" transform="translate(16.000000, 205.000000)">
+                    <g id="icon-huati_16x16" transform="translate(8.000000, 2.000000)">
+                        <rect id="矩形" fill-opacity="0" fill="#D8D8D8" x="0" y="0" width="16" height="16"></rect>
+                        <g id="#" transform="translate(4.180000, 4.000000)" fill="#000000" fill-rule="nonzero">
+                            <path d="M5.748,3.18 L5.424,5.028 L6.828,5.028 L6.828,6.132 L5.22,6.132 L4.824,8.328 L3.564,8.328 L3.96,6.132 L2.184,6.132 L1.788,8.328 L0.528,8.328 L0.924,6.132 L0,6.132 L0,5.028 L1.116,5.028 L1.452,3.18 L0,3.18 L0,2.076 L1.644,2.076 L2.016,0 L3.288,0 L2.916,2.076 L4.68,2.076 L5.052,0 L6.324,0 L5.952,2.076 L6.828,2.076 L6.828,3.18 L5.748,3.18 Z M4.488,3.18 L2.712,3.18 L2.388,5.028 L4.152,5.028 L4.488,3.18 Z" id="形状"></path>
+                        </g>
+                        <path d="M4.18,2 L4.18,3.5 L1.5,3.5 L1.5,12.5 L4.18,12.5 L4.18,14 L0,14 L0,2 L4.18,2 Z M15,14 L11,14 L11,12.5 L13.5,12.5 L13.5,3.5 L11,3.5 L11,2 L15,2 L15,14 Z" id="形状结合" fill="url(#linearGradient-1)"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

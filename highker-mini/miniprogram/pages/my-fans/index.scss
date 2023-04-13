@@ -1,0 +1,27 @@
+/* pages/my-follow/index.wxss */
+page {
+  background: #fff;
+}
+
+.my-fans {
+  position: relative;
+  padding-top: 20rpx;
+
+  &.hk-list1.menu .hk-item {
+    background: transparent;
+    min-height: 120rpx;
+  }
+
+  .hk-btn {
+    height: 52rpx;
+    border-radius: 4rpx;
+    padding: 0 26rpx;
+    line-height: 52rpx;
+    font-size: 24rpx;
+    font-family: PingFangSC-Semibold, PingFang SC;
+    font-weight: 600;
+    color: #666666;
+  }
+}
+
+

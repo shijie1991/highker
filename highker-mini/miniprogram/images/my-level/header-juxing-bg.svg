@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="343px" height="60px" viewBox="0 0 343 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>矩形备份</title>
+    <defs>
+        <linearGradient x1="100%" y1="50%" x2="-1.7091363e-13%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#8188F1" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#3873EA" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.300000012">
+        <g id="我的等级-特权" transform="translate(-16.000000, -205.000000)" fill="url(#linearGradient-1)">
+            <g id="编组" transform="translate(16.000000, 107.000000)">
+                <rect id="矩形备份" x="0" y="98" width="343" height="60" rx="2"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

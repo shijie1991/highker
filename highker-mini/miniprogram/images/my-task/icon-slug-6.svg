@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>评论</title>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="任务中心" transform="translate(-31.000000, -522.000000)">
+            <g id="编组-3备份-2" transform="translate(15.000000, 505.000000)">
+                <g id="评论" transform="translate(16.000000, 17.000000)">
+                    <rect id="矩形" fill="#F5F7F9" x="0" y="0" width="28" height="28" rx="2"></rect>
+                    <path d="M23,7 L23,24 L18.428404,20.8032663 L6,20.8032663 L6,7 L23,7 Z M21.4127879,8.61904762 L7.5862721,8.61904762 L7.5862721,19.1841429 L18.9201165,19.1842186 L21.4127879,20.9270476 L21.4127879,8.61904762 Z" id="路径-5" fill="#222222" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

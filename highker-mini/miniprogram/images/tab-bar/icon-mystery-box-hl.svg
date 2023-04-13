@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-盲盒选中</title>
+    <defs>
+        <linearGradient x1="62.8973221%" y1="85.8506944%" x2="36.7520711%" y2="24.5985243%" id="linearGradient-1">
+            <stop stop-color="#C5B3FF" offset="0%"></stop>
+            <stop stop-color="#9CD2FC" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="切图" transform="translate(-109.000000, -238.000000)">
+            <g id="icon-盲盒选中" transform="translate(109.000000, 238.000000)">
+                <rect id="矩形" fill-opacity="0" fill="#D8D8D8" x="0" y="0" width="24" height="24"></rect>
+                <path d="M4.68532027,8.04464158 L13,13 L13,22.5059608" id="路径-3" stroke="#222222" stroke-width="2.5"></path>
+                <polygon id="路径-8" fill="url(#linearGradient-1)" points="13 13 21.1393408 8.04464158 21.1393408 17.6840538 13 22.5059608"></polygon>
+                <path d="M21.1393408,8.04464158 L13,13 L13,22.5059608" id="路径-3备份" stroke="#222222" stroke-width="2.5"></path>
+                <path d="M13,3.44337567 L21.2762794,8.22168784 L21.2762794,17.7783122 L13,22.5566243 L4.72372056,17.7783122 L4.72372056,8.22168784 L13,3.44337567 Z" id="多边形" stroke="#222222" stroke-width="2.5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,73 @@
+<!--components/feed-item/index.wxml-->
+
+<view class="hk-card" bindtap="feedDetailsClick">
+  <view class="hk-item padding">
+    <view class="flex align-center">
+      <view class="flex align-center" style="overflow: hidden;" catchtap="onUserInfoClick" data-id="{{data.user.id}}">
+        <view class="hk-avatar md round bg-grey" style="background-image: url({{data.user.avatar}});">
+          <image wx:if="{{data.user.gender === 2}}" src="../../images/icon-famale-tubiao.svg" class="gender-icon"></image>
+          <image wx:else src="../../images/icon-male-tubiao.svg" class="gender-icon"></image>
+        </view>
+        <text class="nickname padding-left-sm">{{data.user.name}} </text>
+        <image class="common__vip-level" wx:if="{{data.user.vipLevelImage}}" src="{{data.user.vipLevelImage}}"></image>
+        <image class="vip-member-diamond" wx:if="{{data.user.is_vip}}" src="/images/vip-level-list/member-of-the-diamond.svg"></image>
+      </view>
+      <view style="flex: 1"></view>
+      <!-- 三个点 点击展示私聊 关注 举报 -->
+      <view catchtap="feedMoreClick" class="hk-icon icon-elipsis more flex align-center justify-end margin-left-sm" wx:if="{{isShowMore}}"></view>
+    </view>
+    <view class="padding-top-sm">
+      <view class="text-info" wx:if="{{data.content.text}}">{{data.content.text}}</view>
+      <view class="flex" style="flex-wrap: wrap;padding-top: 14rpx;" wx:if="{{data.images && data.images.length}}">
+        <block wx:if="{{imageFill}}">
+          <view class="fill-image-icom" catchtap="previewImage" data-index="{{index}}" wx:for="{{data.images}}" wx:key="path" style="width: 686rpx; height: 686rpx;background-image:url({{item.path}});background-size: cover;background-position: center;background-repeat: no-repeat;"></view>
+        </block>
+        <block wx:else>
+          <view catchtap="previewImage" data-index="{{index}}" wx:for="{{data.images}}" class="radius flex-sub img-item" style="background-image:url({{item.path}});width: 204rpx; height: 204rpx; flex: 0 0 204rpx; background-size: cover;" wx:key="item"></view>
+        </block>
+      </view>
+    </view>
+    <view class="flex align-center topic-list">
+      <view class="topic-item bg-gray flex margin-right-sm align-center" data-id="{{item.id}}" wx:for="{{data.topics}}" wx:key="id" catchtap="onTopicClick">
+        <image style="width: 32rpx;height: 32rpx;" src="/images/icon-huati.svg"> </image>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+    <view class="flex align-center footer">
+      <view class="post-address">{{data.timerStr}} {{data.location || ''}}</view>
+      <view style="flex: 1;"></view>
+      <view class="flex align-center" catchtap="onCommentClick" wx:if="{{commentShow}}">
+        <image style="width: 40rpx;;height: 40rpx;" src="/images/icon-pinglun.svg"></image>
+        <text class="text-num">{{data.comment_count}}</text>
+      </view>
+      <view class="flex align-center margin-left-lg" catchtap="onGiveALikeClick">
+        <image wx:if="{{data.has_liked}}" style="width: 40rpx;height: 40rpx;" src="/images/icon-zan.svg"></image>
+        <image wx:else style="width: 40rpx;height: 40rpx;" src="/images/icon-zan-no.svg"></image>
+        <text class="text-num">{{data.like_count}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 动态更多 -->
+<!-- <hk-feed-more-popup feedItem="{{data}}" isDelete="{{isDelete}}" show="{{ showMore }}" bind:report="setFeddReport" bind:delete="showModalDelete" bind:follow="onFollowClickCallback" bindhide="showMoreHide"></hk-feed-more-popup> -->
+
+<!-- 删除提示 -->
+<!-- <view class="hk-modal {{modalDelete ? 'show' : ''}}" wx:if="{{isDelete}}" bindtap="hideModalDelete">
+  <view class="hk-dialog" catchtap="true">
+    <view class="padding-xl">
+      确定删除此动态？
+    </view>
+    <view class="hk-bar bg-white flex padding-lr padding-bottom">
+      <view class="flex-sub flex padding-right-sm" bindtap="hideModalDelete">
+        <button class="hk-btn line-black radius" style="width: 100%;">取消</button>
+      </view>
+      <view class="flex-sub flex padding-left-sm" bindtap="onDeleteFeed">
+        <button class="hk-btn bg-black radius" style="width: 100%;">确定</button>
+      </view>
+    </view>
+  </view>
+</view> -->
+
+<!-- 动态评论 -->
+<!-- <hk-comment-list feedId="{{data.id}}" id="commentList" isPopup></hk-comment-list> -->

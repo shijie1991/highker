@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="83px" height="83px" viewBox="0 0 83 83" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组</title>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="发布动态-未输入" transform="translate(-16.000000, -236.000000)">
+            <g id="编组" transform="translate(16.000000, 236.000000)">
+                <path d="M1,0 L82,0 C82.5522847,-1.01453063e-16 83,0.44771525 83,1 L83,82 C83,82.5522847 82.5522847,83 82,83 L1,83 C0.44771525,83 -1.26463225e-15,82.5522847 0,82 L0,1 C-6.76353751e-17,0.44771525 0.44771525,-1.23081457e-15 1,0 Z" id="矩形" fill="#F5F7F9"></path>
+                <rect id="矩形" fill="#999999" x="32" y="40" width="20" height="4"></rect>
+                <rect id="矩形备份" fill="#999999" transform="translate(42.000000, 42.000000) rotate(90.000000) translate(-42.000000, -42.000000) " x="32" y="40" width="20" height="4"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

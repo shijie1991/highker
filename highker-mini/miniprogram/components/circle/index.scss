@@ -1,0 +1,15 @@
+/* components/circle/index.wxss */
+$gray-8: #323233;
+.hk-circle {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    color: $gray-8;
+  }
+}

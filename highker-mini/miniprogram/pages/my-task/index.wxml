@@ -1,0 +1,85 @@
+<!--pages/my-task/index.wxml-->
+<hk-custom-nav isBack>
+  <view slot="content">任务中心</view>
+</hk-custom-nav>
+<scroll-view scroll-y style="height: calc(100vh - {{customBarHeight}}px);">
+  <view class="my-task">
+    <image class="my-task__nav-bg" src="https://hk-resources.oss-cn-beijing.aliyuncs.com/images/nav-bg.png"></image>
+    <view class="my-task__header">
+      <view class="flex align-center">
+        <view class="flex-sub">
+          <image class="title-icon" src="/images/my-task/signin-the-title.svg"></image>
+        </view>
+        <view class="signin-num">
+          <image class="signin-icon" src="/images/my-task/signin-the-num.svg"></image>
+          <view class="signin-text flex align-end justify-center">
+            <view class="p">{{signInNum}}</view>
+            <view class="l">天</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="my-task__list radius">
+      <view class="card-title flex align-start">
+        <text>每日任务</text>
+        <image src="/images/my-task/zhuiyuanxing-icon.svg"></image>
+      </view>
+      <view class="hk-list menu ">
+        <view class="hk-item" wx:for="{{taskDailyMissionList}}" wx:key="id">
+          <view class="content flex-sub flex align-center">
+            <image class="item-icon" src="/images/my-task/icon-slug-{{item.slug}}.svg"></image>
+            <view style="padding-left: 4rpx">
+              <view class="item-text">{{item.name}}</view>
+              <view class="item-doc">
+                <text wx:if="{{item.score}}">金币+{{item.score}}</text>
+                <text class="padding-lr-xs"></text>
+                <text wx:if="{{item.exp}}">经验+{{item.exp}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="action">
+            <button class="hk-btn  radius {{item.finish ? 'bg-gray' : 'bg-black'}}">{{item.finish ? '已完成' : item.complete_count + '/' + item.must_count}}</button>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class=" my-task__list radius">
+      <view class="card-title flex align-start">
+        <text>新手任务</text>
+        <image src="/images/my-task/zhuiyuanxing-icon.svg"></image>
+      </view>
+      <view class="hk-list menu ">
+        <view class="hk-item " wx:for="{{taskNewsTaskList}}" wx:key="id">
+          <view class="content flex-sub flex align-center">
+            <image class="item-icon" src="/images/my-task/icon-slug-{{item.slug}}.svg"></image>
+            <view style="padding-left: 4rpx">
+              <view class="item-text">{{item.name}}</view>
+              <view class="item-doc">
+                <text wx:if="{{item.score}}">金币+{{item.score}}</text>
+                <text class="padding-lr-xs"></text>
+                <text wx:if="{{item.exp}}">经验+{{item.exp}}</text>
+              </view>
+            </view>
+          </view>
+          <!-- <view class="action" wx:if="{{item.once}}">
+            <button class="hk-btn radius {{item.finish ? 'bg-gray' : 'bg-black'}}">{{item.finish ? '已完成' : '去完成'}}</button>
+          </view> -->
+          <view class="action">
+            <button class="hk-btn radius {{item.finish ? 'bg-gray' : 'bg-black'}}">{{item.finish ? '已完成' : item.complete_count + '/' + item.must_count}}</button>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="my-task__task-privi radius padding-tb-lg">
+      <view class="privi-title flex align-center justify-center">
+        <text>做任务，开启更多特权</text>
+        <image style=" width: 24rpx;height: 24rpx;" src="/images/my-task/zhuiyuanxing-icon.svg"></image>
+      </view>
+      <view class="flex padding-top-lg">
+        <image class="img-item flex-sub" src="/images/my-task/privi-1.svg"></image>
+        <image class="img-item flex-sub" src="/images/my-task/privi-2.svg"></image>
+        <image class="img-item flex-sub" src="/images/my-task/privi-3.svg"></image>
+      </view>
+    </view>
+  </view>
+</scroll-view>

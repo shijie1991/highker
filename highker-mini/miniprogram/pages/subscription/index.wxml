@@ -1,0 +1,24 @@
+<!--pages/subscription/index.wxml-->
+<hk-custom-nav isBack>
+</hk-custom-nav>
+<view class="swiper-box">
+  <swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+    <swiper-item>
+      <image src="https://hk-resources.oss-cn-beijing.aliyuncs.com/images/subscription1.png" mode="aspectFill"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="https://hk-resources.oss-cn-beijing.aliyuncs.com/images/subscription2.png" mode="aspectFill"></image>
+    </swiper-item>
+  </swiper>
+  <view class="padding">
+    <view class="title">订阅消息通知</view>
+    <view class="info">订阅消息通知后，有新的评论、点赞，有新的关注等消息时，我们可以第一时间通知您。 订阅步骤</view>
+    <view class="sub-title">订阅步骤</view>
+    <view class="li">总是保持以上选择，不再询问；</view>
+    <view class="li">在弹出框中勾选-总是保持以上选择，不在询问</view>
+    <view class="li">点击允许按钮。</view>
+  </view>
+  <view class="padding flex flex-direction">
+    <button style="height: 88rpx;" class="hk-btn radius bg-black lg" bindtap="subscriptionsSetting">订阅消息通知</button>
+  </view>
+</view>

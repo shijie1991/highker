@@ -1,0 +1,69 @@
+<!--pages/personalProfile/index.wxml-->
+<wxs module="utils" src="/wxs/index.wxs"></wxs>
+<hk-custom-nav isBack>
+  <view slot="content">我的资料</view>
+</hk-custom-nav>
+<view class="hk-user-profile padding">
+  <view class="hk-user-profile__form padding-top-sm padding-bottom-lg radius" catchtouchmove='true'>
+    <view class="hk-form-group padding-bottom-sm">
+      <view class="title">头像</view>
+      <!-- <view class="hk-user-profile__form_avatar" webp="true" style="background-image: url({{avatar}}); height: 90rpx; width: 90rpx;position: relative;" bindtap="uploadAvatar">
+        <image class="camera" src="/images/icon-user-shangchuan.svg"></image>
+      </view> -->
+      <image class="hk-user-profile__form_avatar" src="{{avatar}}" bindtap="uploadAvatar">
+        <image class="camera" src="/images/icon-user-shangchuan.svg"></image>
+      </image>
+    </view>
+    <view class="hk-form-group">
+      <view class="title">昵称</view>
+      <input data-name="name" placeholder="请输入名称" class="value" value="{{form.name}}" maxlength="18" bindinput="textareaAInput"></input>
+    </view>
+    <view class="hk-form-group">
+      <view class="title">性别</view>
+      <view class="value">{{form.gender === 2 ? '女' : '男'}}</view>
+    </view>
+    <view class="hk-form-group">
+      <view class="title">出生日期</view>
+      <picker mode="date" value="{{form.birthday}}" data-name="birthday" bindchange="selectChange">
+        <view class="picker">
+          {{ form.birthday ? form.birthday : '请选择日期'}}
+        </view>
+      </picker>
+    </view>
+    <view class="hk-form-group">
+      <view class="title">情感状态</view>
+      <picker value="{{form.emotion}}" range="{{emotionList}}" range-key="text" data-name="emotion" bindchange="selectChange">
+        <view class="picker">
+          {{ form.emotion > 0 ? utils.parsingIdxTotext(form.emotion, emotionList) : '请选择情感状态'}}
+        </view>
+      </picker>
+    </view>
+    <view class="hk-form-group">
+      <view class="title">所在地</view>
+      <picker mode="region" value="{{form.region}}" data-name="region" bindchange="selectChange">
+        <view class="picker">
+          {{ regionArray.length ? regionArray[0] + '-' + regionArray[1] : '请选择所在地'}}
+        </view>
+      </picker>
+    </view>
+    <view class="hk-form-group">
+      <view class="title">目的</view>
+      <picker value="{{form.purpose}}" range="{{purposeList}}" range-key="text" data-name="purpose" bindchange="selectChange">
+        <view class="picker">
+          {{ form.purpose > 0 ? utils.parsingIdxTotext(form.purpose, purposeList) : '请选择目的'}}
+        </view>
+      </picker>
+    </view>
+    <view class="hk-form-group">
+      <view class="title">个性签名</view>
+    </view>
+    <view class="hk-form-group">
+      <textarea data-name="description" placeholder="请输入个性签名" value="{{form.description}}" bindinput="textareaAInput" show-confirm-bar='{{false}}'></textarea>
+    </view>
+
+
+  </view>
+  <view class=" flex flex-direction">
+    <button class="hk-btn bg-black lg hk-user-profile__btn radius" bindtap="submit">保存</button>
+  </view>
+</view>

@@ -1,0 +1,124 @@
+<!--pages/personal-homepage/index.wxml-->
+<wxs module="utils" src="/wxs/index.wxs"></wxs>
+<hk-custom-nav isBack>
+</hk-custom-nav>
+<scroll-view class="personal-homepage-main" scroll-y style="height: calc(100vh - {{customBarHeight}}px);" bindscrolltolower='bindscrolltolower'>
+  <view class="padding" wx:if="{{userInfo}}">
+    <view class="flex">
+      <view class="common__avatar avatar">
+        <view class="bg-grey" style="width:184rpx;height: 184rpx;flex: 0 0 184rpx;background-image: url({{userInfo.avatar}});background-repeat: no-repeat;background-size: cover;border-radius: 50%;background-position: center;" bindtap="previewImage" data-url='{{userInfo.avatar}}'></view>
+        <image wx:if="{{userInfo.gender === 2}}" src="/images/icon-famale-tubiao.svg" class="gender-icon"></image>
+        <image wx:else src="/images/icon-male-tubiao.svg" class="gender-icon"></image>
+      </view>
+      <view class="flex-sub padding-left-xl padding-top-xs">
+        <view class="flex">
+          <view class="text-center">
+            <view class="num-text">{{userInfo.info.follow_count}}</view>
+            <view class="num-lable">关注</view>
+          </view>
+          <view class="text-center" style="padding-left: 80rpx;">
+            <view class="num-text">{{userInfo.info.fans_count}}</view>
+            <view class="num-lable">粉丝</view>
+          </view>
+        </view>
+        <view bindtap="toPersonalEditorPage" class="margin-top" wx:if="{{myUserId === currentUserId}}">
+          <button class="hk-btn line-black radius " style="height: 52rpx;font-size: 24rpx;">编辑资料</button>
+        </view>
+        <view wx:else class="flex align-center margin-top">
+          <button class="hk-btn radius {{userInfo.has_followed ? 'bg-gray' : 'bg-black'}}" style="height: 52rpx;" bindtap="followedClick">
+            <!-- <view class="common-gradient-add-icon" style="margin-top: -12rpx;" wx:if="{{!userInfo.info.has_followed}}">+</view> -->
+            <view class="common-gradient-add-icon" style="margin-top: 0rpx;" wx:if="{{!userInfo.has_followed}}">+</view>
+            <view>{{userInfo.has_followed ? '取消关注' : '关注'}}</view>
+          </button>
+          <button class="hk-btn  radius margin-left-sm line-black" style="height: 52rpx;" bindtap="toChatPage">
+            <view>私聊</view>
+          </button>
+        </view>
+      </view>
+    </view>
+    <view class="flex align-center margin-top-lg ">
+      <view class="common__nickname">{{userInfo.name}}</view>
+      <image class="common__vip-level" src="{{userInfo.vipLevelImage}}"></image>
+    </view>
+    <view style="padding-top: 8rpx;" class="signs">{{userInfo.info.description || ''}}</view>
+    <view class="margin-top-xl margin-bottom-sm">
+      <hk-tabs selected="{{tab}}" data="{{tabs}}" bind:click="onSwitchTab" />
+    </view>
+    <!-- 个人信息 -->
+    <view wx:if="{{tab === 'info'}}" class="bg-white radius padding" style=" min-height: 860rpx;">
+      <view class="info-title">基本信息</view>
+      <view class="hk-list grid col-3 no-border">
+        <view class="hk-item text-left">
+          <view class="bg-gray padding-sm">
+            <view class="item-lable">性别</view>
+            <view class="item-value">{{userInfo.gender === 2? '女' : '男'}}</view>
+          </view>
+        </view>
+        <view class="hk-item text-left">
+          <view class="bg-gray radius padding-sm">
+            <view class="item-lable">出生日期</view>
+            <view class="item-value" style="font-size: 28rpx;">{{userInfo.info.birthday || '无'}}</view>
+          </view>
+        </view>
+        <view class="hk-item text-left">
+          <view class="bg-gray radius padding-sm">
+            <view class="item-lable">感情状态</view>
+            <view class="item-value">{{userInfo.info.emotion > 0 ? utils.parsingIdxTotext(userInfo.info.emotion, emotionList) : '无'}}</view>
+          </view>
+        </view>
+        <view class="hk-item text-left">
+          <view class="bg-gray radius padding-sm">
+            <view class="item-lable">所在地</view>
+            <view class="item-value">{{userInfo.info.region ? utils.parsingRegionTotext(userInfo.info.region) : '无'}}</view>
+          </view>
+
+        </view>
+        <view class="hk-item text-left">
+          <view class="bg-gray radius padding-sm">
+            <view class="item-lable">目的</view>
+            <view class="item-value">{{userInfo.info.purpose > 0 ? utils.parsingIdxTotext(userInfo.info.purpose, purposeList) : '无'}}</view>
+          </view>
+
+        </view>
+        <view class="hk-item text-left">
+          <view class="bg-gray radius padding-sm">
+            <view class="item-lable">降临天数</view>
+            <view class="item-value">{{userInfo.info.advent_days}}</view>
+          </view>
+
+        </view>
+      </view>
+      <view class="margin-top-sm">
+        <view class="info-title">个性签名</view>
+        <view class="margin-top-sm text-dark-gray" style="font-size: 28rpx;">{{userInfo.info.description || ''}}</view>
+      </view>
+    </view>
+    <!-- 动态 -->
+    <view wx:else style=" min-height: 860rpx;">
+      <view wx:if="{{feedList.length>0}}" style="margin: 0 -30rpx">
+        <block wx:if="{{feedList.length}}">
+          <hk-feed-item isDelete="{{myUserId===currentUserId}}" bind:comment="onFeedCommentClick" bind:more="onFeedMore" bind:topic="onTopicClick" isShowMore='{{true}}' bind:details="onFeedDetailsClick" item="{{item}}" wx:for="{{feedList}}" wx:key="item"/>
+          <view class="flex align-center justify-center ">
+            <hk-loadmore isMore="{{isMore}}" />
+          </view>
+        </block>
+      </view>
+      <view wx:else style="min-height: 600rpx;" class="flex  align-center justify-center">
+          <hk-empty>暂无数据</hk-empty>
+        </view>
+      <!-- <view wx:else class="flex  align-center justify-center" style="min-height: 600rpx;">
+        <hk-loading />
+      </view> -->
+    </view>
+  </view>
+
+  <view wx:else class="flex  align-center justify-center" style="height: 100%;">
+    <hk-loading />
+  </view>
+</scroll-view>
+
+<!-- 动态评论 -->
+<hk-comment-list id="commentList" isPopup></hk-comment-list>
+
+<!-- 动态更多 -->
+<hk-feed-more-popup id="feedMore" isFollow="{{true}}" bind:delete="onRemoveFeed" isDelete="{{myUserId===currentUserId}}"></hk-feed-more-popup>

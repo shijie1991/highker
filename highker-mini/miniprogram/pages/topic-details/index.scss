@@ -1,0 +1,70 @@
+/* pages/topic-details/index.wxss */
+.tabs .tab.selected::after {
+  bottom: 0 !important;
+}
+.nav-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-image: url(https://hk-resources.oss-cn-beijing.aliyuncs.com/images/topic-nav-bg-2.png);
+  height: 500rpx;
+  background-size: cover;
+}
+.cover {
+  width: 120rpx;
+  height: 120rpx;
+  flex: 0 0 120rpx;
+  border-radius: 12rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--grey);
+}
+.add-icon {
+  margin-top: -6rpx;
+  display: flex;
+  background: linear-gradient(315deg, #4db8ff 0%, #c183f2 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 34rpx;
+  font-weight: bold;
+  margin-right: 8rpx;
+}
+
+.topic-title {
+  height: 52rpx;
+  font-size: 40rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #222222;
+  line-height: 52rpx;
+}
+.count {
+  height: 32rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 32rpx;
+  margin-top: 24rpx;
+}
+.desc {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 40rpx;
+}
+
+.add-feed-btn {
+  width: 284rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #ffffff;
+  border-radius: 8rpx;
+  margin: 0 auto;
+}

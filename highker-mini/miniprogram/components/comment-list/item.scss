@@ -1,0 +1,57 @@
+/* components/comment-list/item.wxss */
+.comment-item {
+  .avatar {
+    position: relative;
+    width: 68rpx;
+    height: 68rpx;
+    flex: 0 0 68rpx;
+    .gender {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 24rpx;
+      height: 24rpx;
+    }
+  }
+  .content {
+    padding-left: 24rpx;
+    .nickname {
+      font-size: 28rpx;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: var(--black);
+    }
+    .vip-level {
+      height: 28rpx;
+      width: 76rpx;
+      padding-left: 6rpx;
+    }
+    .comment-content {
+      font-size: 28rpx;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: var(--black);
+      padding-bottom: 4rpx;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      word-break: break-word;
+    }
+    .sub-comment-list {
+      background-color: var(--gray);
+      margin-top: 12rpx;
+      padding: 24rpx;
+      border-radius: 2px;
+    }
+    .sub-comment-item {
+      margin-bottom: 38rpx;
+      font-size: 24rpx;
+    }
+    .post-address {
+      font-size: 20rpx;
+      font-weight: 500;
+      color: #999999;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "hk-empty": "/components/empty/index",
+    "hk-scroller": "coolui-scroller/scroller/index"
+  },
+  "disableScroll": true
+}

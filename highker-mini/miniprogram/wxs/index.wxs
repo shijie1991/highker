@@ -1,0 +1,33 @@
+ var parsingIdxTotext = function (idx, arr) {
+   var str = ''
+   for (var i = 0; i < arr.length; i++) {
+     var item = arr[i]
+     if (item.id == idx) {
+       str = item.text
+     }
+   }
+   return str
+ }
+ // 地址处理
+ var parsingRegionTotext = function (str) {
+   if (!str) return ''
+   var split = str.split('-')
+   return split[1]
+ }
+
+ //  数组翻转
+ var reserveArray = function (arr) {
+   return arr.slice().reverse()
+ }
+ // 字符串截断
+ var subStrSomething = function (str, start, length) {
+   return str.slice(start, length)
+ }
+
+
+ module.exports = {
+   parsingIdxTotext: parsingIdxTotext,
+   reserveArray: reserveArray,
+   parsingRegionTotext: parsingRegionTotext,
+   subStrSomething: subStrSomething,
+ }

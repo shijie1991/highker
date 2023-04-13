@@ -1,0 +1,21 @@
+{
+  "name": "miniprogram-ts-less-quickstart",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "axios-miniprogram-adapter": "^0.3.2",
+    "coolui-scroller": "^3.0.9",
+    "dayjs": "^1.11.1",
+    "qs": "5.0.0"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/qs": "^6.9.7",
+    "miniprogram-api-typings": "^3.4.6"
+  }
+}

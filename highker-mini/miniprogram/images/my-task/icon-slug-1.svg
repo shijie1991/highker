@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>放盲盒</title>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="任务中心" transform="translate(-31.000000, -398.000000)">
+            <g id="编组-3备份-6" transform="translate(15.000000, 381.000000)">
+                <g id="放盲盒" transform="translate(16.000000, 17.000000)">
+                    <rect id="矩形" fill="#F5F7F9" x="0" y="0" width="28" height="28" rx="2"></rect>
+                    <g id="box" transform="translate(5.000000, 3.862419)" fill="#000000" fill-rule="nonzero" stroke="#F5F7F9" stroke-width="0.3">
+                        <path d="M17.955,5.08628115 L17.955,15.2718557 L8.95007324,20.3215869 L0,15.2031906 L0,5.05753533 L9,0 L17.955,5.08628115 Z M16.2,7.12659219 L9.90000001,10.6870317 L9.90000001,17.8079109 L16.2,14.2035153 L16.2,7.12659219 Z M9,9.1485702 L15.3,5.58813064 L13.05,4.31340538 L6.74999999,7.87384494 L9,9.1485702 Z M8.09999999,17.7639548 L8.09999999,10.6870317 L1.80000001,7.12659219 L1.80000001,14.2474713 L8.09999999,17.7639548 Z M9,2.02769108 L2.7,5.58813064 L4.95,6.86285592 L11.25,3.30241636 L9,2.02769108 Z" id="形状"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

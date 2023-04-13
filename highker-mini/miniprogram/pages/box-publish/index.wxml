@@ -1,0 +1,101 @@
+<!--pages/box-publish/index.wxml-->
+<hk-custom-nav isBack>
+  <view slot="content" class="flex-sub flex justify-center">
+    <hk-tabs selected="{{tab}}" data="{{tabs}}" bind:click="onSwitchTab" />
+  </view>
+</hk-custom-nav>
+<scroll-view class="" scroll-y style="height: calc(100vh - (48px + env(safe-area-inset-bottom)));background-color: #fff;">
+  <view class="padding margin-top-xs box-publish__main">
+    <block wx:if="{{tab === 'content'}}">
+      <view class="textarea-box padding-sm">
+        <textarea value="{{content}}" style="width: 100%;height: 316rpx;" placeholder="请输入内容" bindinput="textareaAInput" show-confirm-bar='{{false}}'></textarea>
+        <view class="flex justify-end margin-top-xs text-dark-gray text-sm">
+          {{content.length}}/100
+        </view>
+      </view>
+      <button class="hk-btn block radius {{content ? 'bg-black' : 'bg-gray text-dark-gray'}}" style="height: 88rpx;margin-top: 56rpx;" bindtap="submit">发布</button>
+    </block>
+    <block wx:elif="{{tab === 'image'}}">
+      <!-- 会员 -->
+      <block wx:if="{{is_vip===true}}">
+        <!-- <view style="background-image: url({{image}});background-repeat:no-repeat;background-size: cover;height: 602rpx;width: 100%;position: relative;" wx:if="{{image}}" bindtap="previewImage"> -->
+        <view style="height: 602rpx;width: 100%;position: relative;overflow: hidden;" class="flex justify-center" wx:if="{{image}}" bindtap="previewImage">
+          <!-- <view style="width: 100%;position: relative;" class="flex justify-center" wx:if="{{image}}" bindtap="previewImage"> -->
+          <!-- <view class="icon-close hk-icon icon-close2" catchtap="removeImage" data-index="{{index}}"></view> -->
+          <!-- <image src="{{image}}" style="height: 602rpx;position: relative;" mode="heightFix"></image> -->
+          <image src="{{image}}" style="width: 100%;position: relative;" mode="widthFix"></image>
+          <image class=" icon-close2" catchtap="removeImage" data-index="{{index}}" src='/images/icon_Close_20x20@2x.png'></image>
+
+        </view>
+        <view wx:else class="bg-gray padding-sm flex align-center justify-center" bindtap="uploadFile" style="height: 596rpx;">
+          <view class="text-center">
+            <view class="icon-add hk-icon" style="font-size: 60rpx;font-weight: 800;color: #CCCCCC;"></view>
+            <view style="font-size: 40rpx;font-family: PingFangSC-Semibold, PingFang SC;font-weight: 600;color: #CCCCCC;line-height: 56rpx;">
+              <view>轻触选择</view>
+              <view>你的一张照片</view>
+            </view>
+          </view>
+        </view>
+        <button class="hk-btn block radius {{image ? 'bg-black' : 'bg-gray text-dark-gray'}} " style="height: 88rpx;margin-top: 56rpx;" bindtap="submit">发布</button>
+      </block>
+      <!-- 非会员 -->
+      <view wx:else class="flex align-center justify-center" style="height: calc(100vh - {{customBarHeight}}px - 140rpx)">
+        <hk-empty>该功能仅会员可用</hk-empty>
+      </view>
+    </block>
+    <block wx:else>
+      <block wx:if="{{is_vip===true}}">
+        <view class="box-publish__record-ing flex align-center" wx:if="{{recording || hasRecord}}">
+          <view class="spinner">
+            <view class="spinner-item rect{{index + 1}}" wx:for="{{32}}" wx:key="key"></view>
+          </view>
+        </view>
+        <!-- <view class="flex justify-center" style="margin-top: 280rpx;"> -->
+        <view class="flex justify-center voice-main-box align-center">
+          <view class="text-center">
+            <view class="box-publish__record-time">{{hasRecord ?playTime : recordTime}}s</view>
+
+            <!-- 录音中 -->
+            <view bindtap="stopRecord" style="width: 72px;height: 72px;position: relative;" class="flex align-center justify-center margin-top-sm" wx:if="{{recording}}">
+              <hk-circle size="72" progressTotal="{{60}}" value="{{ recordTime  }}" stroke-width="4" layer-color="#f5f7f9" />
+              <view class="bg-black flex align-center justify-center box-publish__pause" style="transform: translateY(-9rpx);">
+                <image style="width: 40rpx;height: 40rpx;" src="/images/mystery-box/icon-zanting-20x20.svg"></image>
+              </view>
+            </view>
+            <!-- 已录完 -->
+            <view class="flex align-center" wx:elif="{{hasRecord}}">
+              <view class="box-publish__operation" bindtap="removeVoice">
+                <view class="bg-gray btn flex align-center justify-center">
+                  <image style="width: 40rpx;height: 40rpx;" src="/images/mystery-box/icon-delelet-20x20.svg">ff</image>
+                </view>
+                <view class="text">删除</view>
+              </view>
+              <view style="width: 72px;height: 72px;position: relative;" class="flex align-center justify-center margin-top-sm">
+                <hk-circle style="height: 72px;" size="72" value="{{ playTime }}" progressTotal="{{recordTime}}" stroke-width="4" layer-color="#f5f7f9" />
+                <view class="bg-black flex align-center justify-center box-publish__play" bindtap="playVoice">
+                  <image wx:if="{{playing}}" style="width: 40rpx;height: 40rpx;" src="/images/mystery-box/icon-zanting-20x20.svg"></image>
+                  <image wx:else style="width: 40rpx;height: 40rpx;" src="/images/mystery-box/icon-vedio-bofang-20x20.svg"></image>
+                </view>
+              </view>
+              <view class="box-publish__operation" bindtap="submit">
+                <view class="bg-gray btn flex align-center justify-center">
+                  <image style="width: 40rpx;height: 40rpx;" src="/images/mystery-box/icon-fabu-20x20.svg">ff</image>
+                </view>
+                <view class="text">发布</view>
+              </view>
+            </view>
+
+            <view bindtap="startRecord" style="width: 72px;height: 72px; background: #222222;border-radius: 50%;" class="flex align-center justify-center margin-top-sm" wx:else>
+              <image style="width: 64rpx;height: 64rpx;" src="/images/mystery-box/icon-yuyin-32x32.svg"></image>
+            </view>
+            <view class="margin-top-lg box-publish__record-start-btn"> {{recording ? '录音中' : hasRecord ? '点击播放' : '点击录音'}} </view>
+          </view>
+        </view>
+      </block>
+      <!-- 非会员 -->
+      <view wx:else class="flex align-center justify-center" style="height: calc(100vh - {{customBarHeight}}px - 140rpx)">
+        <hk-empty>该功能仅会员可用</hk-empty>
+      </view>
+    </block>
+  </view>
+</scroll-view>

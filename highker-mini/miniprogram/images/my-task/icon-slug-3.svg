@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>每日登录</title>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="任务中心" transform="translate(-31.000000, -274.000000)">
+            <g id="编组-3备份-4" transform="translate(15.000000, 257.000000)">
+                <g id="每日登录" transform="translate(16.000000, 17.000000)">
+                    <rect id="矩形" fill="#F5F7F9" x="0" y="0" width="28" height="28" rx="2"></rect>
+                    <g id="登录" transform="translate(5.000000, 5.000000)" fill="#000000" fill-rule="nonzero">
+                        <polygon id="路径" points="16.2 1.81818181 10.8 1.81818181 10.8 0 18 0 18 20 10.8 20 10.8 18.1818182 16.2 18.1818182"></polygon>
+                        <polygon id="路径" points="11.9565 9.09090908 9 5.89727272 10.251 4.54545454 15.3 10 10.251 15.4545455 9 14.1027273 11.9565 10.9090909 0 10.9090909 0 9.09090908"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

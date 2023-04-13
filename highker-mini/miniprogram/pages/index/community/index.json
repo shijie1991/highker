@@ -1,0 +1,14 @@
+{
+  "component": true,
+  "usingComponents": {
+    "hk-feed-item": "/components/feed-item/index",
+    "hk-topic-list": "/components/topic-list/index",
+    "hk-scroller": "coolui-scroller/scroller/index",
+    "hk-refresh": "coolui-scroller/refresh/index",
+    "hk-loadmore": "/components/loadmore/index",
+    "hk-feed-more-popup": "/components/feed-more-popup/index",
+    "hk-comment-list": "/components/comment-list/index"
+  },
+  "navigationStyle": "custom",
+  "disableScroll": true
+}

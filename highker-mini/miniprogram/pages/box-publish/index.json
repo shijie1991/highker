@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "hk-tabs": "/components/tabs/index",
+    "hk-circle": "/components/circle/index"
+  },
+  "navigationStyle": "custom",
+  "disableScroll":true
+}

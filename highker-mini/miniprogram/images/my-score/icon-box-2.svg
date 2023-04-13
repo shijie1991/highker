@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="45px" viewBox="0 0 48 45" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组 15</title>
+    <defs>
+        <linearGradient x1="-6.86695249%" y1="65.237747%" x2="107.193152%" y2="15.5391089%" id="linearGradient-1">
+            <stop stop-color="#9CD2FC" offset="0%"></stop>
+            <stop stop-color="#C5B3FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-6.86695249%" y1="65.7473939%" x2="107.193152%" y2="14.3865181%" id="linearGradient-2">
+            <stop stop-color="#9CD2FC" offset="0%"></stop>
+            <stop stop-color="#C5B3FF" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-3" points="4.70070461 0 45.6459621 9.48581491e-14 45.6459621 32.2424242 31.1811945 32.2424242 24.8849864 38 18.3183017 32.2424242 4.70070461 32.2424242"></polygon>
+        <linearGradient x1="-6.86695249%" y1="64.1093335%" x2="107.193152%" y2="18.0910697%" id="linearGradient-4">
+            <stop stop-color="#9CD2FC" offset="0%"></stop>
+            <stop stop-color="#C5B3FF" offset="100%"></stop>
+        </linearGradient>
+        <path d="M30.7466667,7.28571429 C33.9867372,7.28571429 36.6133333,9.90804647 36.6133333,13.1428571 C36.6133333,14.9435873 35.7993925,16.5545199 34.5187825,17.6289473 L25.8103508,26.3544558 L17.315581,17.8750441 C15.8552828,16.8096664 14.9066667,15.0868625 14.9066667,13.1428571 C14.9066667,9.90804647 17.5332628,7.28571429 20.7733333,7.28571429 C22.8792099,7.28571429 24.7259352,8.39347153 25.760789,10.057163 C26.7940648,8.39347153 28.6407901,7.28571429 30.7466667,7.28571429 Z" id="path-5"></path>
+    </defs>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="我的金币-兑换" transform="translate(-47.000000, -596.000000)">
+            <g id="编组-4" transform="translate(16.000000, 575.000000)">
+                <g id="编组-15" transform="translate(32.000000, 22.328571)">
+                    <polygon id="矩形备份-34" stroke="#000000" stroke-width="1.71428571" fill="url(#linearGradient-1)" points="0.35403794 3.34285714 4.70070461 5.35564761e-14 41.6533333 3.01428571 45.6459621 32.2424242 41.2992954 35.5852814 26.9384232 35.8142857 20.5333333 41.6714286 13.8530893 35.8142857 2.55894801e-17 35.8142857"></polygon>
+                    <g id="矩形">
+                        <use fill="url(#linearGradient-2)" xlink:href="#path-3"></use>
+                        <use stroke="#000000" stroke-width="1.71428571" fill="#FFFFFF" xlink:href="#path-3"></use>
+                    </g>
+                    <g id="形状结合">
+                        <use fill="url(#linearGradient-4)" xlink:href="#path-5"></use>
+                        <use stroke="#000000" stroke-width="1.71428571" fill="#FF2E51" xlink:href="#path-5"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

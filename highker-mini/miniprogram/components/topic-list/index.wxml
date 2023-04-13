@@ -1,0 +1,32 @@
+<!-- <hk-scroller id="scroller" bind:scroll="onScroll" bind:loadmore="bindScrollToLower" bind:refresh="bindRefresh" class="hk-community" style="height: calc(100vh - ({{customBarHeight}}px + env(safe-area-inset-bottom)));"> -->
+<hk-scroller id="scroller" bind:scroll="onScroll" bind:loadmore="bindScrollToLower" bind:refresh="bindRefresh" class="hk-community" style="{{style}}">
+
+  <!-- 话题列表 -->
+  <view class="hk-vertical-box flex">
+    <!-- 左边的分类栏 -->
+    <scroll-view class="hk-vertical-nav" scroll-y scroll-with-animation style="{{style}}">
+      <view bindtap="handlerTopicVerticalTab" data-id="{{item.id}}" class="hk-item flex align-center justify-center {{currentTopicId === item.id ? 'cur' : ''}}" wx:for="{{topicList}}" wx:key="id">{{item.name}}</view>
+    </scroll-view>
+    <!-- 右边的标题栏 -->
+    <scroll-view class="hk-vertical-main flex  flex-sub" scroll-y scroll-with-animation style="{{style}}">
+      <view class="hk-vertical-list">
+        <block wx:if="{{!isNodesEmpty}}">
+          <view class="hk-item flex align-center {{item.active ? 'active' : ''}}" wx:for="{{topicGroupNodes}}" wx:key="id" data-id="{{item.id}}" bindtap="bindTopicClick">
+            <view class="active-checkbox" wx:if="{{item.active}}"></view>
+            <view class="padding-lr">
+              <view class="flex">
+                <image style="width: 33rpx;height: 33rpx;flex: 0 0 33rpx;margin-top: 8rpx;" src="/images/icon-huati-white.svg"></image>
+                <view class="topic-title padding-left-sm">{{item.name}}</view>
+              </view>
+              <view class="topic-sub-title padding-left-xl">{{item.description}}</view>
+            </view>
+          </view>
+        </block>
+        <block wx:else>
+          <hk-empty>暂无数据</hk-empty>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+
+</hk-scroller>

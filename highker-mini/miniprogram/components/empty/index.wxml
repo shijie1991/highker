@@ -1,0 +1,10 @@
+<!--components/empty/index.wxml-->
+<view class="flex justify-center">
+  <view class="text-center">
+    <!-- <image style="width: 296rpx;height: 296rpx;" src="./images/kong-148x148.svg"></image> -->
+    <image style="width: 296rpx;height: 296rpx;" src="/images/no-data.png"></image>
+    <view class="text-dark-gray margin-top-sm text-df">
+      <slot></slot>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "hk-emoji": "/components/emoji/index",
+    "hk-scroller": "coolui-scroller/scroller/index",
+    "hk-feed-item": "/components/feed-item/index",
+    "hk-comment-list": "/components/comment-list/index",
+    "hk-loadmore": "/components/loadmore/index",
+    "hk-feed-more-popup": "/components/feed-more-popup/index"
+  },
+  "navigationStyle": "custom"
+}

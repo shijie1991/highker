@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="20px" viewBox="0 0 28 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon_Xuanzhong_28x20</title>
+    <defs>
+        <linearGradient x1="93.834529%" y1="72.631942%" x2="9.29043532%" y2="28.9411599%" id="linearGradient-1">
+            <stop stop-color="#4DB8FF" offset="0%"></stop>
+            <stop stop-color="#C183F2" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="完善信息" transform="translate(-153.000000, -406.000000)">
+            <g id="icon_Xuanzhong_28x20" transform="translate(153.000000, 406.000000)">
+                <rect id="矩形备份-2" stroke="#000000" stroke-width="2" fill="url(#linearGradient-1)" x="1" y="1" width="26" height="18" rx="2"></rect>
+                <path d="M10,4 L10,10 L21,10 L21,12 L8,12 L8,4 L10,4 Z" id="形状结合" fill="#FFFFFF" transform="translate(14.500000, 8.000000) rotate(-45.000000) translate(-14.500000, -8.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

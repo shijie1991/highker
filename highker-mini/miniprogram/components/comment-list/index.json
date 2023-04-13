@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "hk-scroller": "coolui-scroller/scroller/index",
+    "hk-item": "./item",
+    "hk-empty": "/components/empty/index",
+    "hk-loadmore": "/components/loadmore/index",
+    "hk-loading": "/components/loading/index"
+  }
+}

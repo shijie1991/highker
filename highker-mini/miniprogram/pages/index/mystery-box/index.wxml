@@ -1,0 +1,103 @@
+<!--pages/index/mystery-box.wxml-->
+<!-- <view class="hk-mystery-box" style="padding-bottom: calc(48px + env(safe-area-inset-bottom));    padding-top: 24rpx;"> -->
+<scroll-view class="hk-mystery-box" scroll-y style="padding-bottom: calc(48px + env(safe-area-inset-bottom));padding-top: 24rpx;">
+  <view style="height: {{customBarHeight}}px;"></view>
+  <image class="hk-mystery-box-bg" src="https://hk-resources.oss-cn-beijing.aliyuncs.com/images/manghe-bg.png"></image>
+  <view class="hk-mystery-box-title flex">
+    <image src="https://hk-resources.oss-cn-beijing.aliyuncs.com/images/box-title.png"></image>
+  </view>
+
+  <view class="hk-mystery-box-main margin-top-lg flex">
+    <image class="mystery-box-img" src="https://hk-resources.oss-cn-beijing.aliyuncs.com/images/chaimaghe.png"></image>
+    <image class="guide" src="https://hk-resources.oss-cn-beijing.aliyuncs.com/images/shou.png"></image>
+    <view class="tips-box flex align-center">
+      <view class="tips-move">
+        <view class="tips-item flex margin-lr-sm">
+          SUPERISE BOX
+          <view class="margin-lr-sm">●</view>
+          SUPERISE BOX
+          <view class="margin-lr-sm">●</view>
+          SUPERISE BOX
+          <view class="margin-lr-sm">●</view>
+          SUPERISE BOX
+          <view class="margin-lr-sm">●</view>
+          SUPERISE BOX
+          <view class="margin-lr-sm">●</view>
+          SUPERISE BOX
+          <view class="margin-lr-sm">●</view>
+          SUPERISE BOX
+          <view class="margin-lr-sm">●</view>
+          SUPERISE BOX
+          <view class="margin-lr-sm">●</view>
+          SUPERISE BOX
+          <view class="margin-lr-sm">●</view>
+          SUPERISE BOX
+          <view class="margin-lr-sm">●</view>
+          SUPERISE BOX
+          <view class="margin-lr-sm">●</view>
+          SUPERISE BOX
+          <view class="margin-lr-sm">●</view>
+        </view>
+        <!-- <view class="tips-item flex margin-lr-sm">SUPERISE BOX
+          <view class="margin-lr-sm">●</view> SUPERISE BOX
+          <view class="margin-lr-sm">●</view> SUPERISE BOX
+          <view class="margin-lr-sm">●</view>
+        </view> -->
+      </view>
+    </view>
+  </view>
+  <!-- 拆一个 放一个 -->
+  <view class="hk-footer flex justify-center ">
+    <view class="left-btn btn" bindtap="getBox">
+      <image class="img-btn" src="https://hk-resources.oss-cn-beijing.aliyuncs.com/images/btn_chai-2x.png"> </image>
+      <view class="juxing">
+        <image src="/images/mystery-box/chaimanghe-juxing.svg"></image>
+        <text class="num">{{pullBoxCount}}</text>
+      </view>
+    </view>
+    <view class="right-btn btn" bindtap="toBoxPublishPage">
+      <image class="img-btn" src="https://hk-resources.oss-cn-beijing.aliyuncs.com/images/btn_fang-2x.png"> </image>
+      <view class="juxing">
+        <image src="/images/mystery-box/chaimanghe-juxing.svg"></image>
+        <text class="num">{{pushBoxCount}}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<!-- </view> -->
+
+<view class="hk-modal {{dialogType ? 'show' : ''}}" bindtap="hideModal">
+  <view class="hk-dialog box-dialog" catchtap>
+    <!-- 没有开到消息 -->
+    <block wx:if="{{ dialogType ===  'NOT_MESSAGE'}}">
+      <image style="width: 360rpx;height: 240rpx;" src="https://hk-resources.oss-cn-beijing.aliyuncs.com/images/image_Wu_180x120-2x.png"></image>
+      <image style="width: 224rpx;height: 32rpx;margin-top: 10rpx;" src="https://hk-resources.oss-cn-beijing.aliyuncs.com/images/box-msg2-2x.png"></image>
+      <view style="padding-top: 20rpx;font-size: 28rpx;color: #222222;height: 40rpx;">快去放一个消息</view>
+      <view class="flex flex-direction" style="margin-top: 66rpx;">
+        <button class="hk-btn  block bg-black radius" style="height: 80rpx;width: 360rpx;" bindtap="hideModal">我知道了</button>
+      </view>
+    </block>
+    <!-- 开到有消息 -->
+    <block wx:elif="{{ dialogType ===  'OPEN_MESSAGE'}}">
+      <image style="width: 360rpx;height: 240rpx;" src="https://hk-resources.oss-cn-beijing.aliyuncs.com/images/image_xiaoxi_180x120-2x.png"></image>
+      <image style="width: 224rpx;height: 32rpx;margin-top: 10rpx;" src="https://hk-resources.oss-cn-beijing.aliyuncs.com/images/box-msg1-2x.png"></image>
+      <view style="padding-top: 20rpx;font-size: 28rpx;color: #222222;height: 40px;">快去看看</view>
+      <view class="flex flex-direction" style="margin-top: 56rpx;">
+        <button class="hk-btn  block bg-black radius" bindtap="toChatPage">立即查看</button>
+      </view>
+      <view class="box-dialog-close" bindtap="hideModal">
+        <view class="icon-close hk-icon" style="font-size: 40rpx;"></view>
+      </view>
+    </block>
+    <block wx:elif="{{ dialogType ===  'ADD_MESSAGE'}}">
+      <!-- 放盲盒 -->
+      <image style="width: 360rpx;height: 240rpx;" src="https://hk-resources.oss-cn-beijing.aliyuncs.com/images/image_Fangzhi_180x120-2x.png"></image>
+      <image style="width: 224rpx;height: 32rpx;margin-top: 10rpx;" src="https://hk-resources.oss-cn-beijing.aliyuncs.com/images/box-msg3-2x.png"></image>
+      <view style="padding-top: 20rpx;font-size: 28rpx;color: #222222;height: 40px;">被人拆开后即可聊天</view>
+      <view class="flex flex-direction" style="margin-top: 56rpx;">
+        <button class="hk-btn  block bg-black radius" bindtap="hideModal">我知道了</button>
+      </view>
+    </block>
+
+  </view>
+</view>

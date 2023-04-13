@@ -1,0 +1,14 @@
+<!--pages/user-feedback/index.wxml-->
+<hk-custom-nav isBack>
+  <view slot="content">用户反馈</view>
+</hk-custom-nav>
+
+<view class="padding">
+  <view class="textarea-box padding-sm">
+    <textarea value="{{content}}" maxlength="{{200}}" style="width: 100%;height: 316rpx;" placeholder="请输入内容" show-confirm-bar='{{false}}'bindinput="textareaAInput"></textarea>
+    <view class="flex justify-end margin-top-xs text-dark-gray text-sm">
+      {{content.length}}/200
+    </view>
+  </view>
+  <button class="hk-btn block radius {{content ? 'bg-black' : 'bg-gray text-dark-gray'}}" style="height: 88rpx;margin-top: 56rpx;" bindtap="submit">提交</button>
+</view>

@@ -1,0 +1,95 @@
+<!--pages/index/mey.wxml-->
+<image class="my-top-bg" src="https://hk-resources.oss-cn-beijing.aliyuncs.com/images/nav-top-bg-1.png"></image>
+<scroll-view class="hk-my flex flex-direction " scroll-y style="height: calc(100vh - (48px + env(safe-area-inset-bottom)));background-color: #fff;padding-top: {{customBarHeight}}px;">
+  <view class="flex flex-direction " style="min-height: 100%;">
+    <view class="flex-sub">
+      <view class="hk-my__header padding-lr">
+        <view class="flex" bindtap="toPersonalHomepage">
+          <view class="hk-avatar round">
+            <view catchtap="getThePreviewImage" style="background-image: url({{baseInfo.avatar}});width: 100%;height: 100%;border-radius: inherit;background-size: cover;" class="bg-gray"></view>
+            <image wx:if="{{baseInfo.gender === 1}}" src="/images/icon-male-tubiao.svg" class="gender-icon"></image>
+            <image wx:else src="/images/icon-famale-tubiao.svg" class="gender-icon"></image>
+          </view>
+          <view class="padding-lr-sm flex-sub content">
+            <view class="align-center padding-top-xs flex">
+              <view class="nickname">{{baseInfo.name}}</view>
+              <view class="flex align-center">
+                <image class="vip-level" src="{{baseInfo.levelImage}}"></image>
+                <image class="vip-member-diamond" wx:if="{{baseInfo.is_vip}}" src="/images/vip-level-list/member-of-the-diamond.svg"></image>
+              </view>
+            </view>
+            <view class="signa">{{baseInfo.info.description || ''}}</view>
+          </view>
+          <view class="icon-arrow-right-bold hk-icon flex align-center text-grey"></view>
+        </view>
+        <view class="flex justify-center align-center hk-my__header-attention">
+          <view class="flex-sub text-center attention-item" bindtap="toMyFollowPage">
+            <view class="num">{{baseInfo.info.follow_count}}</view>
+            <view class="text">关注</view>
+          </view>
+          <view class="flex-sub text-center attention-item" bindtap="toMyFansPage">
+            <view class="num">{{baseInfo.info.fans_count}}</view>
+            <view class="text">粉丝</view>
+          </view>
+          <view class="flex-sub text-center attention-item" bindtap="toMyVisitorPage">
+            <view class="num">{{baseInfo.info.visit_count}}</view>
+            <view class="text">访客</view>
+          </view>
+        </view>
+        <!-- banner栏 -->
+        <view class="hk-my__header-themember-state" data-id="memberCenter" bindtap="menuItemClick">
+          <image class="bg" src="/images/my-icon/card-bg.png"></image>
+          <view class="flex content align-center">
+            <view class="flex-sub ">
+              <block wx:if="{{baseInfo.is_vip}}">
+                <image class="huiyuan-img" src="/images/my-icon/highker-huiyuan.png"> </image>
+                <!-- <image class="huiyuan-img" src="/images/my-icon/highker-huiyuan.svg"> </image> -->
+                <!-- <view class="time">没有字段</view> -->
+                <view class="time" wx:if="{{baseInfo.is_vip}}">将于 {{baseInfo.vip_expired_at}} 到期</view>
+                <view class="time" wx:else>开通会员后享多项权益</view>
+              </block>
+              <block wx:else>
+                <!-- <image class="huiyuan-img" src="/images/my-icon/icon-no-huiyuan.svg"> </image> -->
+                <image class="huiyuan-img" src="/images/my-icon/icon-no-huiyuan.png"> </image>
+                <view class="time">开通会员后享多项权益</view>
+              </block>
+            </view>
+            <view class="more-benefits-btn flex align-center justify-center">
+              {{baseInfo.is_vip ? '查看更多权益' : '开通会员'}}
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class=" hk-my__main">
+        <view class="hk-list grid col-3 no-border">
+          <view wx:for="{{myCellList}}" wx:key="id" class="hk-item the-member-item" data-id="{{item.id}}" bindtap="menuItemClick">
+            <view wx:if="{{item.id!='feedback'}}">
+              <image class="item-icon" src="{{item.src}}"></image>
+              <text class="item-text">{{item.text}}</text>
+            </view>
+            <view wx:else style="position:relative">
+              <image class="item-icon" src="{{item.src}}"></image>
+              <text class="item-text">{{item.text}}</text>
+              <button open-type='contact' style="opacity: 0;width: 100%;height: 100%;position:absolute;top: 0;left: 0;"></button>
+            </view>
+          </view>
+        </view>
+        <!-- <block wx:else> -->
+        <!-- <view class="hk-list menu padding-tb-sm">
+      <view class="hk-item arrow" wx:for="{{myCellList}}" wx:key="id">
+        <view class="content">
+          <image class="item-icon" src="{{item.src}}"></image>
+          <text>{{item.text}}</text>
+        </view>
+      </view>
+    </view> -->
+        <!-- </block> -->
+      </view>
+    </view>
+    <!-- <button open-type='contact'>打开客服</buttn> -->
+    <view style="width: 686rpx;height: 88rpx;background: #F5F7F9;border-radius: 4rpx;margin: auto;" class="flex justify-center align-center " bindtap="_logout">
+      <text style="width: 112rpx;height: 40rpx;font-size: 28rpx;font-family: PingFangSC-Semibold, PingFang SC;font-weight: 600;color: #110F27;line-height: 40rpx;">退出登陆</text>
+    </view>
+    <view style="height: 40rpx;"></view>
+  </view>
+</scroll-view>

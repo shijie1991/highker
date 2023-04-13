@@ -1,0 +1,39 @@
+<!--pages/my-follow/index.wxml-->
+<hk-custom-nav isBack>
+  <view slot="content">我的粉丝</view>
+</hk-custom-nav>
+<scroll-view scroll-y style="height: calc(100vh - {{customBarHeight}}px);" wx:if="{{fansList}}" bindscrolltolower='bindscrolltolower'>
+  <image class="common__nav-bg" src="https://hk-resources.oss-cn-beijing.aliyuncs.com/images/nav-top-bg-1.png"></image>
+  <view class="my-fans hk-list1 menu flex flex-direction" wx:if="{{fansList.length}}" style="min-height:100%;">
+    <view class="flex-sub">
+      <view class="hk-item" wx:for="{{fansList}}" wx:key="id">
+        <view class="content flex align-center">
+          <view class="common__avatar" bindtap="onUserInfoClick" data-id='{{item.id}}'>
+            <image src="{{item.avatar}}" style="width: 88rpx;height: 88rpx;"></image>
+            <image wx:if="{{item.gender === 2}}" src="../../images/icon-famale-tubiao.svg" class="gender-icon"></image>
+            <image wx:else src="../../images/icon-male-tubiao.svg" class="gender-icon"></image>
+          </view>
+          <view class="common__nickname padding-left-sm" bindtap="onUserInfoClick" data-id='{{item.id}}'>{{item.name}}</view>
+          <image class="common__vip-level" style="height: 28rpx;width: 76rpx;" src="{{item.vipLevel}}" bindtap="onUserInfoClick" data-id='{{item.id}}'></image>
+          <image class="common-vip-member-diamond" wx:if="{{item.user.is_vip}}" src="/images/vip-level-list/member-of-the-diamond.svg" bindtap="onUserInfoClick" data-id='{{item.id}}'></image>
+        </view>
+        <view class="action">
+          <button class="hk-btn  bg-gray radius" style="height: 56rpx;" data-id="{{item.id}}" bindtap="followedClick" wx:if="{{item.has_followed }}">
+            <view>取消关注</view>
+          </button>
+          <button class="hk-btn  bg-black radius" style="height: 56rpx;" data-id="{{item.id}}" bindtap="followedClick" wx:else>
+            <view class="common-gradient-add-icon">+</view>
+            <view class="text-white">关注</view>
+          </button>
+
+        </view>
+      </view>
+    </view>
+    <view slot="loadmore" class="flex align-center justify-center padding-tb-sm">
+      <hk-loadmore isMore="{{isMore}}" />
+    </view>
+  </view>
+  <view wx:else class="flex align-center justify-center" style="height: calc(100% - {{customBarHeight}}px)">
+    <hk-empty>暂无数据</hk-empty>
+  </view>
+</scroll-view>

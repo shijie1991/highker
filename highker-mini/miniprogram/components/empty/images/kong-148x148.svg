@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="148px" height="148px" viewBox="0 0 148 148" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>image_Kong_148x148</title>
+    <defs>
+        <linearGradient x1="93.834529%" y1="74.481978%" x2="9.29043532%" y2="27.2197163%" id="linearGradient-1">
+            <stop stop-color="#4DB8FF" offset="0%"></stop>
+            <stop stop-color="#C183F2" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="93.834529%" y1="65.4888522%" x2="9.29043532%" y2="35.5877476%" id="linearGradient-2">
+            <stop stop-color="#4DB8FF" offset="0%"></stop>
+            <stop stop-color="#C183F2" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-3" x="32" y="79" width="88" height="52"></rect>
+    </defs>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="盲盒-放消息-图片-非会员" transform="translate(-109.000000, -188.000000)">
+            <g id="image_Kong_148x148" transform="translate(109.000000, 188.000000)">
+                <rect id="矩形" fill-opacity="0" fill="#D8D8D8" x="0" y="0" width="148" height="148"></rect>
+                <ellipse id="椭圆形" fill="#000000" cx="74" cy="125" rx="70" ry="22"></ellipse>
+                <rect id="矩形" stroke="#000000" fill="#FF9500" x="31.5" y="5.5" width="21" height="29"></rect>
+                <rect id="矩形备份" fill="#000000" x="49" y="5" width="4" height="30"></rect>
+                <ellipse id="椭圆形" fill="#000000" cx="44.5" cy="10" rx="2.5" ry="2"></ellipse>
+                <path d="M53,6.98665066 L53.6933329,6.98665066 L108.984667,6.98665066 C112.578205,6.98665066 115.491342,9.89978813 115.491342,13.4933253 C115.491342,17.0868625 112.578205,20 108.984667,20 L87.4908627,20 L87.4908627,20 L110.974532,20 C114.373817,20 117.129483,22.7556653 117.129483,26.1549507 C117.129483,29.5542361 114.373817,32.3099014 110.974532,32.3099014 L98.7126594,32.3099014 L98.7126594,32.3099014 C100.085713,37.3681591 100.428976,41.0730062 99.7424493,43.4244429 C98.7126594,46.9515979 92.596749,53.9675143 88.8307452,52.4006981 C85.0647413,50.8338819 83.5061242,48.0860096 84.2854327,44.473892 C85.0647413,40.8617743 87.4908627,40.5989378 87.4908627,37.7994689 C87.4908627,35 83.9514124,33.4075095 79.5,33.4075095 C75.0485876,33.4075095 71.4299316,35.5639622 71.4299316,38.684518 C71.4299316,41.8050738 76.0881785,41.790214 76.0881785,45.7066601 C76.0881785,49.6231062 72.7988154,53.5888869 67.4118445,51.6059965 C62.0248737,49.6231062 59.1801155,40.7743988 59.1801155,38.684518 C59.1801155,36.5946372 59.7617787,32.7929797 61.420143,31.4387225 C61.420143,31.4387225 58.6134286,31.4387225 53,31.4387225 L53,6.98665066 Z" id="路径-23" stroke="#000000" fill="#FFCDBE"></path>
+                <polygon id="路径-24" stroke="#000000" fill="url(#linearGradient-1)" points="44.3686422 73.2726844 76.5858336 48.0018602 78.3847878 51 50 73.2726844"></polygon>
+                <polygon id="路径-24备份" stroke="#000000" fill="url(#linearGradient-1)" transform="translate(98.376715, 60.637272) scale(-1, 1) translate(-98.376715, -60.637272) " points="81.3686422 73.2726844 113.585834 48.0018602 115.384788 51 87 73.2726844"></polygon>
+                <circle id="椭圆形" stroke="#000000" fill="#64DCFF" cx="80" cy="51" r="6"></circle>
+                <rect id="矩形" stroke="#000000" fill="#FFFFFF" x="37" y="73" width="89" height="52"></rect>
+                <rect id="矩形备份-2" stroke="#000000" fill="#FFFFFF" x="34" y="76" width="89" height="52"></rect>
+                <g id="矩形备份-3">
+                    <use fill="url(#linearGradient-2)" xlink:href="#path-3"></use>
+                    <use stroke="#000000" stroke-width="1" fill="#00E3E2" xlink:href="#path-3"></use>
+                </g>
+                <text id="Not-yet备份" stroke="#000000" fill="#000000" fill-rule="nonzero" font-family="Impact" font-size="24" font-style="condensed" font-weight="700">
+                    <tspan x="40" y="115">NOT YET</tspan>
+                </text>
+                <text id="Not-yet" stroke="#000000" fill-rule="nonzero" font-family="Impact" font-size="24" font-style="condensed" font-weight="700" fill="#FFFFFF">
+                    <tspan x="39" y="115">NOT YET</tspan>
+                </text>
+                <line x1="126" y1="64.5965158" x2="129.109973" y2="52.625418" id="路径" stroke="#000000"></line>
+                <line x1="129.109973" y1="68" x2="138.521429" y2="58.6109669" id="路径-2" stroke="#000000"></line>
+                <line x1="131.40312" y1="73.2726844" x2="142.601319" y2="71.0214213" id="路径-3" stroke="#000000"></line>
+            </g>
+        </g>
+    </g>
+</svg>

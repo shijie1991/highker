@@ -1,0 +1,112 @@
+/**index.wxss**/
+
+.hk-community {
+	box-sizing: border-box;
+	height: calc(100vh - (var(--height--) + 48px));
+    /* 兼容 苹果手机 */
+    height: calc(100vh - (var(--height--) + 14px) + env(safe-area-inset-bottom));
+	&__nav {
+		.hk-bar {
+			background: var(--gray);
+			z-index: 100;
+			align-items: center;
+			justify-content: space-around;
+			font-size: 32rpx;
+			font-family: PingFangSC-Regular, PingFang SC;
+			font-weight: 400;
+			color: var(--black);
+		}
+
+		.nav-item {
+			transition: font-size 0.3s;
+		}
+	}
+}
+
+.add-feed-btn {
+	width: 284rpx;
+	height: 96rpx;
+	line-height: 96rpx;
+	font-size: 28rpx;
+	font-family: PingFangSC-Semibold, PingFang SC;
+	font-weight: 600;
+	color: #ffffff;
+	border-radius: 8rpx;
+	margin: 0 auto;
+}
+
+.add-icon {
+	// margin-top: -6rpx;
+	margin-top: -8rpx;
+	// display: flex;
+	background: linear-gradient(315deg, #4db8ff 0%, #c183f2 100%);
+	-webkit-background-clip: text;
+	color: transparent;
+	font-size: 48rpx;
+	font-weight: bold;
+	margin-right: 8rpx;
+}
+
+.hide {
+	display: none;
+}
+
+
+.rank-image {
+	width: 200rpx;
+	height: 120rpx;
+}
+
+
+
+.scroll-box {
+	margin-top: 32rpx;
+
+	image:nth-child(1) {
+		margin-left: 32rpx;
+	}
+
+	image:last-child {
+		margin-right: 32rpx;
+	}
+
+	image {
+		margin-left: 16rpx;
+	}
+
+	.rank-item {
+		width: 200rpx;
+		height: 120rpx;
+		position: relative;
+		overflow: hidden;
+		border-radius: 2px;
+		background: linear-gradient(200deg,
+				rgba(144, 99, 245, 0.3) 0%,
+				#7349ee 100%);
+		margin-left: 16rpx;
+		line-height: 1.4;
+
+		&:nth-child(1) {
+			margin-left: 32rpx;
+		}
+
+		&:last-child {
+			margin-right: 32rpx;
+		}
+
+		&:nth-of-type(odd) {
+			background: linear-gradient(200deg,
+					rgba(51, 141, 231, 0.3) 0%,
+					#338de7 100%);
+		}
+
+		.rank-cn-name{
+			font-size: 28rpx;
+		}
+
+		.rank-en-name{
+			font-size: 22rpx;
+		}
+	}
+
+}

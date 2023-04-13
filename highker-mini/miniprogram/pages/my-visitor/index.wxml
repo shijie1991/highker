@@ -1,0 +1,104 @@
+<wxs module="utils" src="/wxs/index.wxs"></wxs>
+
+<hk-custom-nav isBack>
+  <view slot="content">我的访客</view>
+</hk-custom-nav>
+<!-- <scroll-view scroll-y style="height: calc(100vh - {{customBarHeight}}px);"> -->
+<scroll-view scroll-y style="height: calc(100vh - {{customBarHeight}}px);" bindscrolltolower='bindscrolltolower'>
+  <!-- <image class="common__nav-bg" src="https://hk-resources.oss-cn-beijing.aliyuncs.com/images/nav-top-bg-1.png"></image> -->
+  <view class="flex justify-center banner-bg-box align-center">
+    <image class="banner-bg" src="../../images/fangke_bg.png"></image>
+    <view class="flex content ">
+      <view style="width: 50%; " class="flex justify-center align-center flex-direction">
+        <view class="text">{{day_visit_count}}</view>
+        <view class="text2 ">今日浏览量</view>
+      </view>
+      <view style="width: 4rpx;height: 80rpx;background: #FFFFFF;opacity: 0.3;margin-top: 66rpx;"> </view>
+      <view style="width: 50%;" class="flex justify-center align-center  flex-direction">
+        <view class="text">{{visit_count}}</view>
+        <view class="text2 ">总浏览量</view>
+      </view>
+    </view>
+  </view>
+  <!--  -->
+  <view class="title">近30天浏览数量</view>
+  <!-- <view class="my-visitor  hk-list menu" wx:if="{{visitorList}}" style="min-height: 100%;"> -->
+  <view class="my-visitor  hk-list menu" wx:if="{{visitorList}}">
+    <block wx:if="{{is_vip}}">
+      <block wx:if="{{visitorList.length}}">
+        <view class="hk-item" wx:for="{{visitorList}}" wx:key="id">
+          <view class="content flex align-center">
+            <view class="common__avatar" bindtap="onUserInfoClick" data-id='{{item.visitor.id}}'>
+              <!-- <image src="{{'http://cdn.highker.club/'+ item.visitor.avatar}}" style="width: 88rpx;height: 88rpx;border-radius: 50%;"></image> -->
+              <view class="bg-grey" style="width: 88rpx;height: 88rpx;border-radius: 50%;background-image: url({{item.visitor.avatar}});background-repeat: no-repeat;background-size: cover;"></view>
+              <image wx:if="{{item.visitor.gender === 2}}" src="/images/icon-famale-tubiao.svg" class="gender-icon"></image>
+              <image wx:else src="/images/icon-male-tubiao.svg" class="gender-icon"></image>
+            </view>
+            <view>
+              <view class="common__nickname padding-left-sm flex align-center" bindtap="onUserInfoClick" data-id='{{item.visitor.id}}'>
+                {{item.visitor.name}}
+                <image class="common__vip-level" wx:if="{{item.visitor.vipLevel}}" src="{{item.visitor.vipLevel}}" style="margin-top: 2rpx;"></image>
+                <!-- <image class="common__vip-member-diamond" wx:if="{{item.visitor.is_vip}}" src="/images/vip-level-list/member-of-the-diamond.svg"></image> -->
+                <image class=".common-vip-member-diamond" wx:if="{{item.visitor.is_vip}}" src="/images/vip-level-list/member-of-the-diamond.svg"></image>
+              </view>
+              <view class="visti-time padding-left-sm" style="width: 100%;">{{utils.subStrSomething(item.updated_at,0,10) }} 访问了你的主页</view>
+            </view>
+
+
+          </view>
+          <view class="action">
+            <button class="hk-btn  bg-gray radius" style="height: 56rpx;" data-visitor="{{item.visitor}}" data-index='{{index}}' bindtap="followedClick" wx:if="{{item.visitor.has_followed }}">
+              <view>取消关注</view>
+            </button>
+            <button class="hk-btn  bg-black radius" style="height: 56rpx;" data-visitor="{{item.visitor}}" data-index='{{index}}' bindtap="followedClick" wx:else>
+              <view class="common-gradient-add-icon">+</view>
+              <view class="text-white">关注</view>
+            </button>
+          </view>
+        </view>
+        <view class="flex align-center justify-center padding-tb-sm">
+          <hk-loadmore isMore="{{isMore}}" />
+        </view>
+      </block>
+      <view wx:else class="flex justify-center align-center" style="margin-top: 148rpx;">
+        <!-- <hk-empty>{{is_vip ? '暂无数据': '该功能仅会员可用'}} </hk-empty> -->
+        <hk-empty>暂无数据</hk-empty>
+      </view>
+    </block>
+
+    <view wx:else style="margin-top: 148rpx;">
+      <hk-empty> 该功能仅会员可用 </hk-empty>
+      <!-- 购买/续费会员栏 -->
+      <!-- <view class="margin-top-lg padding-top-lg ">
+        <view class="hk-list grid  no-border member-center__pay-list">
+          <view wx:for="{{payList}}" wx:key="id" class="hk-item pay-item {{item.slug === slug ? 'active' : ''}}" data-id="{{item.slug}}" bindtap="payItemClick">
+            <view class="active-checkbox" wx:if="{{item.slug === slug}}"></view>
+
+            <view class="item-title">{{item.name}}</view>
+            <view class="item-price flex justify-center align-center">
+              <view style="font-size: 40rpx;margin-top: 10rpx;">¥</view>
+              <view>{{item.price}}</view>
+            </view>
+            <text class="item-doc">{{item.day}}</text>
+            <view class="item-discount" wx:if="{{item.discount}}">{{item.discount}}</view>
+          </view>
+        </view>
+        <view class="padding-top-lg margin-lr">
+          <button class=" block bg-black  member-center__pay-btn" bindtap="requestPayment" wx:if="{{isIos=== false }}">
+            <text class="padding-left-sm text-xl"> {{userInfo.is_vip?'续费会员':'开通会员'}} </text>
+          </button>
+          <button class=" block bg-black  member-center__pay-btn" wx:else open-type='contact'>
+            <text class="padding-left-sm text-xl">联系客服</text>
+          </button>
+        </view>
+      </view> -->
+    </view>
+    <!-- <view wx:else class="flex justify-center align-center" style="height: calc(90vh - {{customBarHeight}}px);">
+      <hk-empty>{{isVip ? '暂无数据': '该功能仅会员可用'}} </hk-empty>
+    </view> -->
+
+  </view>
+  <view wx:else class="flex  align-center justify-center" style="height: 100%;">
+    <hk-loading />
+  </view>
+</scroll-view>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组 2@3x</title>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="私信" transform="translate(-319.000000, -573.000000)">
+            <g id="编组-2" transform="translate(319.000000, 573.000000)">
+                <circle id="椭圆形" fill="#000000" cx="22" cy="22" r="22"></circle>
+                <g id="icon-圈子" transform="translate(22.000000, 22.000000) scale(-1, 1) translate(-22.000000, -22.000000) translate(10.000000, 10.000000)">
+                    <rect id="矩形" fill-opacity="0" fill="#D8D8D8" x="0" y="0" width="24" height="24"></rect>
+                    <path d="M19.75,5.25 L19.75,19.6915735 L17.0169096,17.9078947 L4.25,17.9078947 L4.25,5.25 L19.75,5.25 Z" id="矩形" stroke="#FFFFFF" stroke-width="2.5"></path>
+                    <path d="M9.98623152,11.0146817 C9.97897842,12.4284995 10.6420185,13.1354085 11.9753519,13.1354085 C13.3086852,13.1354085 13.9853064,12.4284995 14.0052153,11.0146817 L15.9556053,11.0146817 C15.7719785,13.6219032 14.4534434,14.9255139 12,14.9255139 C9.54655663,14.9255139 8.21158943,13.6219032 7.9950984,11.0146817 L9.98623152,11.0146817 Z" id="矩形" fill="#FFFFFF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

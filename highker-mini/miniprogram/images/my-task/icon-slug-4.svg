@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>浏览</title>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="任务中心" transform="translate(-31.000000, -460.000000)">
+            <g id="编组-3备份-3" transform="translate(15.000000, 443.000000)">
+                <g id="浏览" transform="translate(16.000000, 17.000000)">
+                    <rect id="矩形" fill="#F5F7F9" x="0" y="0" width="28" height="28" rx="2"></rect>
+                    <path d="M14.5,8 L17.495095,10.9344822 L16.3916794,12.053387 L15.2940511,10.9779718 L15.2940511,13.8567186 L13.7059489,13.8567186 L13.7059489,11.0333404 L12.645514,12.07272 L11.505471,10.9344822 L14.5,8 Z M10,19.3364614 L19,19.3364614 L19,21 L10,21 L10,19.3364614 Z M10,15.6517233 L19,15.6517233 L19,17.3152619 L10,17.3152619 L10,15.6517233 Z" id="形状" fill="#222222" fill-rule="nonzero"></path>
+                    <path d="M6,25 L6,5 L23,5 L23,25 L6,25 Z M7.61229135,6.62162162 L7.61229135,23.3783784 L21.3877086,23.3783784 L21.3877086,6.62162162 L7.61229135,6.62162162 Z" id="形状" fill="#222222" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

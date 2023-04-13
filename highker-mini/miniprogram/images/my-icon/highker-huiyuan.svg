@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="119px" height="18px" viewBox="0 0 119 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>HighKer会员</title>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="YouSheBiaoTiHei" font-size="20" font-weight="normal" letter-spacing="-0.5">
+        <g id="个人主页" transform="translate(-37.000000, -255.000000)" fill="#110F27">
+            <g id="会员" transform="translate(16.000000, 240.000000)">
+                <text id="HighKer会员">
+                    <tspan x="21" y="30">H</tspan>
+                    <tspan x="35.94" y="30" letter-spacing="-0.9">ig</tspan>
+                    <tspan x="54.44" y="30">h</tspan>
+                    <tspan x="66.68" y="30" letter-spacing="-1.5">K</tspan>
+                    <tspan x="80.22" y="30" letter-spacing="-0.6">e</tspan>
+                    <tspan x="92.16" y="30">r会员</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

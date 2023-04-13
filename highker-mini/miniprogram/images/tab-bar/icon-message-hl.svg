@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-圈子选中</title>
+    <defs>
+        <linearGradient x1="90.7133557%" y1="67.9320431%" x2="8.17987351%" y2="37.2945179%" id="linearGradient-1">
+            <stop stop-color="#A991F6" offset="0%"></stop>
+            <stop stop-color="#75C1FD" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="切图" transform="translate(-166.000000, -238.000000)">
+            <g id="icon-圈子选中" transform="translate(166.000000, 238.000000)">
+                <polygon id="矩形" fill="url(#linearGradient-1)" points="3 6.18417863 19 17.5 3 17.5"></polygon>
+                <rect id="矩形" fill-opacity="0" fill="#D8D8D8" x="0" y="0" width="24" height="24"></rect>
+                <path d="M19.75,5.25 L19.75,19.6915735 L17.0169096,17.9078947 L4.25,17.9078947 L4.25,5.25 L19.75,5.25 Z" id="矩形" stroke="#000000" stroke-width="2.5"></path>
+                <rect id="矩形" fill="#000000" x="8" y="12" width="8" height="2.5"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,33 @@
+/* pages/about/index.wxss */
+page {
+  background: var(--gray);
+}
+.hk-about {
+  background: var(--white);
+  &__logo {
+    margin-top: 50rpx;
+    .avatar {
+      width: 180rpx;
+      height: 180rpx;
+      // background: #d8d8d8;
+      margin: 0 auto;
+    }
+    .logo{
+      width: 100%;
+      height: 100%;
+      transform: scale(2.5);
+    }
+    .text {
+      font-size: 32rpx;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: var(--black);
+    }
+  }
+  &__list {
+    &.hk-list.menu > .hk-item {
+      min-height: 96rpx;
+      padding: 0;
+    }
+  }
+}

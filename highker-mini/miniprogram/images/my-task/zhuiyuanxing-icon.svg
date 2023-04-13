@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>椭圆形</title>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="任务中心" transform="translate(-101.000000, -228.000000)" fill="#222222">
+            <g id="编组" transform="translate(16.000000, 217.000000)">
+                <path d="M91,23 C91,19.5 92.9712422,17 97,17 C93.0733899,17 91,15.6340487 91,11 C91,15.306773 88.9532105,17 85,17 C88.7361467,17 91,19.5 91,23 Z" id="椭圆形"></path>
+            </g>
+        </g>
+    </g>
+</svg>

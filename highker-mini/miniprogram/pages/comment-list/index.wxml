@@ -1,0 +1,151 @@
+<!--pages/comment-list/index.wxml-->
+<hk-custom-nav style="background-color: #fff;" isBack>
+  <view slot="content">全部回复</view>
+</hk-custom-nav>
+
+<scroll-view scroll-y style="height: calc(100vh - {{customBarHeight}}px);" bindscrolltolower='bindscrolltolower'>
+  <view wx:if="{{commentList}}" style="padding-bottom: calc(env(safe-area-inset-bottom) + 30rpx);">
+
+    <block wx:if="{{commentList.length}}">
+      <!-- <hk-list-item bind:reply-comment="replyToComment" bind:link="onGiveALikeClick" wx:for="{{commentList}}" wx:key="item" item="{{item}}"></hk-list-item> -->
+      <hk-list-item bind:reply-comment="replyToComment" bind:link="onGiveALikeClick2" wx:for="{{[commentDetails]}}" wx:key="item" item="{{item}}"></hk-list-item>
+      <!-- <view slot="loadmore" class="flex align-center justify-center padding-tb-sm">
+        <hk-loadmore isMore="{{isMore}}" />
+      </view> -->
+    </block>
+    <view class="flex comment-item padding-lr padding-bottom-lg padding-top-xs" wx:if="{{false}}">
+      <view class="avatar" bindtap="onUserInfoClick" data-id='{{commentDetails.user.id}}'>
+        <view class="bg-grey" style="width: 68rpx;height: 68rpx;border-radius: 50%;background-image: url({{commentDetails.user.avatar}});background-repeat: no-repeat;background-size: cover;"></view>
+        <image wx:if="{{commentDetails.user.gender === 2}}" width="12" height="12" class="gender" src="/images/icon-famale-tubiao.svg"></image>
+        <image wx:elif="{{commentDetails.user.gender === 1}}" width="12" height="12" class="gender" src="/images/icon-male-tubiao.svg"></image>
+      </view>
+      <view class="content flex-sub">
+        <view class="flex align-center">
+          <text class="nickname " bindtap="onUserInfoClick" data-id='{{commentDetails.user.id}}'>{{commentDetails.user.name}}</text>
+          <image class="vip-level" wx:if="{{commentDetails.vipLevel}}" src="{{commentDetails.user.vipLevel}}" bindtap="onUserInfoClick" data-id='{{commentDetails.user.id}}'></image>
+        </view>
+        <view class="comment-content flex  padding-top-xs" bindtap="replyToComment">
+          <block wx:for="{{commentDetails.emojiArray}}" wx:key="index">
+            <text wx:if="{{item.type === 1}}">{{item.content}}</text>
+            <view wx:if="{{item.type === 2}}" style="display: inline-block; width: {{24}}px; height: {{24}}px">
+              <view class="{{item.imageClass}}" style="background-image: url({{emojiURL}});transform-origin: 0 0; transform: scale({{24 / 64}});"></view>
+            </view>
+          </block>
+        </view>
+        <image bindtap="onCommentImageClick" class="margin-top-sm" wx:if="{{commentDetails.images}}" style="width: 204rpx;height: 204rpx;" src="{{commentDetails.images.path}}"></image>
+        <view class="flex align-center footer margin-top-sm">
+          <view class="post-address">{{commentDetails.created_at}}</view>
+          <view style="flex: 1;"></view>
+          <view class="flex align-center margin-left-lg" catchtap="onGiveALikeClick" data-item="{{commentDetails}}" data-type='level1'>
+            <image wx:if="{{commentDetails.has_liked}}" style="width: 32rpx;height: 32rpx;" src="/images/icon-zan.svg"></image>
+            <image wx:else style="width: 32rpx;height: 32rpx;" src="/images/icon-zan-no.svg"></image>
+            <text class="text-num padding-left-xs">{{commentDetails.like_count}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view style="height: 12rpx;background: #F5F7F9;"></view>
+    <!-- 子回复 -->
+    <view style="padding-top: 16rpx;">
+      <view wx:for="{{commentList}}" wx:key="item" class="flex comment-item padding-lr padding-bottom-lg padding-top-xs">
+        <!-- 用户头像 -->
+        <view class="avatar" bindtap="onUserInfoClick" data-id='{{item.user.id}}'>
+          <view class="bg-grey" style="width: 68rpx;height: 68rpx;border-radius: 50%;background-image: url({{item.user.avatar}});background-repeat: no-repeat;background-size: cover;"></view>
+          <image wx:if="{{item.user.gender === 2}}" width="12" height="12" class="gender" src="/images/icon-famale-tubiao.svg"></image>
+          <image wx:elif="{{item.user.gender === 1}}" width="12" height="12" class="gender" src="/images/icon-male-tubiao.svg"></image>
+
+        </view>
+        <view class="content flex-sub ">
+          <!-- 用户名 -->
+          <view class="flex align-center">
+            <text class="nickname " bindtap="onUserInfoClick" data-id='{{item.user.id}}'>{{item.user.name}}</text>
+            <image class="vip-level" wx:if="{{item.vipLevel}}" src="{{item.vipLevel}}" bindtap="onUserInfoClick" data-id='{{item.user.id}}'></image>
+          </view>
+          <!-- 回复内容 -->
+          <view class="comment-content flex  padding-top-xs" data-id="{{item.id}}" bindtap="replyToSubComment">
+            <block wx:for="{{item.emojiArray}}" wx:key="index">
+              <text wx:if="{{item.type === 1}}">{{item.content}}</text>
+              <view wx:if="{{item.type === 2}}" style="display: inline-block; width: {{24}}px; height: {{24}}px">
+                <view class="{{item.imageClass}}" style="background-image: url({{emojiURL}});transform-origin: 0 0; transform: scale({{24 / 64}});"></view>
+              </view>
+            </block>
+          </view>
+          <image bindtap="onCommentImageClick" class="margin-top-sm" wx:if="{{item.images}}" style="width: 204rpx;height: 204rpx;" src="{{item.images.path}}"></image>
+          <!-- 被@的内容 -->
+          <view class="sub-comment-list" wx:if="{{item.reply_parent}}">
+            <view class="sub-comment-item">
+              <view class="flex align-start">
+                <view class=" " style="color: #80A0FF;" bindtap="onUserInfoClick" data-id='{{item.reply_parent.user.id}}'>{{item.reply_parent.user.name}}：</view>
+                <view class="flex flex-sub" style="flex-wrap: wrap;">
+                  <block wx:for="{{item.reply_parent.emojiArray}}" wx:key="index" wx:for-item="k">
+                    <view wx:if="{{k.type === 1}}">{{k.content}}</view>
+                    <view wx:if="{{k.type === 2}}" style="display: inline-block; width: {{24}}px; height: {{24}}px">
+                      <view class="{{k.imageClass}}" style="background-image: url({{emojiURL}});transform-origin: 0 0; transform: scale({{24 / 64}});"></view>
+                    </view>
+                  </block>
+                </view>
+              </view>
+              <!-- <view class="flex align-center  margin-top-xs">
+                <view class="post-address">{{item.reply_parent.created_at}}</view>
+              </view> -->
+            </view>
+
+          </view>
+          <view class="flex align-center footer margin-top-sm">
+            <view class="post-address">{{item._create_at}}</view>
+            <view style="flex: 1;"></view>
+            <view class="flex align-center margin-left-lg" bindtap="onGiveALikeClick" data-type='level2' data-item="{{item}}">
+              <image wx:if="{{item.has_liked}}" style="width: 32rpx;height: 32rpx;" src="/images/icon-zan.svg"></image>
+              <image wx:else style="width: 32rpx;height: 32rpx;" src="/images/icon-zan-no.svg"></image>
+              <text class="text-num padding-left-xs">{{item.like_count}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="flex align-center justify-center padding-tb-sm">
+        <hk-loadmore isMore="{{isMore}}" />
+      </view>
+    </view>
+  </view>
+  <view wx:else class="flex  align-center justify-center" style="height: 100%;">
+    <hk-loading />
+  </view>
+</scroll-view>
+
+
+<!-- 评论弹框 -->
+<view bindtap="hideComment" wx:if="{{commentShow}}" style="position: fixed;top:0;left: 0;right: 0;bottom: 0;z-index: 100;background: rgba(0, 0, 0, 0.6);">
+  <!-- <view catchtap class="hk-dialog edit-comment-main text-left" style=" height: calc(326rpx + {{keyboardHeight}});padding-bottom: env(safe-area-inset-bottom);background: #fff;width: 100%;position: absolute;bottom: 0;left: 0;right: 0;overflow: inherit;"> -->
+  <view catchtap class="hk-dialog edit-comment-main text-left" style=" height: calc(326rpx + {{keyboardHeight}});background: #fff;width: 100%;position: absolute;bottom: 0;left: 0;right: 0;overflow: inherit;">
+    <view class="comment-image-box" wx:if="{{image}}">
+      <image src="{{image}}"></image>
+      <view class="arrow"></view>
+      <view class="icon-close hk-icon" bindtap="removeFile"></view>
+    </view>
+    <image wx:if=""></image>
+    <view class="edit-comment-main__header padding" style="height: 326rpx;">
+      <view class="edit-comment-main__header__top flex align-center">
+        <view style="font-size: 30rpx;font-weight: 500;">评论</view>
+        <view class="flex-sub flex align-center justify-end">
+          <view class="icon-close hk-icon" style="font-size: 36rpx;" bindtap="hideComment"></view>
+        </view>
+      </view>
+      <view class="edit-comment-box bg-gray">
+        <view class="margin-xs padding-lr-sm padding-top-sm">
+          <textarea id="textarea" fixed="{{true}}" auto-focus="{{true}}" focus="{{isFocus}}" style="height: 80rpx;line-height: 40rpx; width: 100%;" cursor-spacing="8px" confirm-type="send" adjust-position="{{false}}" confirm-hold value="{{comment}}" cursor="{{cursor}}" bindblur="onBlur" placeholder="{{placeholder}}" bind:focus="onFocus" bindinput="onInput" show-confirm-bar="{{false}}" bindconfirm="onConfirm" bind:keyboardheightchange="onkeyboardHeightChange" />
+        </view>
+        <view class="flex align-center padding-sm">
+          <image style="width: 48rpx;height: 48rpx;" wx:if="{{!emojiShow}}" src="./images/icon-biaoqing-24x24.svg" bindtap="handleEmojiShow"></image>
+          <image style="width: 48rpx;height: 48rpx;" wx:else src="./images/icon-jianpan-24x24.svg" bindtap="keyboardShow"></image>
+          <view class="flex-sub flex justify-end">
+            <button class="hk-btn bg-black {{comment===''?'no-comment':''}}" style="height: 52rpx;" bindtap="onsend">发送</button>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view style="position:relative">
+      <hk-emoji id="hk-emoji" height="{{keyboardHeight}}" showHistory="{{false}}" bindinsertemoji="insertEmoji" bindemojiSend='emojiSend' bindemojiDelete='bindemojiDelete' />
+      <view wx:if="{{!emojiShow}}" style="background: #fff; width: 100%; height: {{keyboardHeight}}px;position: absolute;z-index: 100;top: 0;bottom: 0;"></view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="343px" height="158px" viewBox="0 0 343 158" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>bj</title>
+    <defs>
+        <linearGradient x1="115.680035%" y1="67.0956242%" x2="-25.871491%" y2="33.7568661%" id="linearGradient-1">
+            <stop stop-color="#4DB8FF" offset="0%"></stop>
+            <stop stop-color="#C183F2" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="0" y="0" width="343" height="158" rx="2"></rect>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-5" points="268.292466 92.695827 282.910983 92.695827 338.977953 25.7671868 313.577816 -0.30417297 258.606172 -0.30417297 237.827824 26.9350042 273.467506 73.4202506 311.427157 25.7671868 304.33231 18.5011983 268.292466 18.5011983 262.280949 25.7671868 279.506929 50.3841678 273.467506 57.4991971 250.450238 26.9350042 264.575074 8.81431733 308.235284 8.70184262 324.639129 25.7671868"></polygon>
+        <filter x="-3.2%" y="-3.2%" width="106.5%" height="106.5%" filterUnits="objectBoundingBox" id="filter-6">
+            <feGaussianBlur stdDeviation="1" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1" result="shadowMatrixInner1"></feColorMatrix>
+            <feGaussianBlur stdDeviation="1.5" in="SourceAlpha" result="shadowBlurInner2"></feGaussianBlur>
+            <feOffset dx="0" dy="-1" in="shadowBlurInner2" result="shadowOffsetInner2"></feOffset>
+            <feComposite in="shadowOffsetInner2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner2"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0715963724 0" type="matrix" in="shadowInnerInner2" result="shadowMatrixInner2"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner2"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="我的等级-特权" transform="translate(-16.000000, -107.000000)">
+            <g id="bj" transform="translate(16.000000, 107.000000)">
+                <mask id="mask-3" fill="white">
+                    <use xlink:href="#path-2"></use>
+                </mask>
+                <use id="蒙版" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                <rect id="矩形" fill="url(#linearGradient-4)" opacity="0.04" mask="url(#mask-3)" transform="translate(272.322933, 67.461261) rotate(-50.000000) translate(-272.322933, -67.461261) " x="200.322933" y="-73.538739" width="144" height="282"></rect>
+                <rect id="矩形备份-3" fill="url(#linearGradient-4)" opacity="0.06" mask="url(#mask-3)" transform="translate(413.322933, 66.461261) rotate(-50.000000) translate(-413.322933, -66.461261) " x="341.322933" y="-74.538739" width="144" height="282"></rect>
+                <g id="路径-11" opacity="0.400000006" mask="url(#mask-3)" transform="translate(288.402888, 46.195827) rotate(14.000000) translate(-288.402888, -46.195827) ">
+                    <use fill-opacity="0.3" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-5"></use>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                    <path stroke-opacity="0.8" stroke="#FFFFFF" stroke-width="1" d="M313.788753,-0.80417297 L339.651388,25.7419073 L283.144384,93.195827 L267.217919,93.195827 L323.966881,25.7893348 L308.022893,9.20239143 L264.819777,9.3136886 L251.080109,26.9402443 L273.490854,56.6990468 L278.876073,50.3547336 L261.652964,25.7418552 L268.057198,18.0011983 L304.542915,18.0011983 L312.093173,25.7335821 L273.459972,74.2321942 L237.198373,26.9357741 L258.358714,-0.80417297 L313.788753,-0.80417297 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

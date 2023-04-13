@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>任务icon</title>
+    <defs>
+        <linearGradient x1="90.7133557%" y1="52.2579375%" x2="8.17987351%" y2="48.400172%" id="linearGradient-1">
+            <stop stop-color="#A991F6" offset="0%"></stop>
+            <stop stop-color="#75C1FD" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="个人主页" transform="translate(-49.000000, -432.000000)">
+            <g id="任务icon" transform="translate(49.000000, 432.000000)">
+                <path d="M20,22.0769231 L4,22.0769231 C3.73478,22.0769231 3.48043,21.9711177 3.29289,21.7828965 C3.10536,21.5946754 3,21.3392969 3,21.0730769 L3,3.00384615 C3,2.73760608 3.10536,2.48227781 3.29289,2.2940165 C3.48043,2.10576523 3.73478,2 4,2 L20,2 C20.2652,2 20.5196,2.10576523 20.7071,2.2940165 C20.8946,2.48227781 21,2.73760608 21,3.00384615 L21,21.0730769 C21,21.3392969 20.8946,21.5946754 20.7071,21.7828965 C20.5196,21.9711177 20.2652,22.0769231 20,22.0769231 Z M19,20.0692308 L19,4.00769231 L5,4.00769231 L5,20.0692308 L19,20.0692308 Z" id="形状" fill="#222222" fill-rule="nonzero"></path>
+                <polygon id="路径" fill="url(#linearGradient-1)" fill-rule="nonzero" points="8 7.01923077 16 7.01923077 16 9.02692308 8 9.02692308"></polygon>
+                <polygon id="路径" fill="url(#linearGradient-1)" fill-rule="nonzero" points="8 11.0346154 16 11.0346154 16 13.0423077 8 13.0423077"></polygon>
+                <polygon id="路径" fill="url(#linearGradient-1)" fill-rule="nonzero" points="8 15.05 16 15.05 16 17.0576923 8 17.0576923"></polygon>
+                <rect id="矩形" fill-opacity="0" fill="#D8D8D8" x="0" y="0" width="24" height="24"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

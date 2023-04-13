@@ -1,0 +1,77 @@
+{
+    "name": "highker/highker-core",
+    "description": "嗨刻核心",
+    "type": "library",
+    "keywords": [
+        "laravel",
+        "HighKer",
+        "嗨刻"
+    ],
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "dirty",
+            "email": "shijie1991@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "ext-curl": "*",
+        "abelzhou/php-trie-tree": "^3.6",
+        "abovesky/dcat-media-player": "^1.0",
+        "alibabacloud/sdk": "^1.8",
+        "alphasnow/aliyun-oss-laravel": "^4.0",
+        "appstract/laravel-opcache": "^4.0",
+        "barryvdh/laravel-ide-helper": "^2.12",
+        "dcat/laravel-admin": "2.2.0-beta",
+        "fruitcake/laravel-cors": "^2.0.5",
+        "guanguans/laravel-soar": "^2.0",
+        "guzzlehttp/guzzle": "^7.2",
+        "intervention/image": "^2.7",
+        "laravel/framework": "^9.0",
+        "laravel/horizon": "^5.9",
+        "laravel/sanctum": "^2.14",
+        "laravel/telescope": "^4.7",
+        "laravel/tinker": "^2.7",
+        "league/flysystem": "^3.12",
+        "orangehill/iseed": "^3.0",
+        "overtrue/laravel-wechat": "^7.0",
+        "studio/laravel-totem": "^9.0",
+        "wnx/laravel-stats": "^2.8",
+        "yansongda/laravel-pay": "~3.1.0",
+        "zhuzhichao/ip-location-zh": "^2.4"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.9.1",
+        "friendsofphp/php-cs-fixer": "^3.6",
+        "laravel/sail": "^1.0.1",
+        "mockery/mockery": "^1.4.4",
+        "nunomaduro/collision": "^6.1",
+        "phpunit/phpunit": "^9.5.10",
+        "spatie/laravel-ignition": "^1.0"
+    },
+    "repositories": {
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "HighKer\\Core\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "HighKer\\Core\\Providers\\HighKerCoreServiceProvider"
+            ],
+            "aliases": {
+                "HighKer": "HighKer\\Core\\Support\\Facades\\HighKer",
+                "Chat": "HighKer\\Core\\Support\\Facades\\Chat"
+            }
+        }
+    }
+}

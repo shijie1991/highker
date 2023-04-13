@@ -1,0 +1,70 @@
+<!--pages/feed-details/index.wxml-->
+<hk-custom-nav style="background-color: #fff;" isBack>
+  <view slot="content">正文</view>
+</hk-custom-nav>
+<!-- 评论列表 -->
+<!-- <view class="hk-feed-details"> -->
+<!-- <hk-scroller bind:loadmore="bindScrollToLower" class="hk-community" style="height: calc(100vh - ({{customBarHeight}}px + env(safe-area-inset-bottom)));" wx:if="{{feedParams.type !== 'topic'}}"> -->
+<!-- <hk-scroller bind:loadmore="bindScrollToLower" class="hk-community" style="height: calc(100vh - {{customBarHeight}}px);" wx:if="{{feedParams.type !== 'topic'}}" class="hk-feed-details"> -->
+<scroll-view scroll-y bindscrolltolower="bindScrollToLower" class="hk-community" style="height: calc(100vh - {{customBarHeight}}px);" wx:if="{{feedParams.type !== 'topic'}}" class="hk-feed-details">
+
+  <!-- 动态 -->
+  <hk-feed-item wx:if="{{data}}" item="{{data}}" comment-show="{{false}}" image-fill="{{true}}" bind:more="onFeedMore"></hk-feed-item>
+  <!-- 评论 -->
+  <hk-comment-list bind:reply-comment="replyToComment" bind:no-more="commentNoMore" bind:comment-empty="onCommentEmpty" id="commentList" feedId="{{feedId}}" is-popup="{{false}}"></hk-comment-list>
+  <!-- <view slot="loadmore" class="flex align-center justify-center padding-tb-sm text-grey" wx:if="{{!isCommentEmpty}}"> -->
+  <view class="flex align-center justify-center padding-tb-sm text-grey">
+    <hk-loadmore isMore="{{isMore}}" />
+  </view>
+  <!-- </hk-scroller> -->
+</scroll-view>
+<!-- </view> -->
+
+<!-- 发布评论按钮 -->
+<view style="position: fixed;right: 30rpx;bottom: calc(30rpx + env(safe-area-inset-bottom));z-index: 99;width: 112rpx;height: 112rpx;display: inline-block;" bindtap="hanlderShowComment">
+  <image src="/images/feed-icon/icon-fapinglun-56x56.svg" style="width: 112rpx;height: 112rpx;"></image>
+</view>
+
+<!-- 评论弹框 -->
+<view bindtap="hideComment" wx:if="{{commentShow}}" style="position: fixed;top:0;left: 0;right: 0;bottom: 0;z-index: 100;background: rgba(0, 0, 0, 0.6);">
+  <view catchtap class="hk-dialog edit-comment-main text-left" style=" height: calc(326rpx + {{keyboardHeight}});background: #fff;width: 100%;position: absolute;bottom: 0;left: 0;right: 0;overflow: inherit;">
+    <view class="comment-image-box" wx:if="{{image}}">
+      <image src="{{image}}"></image>
+      <view class="arrow"></view>
+      <view class="icon-close hk-icon" bindtap="removeFile"></view>
+    </view>
+    <image wx:if=""></image>
+    <view class="edit-comment-main__header padding">
+      <view class="edit-comment-main__header__top flex align-center">
+        <view style="font-size: 30rpx;font-weight: 500;">评论</view>
+        <view class="flex-sub flex align-center justify-end">
+          <view class="icon-close hk-icon" style="font-size: 36rpx;" bindtap="hideComment"></view>
+        </view>
+      </view>
+      <view class="edit-comment-box bg-gray">
+        <view class="margin-xs padding-lr-sm padding-top-sm">
+          <textarea id="textarea" fixed="{{true}}" auto-focus="{{true}}" focus="{{isFocus}}" style="height: 80rpx;line-height: 40rpx; width: 100%;" cursor-spacing="8px" confirm-type="send" adjust-position="{{false}}" confirm-hold value="{{comment}}" cursor="{{cursor}}" bindblur="onBlur" placeholder="{{placeholder}}" bind:focus="onFocus" bindinput="onInput" show-confirm-bar="{{false}}" bindconfirm="onConfirm" bind:keyboardheightchange="onkeyboardHeightChange" disable-default-padding='{{true}}' />
+        </view>
+        <view class="flex align-center padding-sm">
+          <!-- 表情 -->
+          <image style="width: 48rpx;height: 48rpx;" wx:if="{{!emojiShow}}" src="./images/icon-biaoqing-24x24.svg" bindtap="handleEmojiShow"></image>
+          <!-- 键盘 -->
+          <image style="width: 48rpx;height: 48rpx;" wx:else src="./images/icon-jianpan-24x24.svg" bindtap="keyboardShow"></image>
+          <!-- 图片 -->
+          <image bindtap="uploadFile" wx:if="{{isSubComment===false}}" style="width: 48rpx;height: 48rpx;margin-left: 48rpx;" src="./images/icon-tupian-24x24.svg"></image>
+          <view class="flex-sub flex justify-end">
+            <button class="hk-btn bg-black {{comment===''&&image===''?'no-comment':''}}" style="height: 52rpx;" bindtap="onsend">发送</button>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 表情 -->
+    <view style="position:relative">
+      <hk-emoji id="hk-emoji" height="{{keyboardHeight}}" showHistory="{{false}}" bindinsertemoji="insertEmoji" bindemojiSend='emojiSend' bindemojiDelete='bindemojiDelete'/>
+      <view wx:if="{{!emojiShow}}" style="background: #fff; width: 100%; height: {{keyboardHeight}}px;position: absolute;z-index: 100;top: 0;bottom: 0;"></view>
+    </view>
+  </view>
+</view>
+
+<!-- 动态更多 -->
+<hk-feed-more-popup id="feedMore" bind:follow="onFollowClickCallback"></hk-feed-more-popup>

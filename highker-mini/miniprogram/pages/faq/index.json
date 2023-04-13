@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "hk-collapse": "/components/collapse/index",
+    "hk-collapse-item": "/components/collapse-item/index"
+  },
+  "navigationStyle": "custom"
+}

@@ -1,0 +1,54 @@
+/* pages/personalProfile/index.wxss */
+page {
+  background: #f5f7f9;
+}
+.toptips {
+  top: 160rpx;
+}
+.hk-user-profile {
+  &__form {
+    background: var(--white);
+    &_avatar {
+      position: relative;
+      width: 96rpx;
+      height: 96rpx;
+      background: var(--gray);
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      .camera {
+        position: absolute;
+        width: 36rpx;
+        height: 36rpx;
+        right: 0;
+        bottom: 0;
+      }
+    }
+    .value {
+      font-size: 28rpx;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #999999;
+      text-align: right;
+      padding-right: 0;
+    }
+
+    textarea {
+      margin: 0;
+    }
+    .picker {
+      flex: 1;
+      height: 96rpx;
+      color: #999999;
+    }
+  }
+
+  &__btn {
+    min-height: 96rpx;
+    width: 100% !important;
+    font-size: 36rpx;
+    font-family: PingFangSC-Semibold, PingFang SC;
+    font-weight: 600;
+    margin-top: 252rpx;
+  }
+}

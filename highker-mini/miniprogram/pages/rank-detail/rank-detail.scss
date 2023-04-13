@@ -1,0 +1,45 @@
+/* pages/my-follow/index.wxss */
+page {
+	background: #fff;
+}
+
+.my-fans {
+	position: relative;
+	padding-top: 20rpx;
+
+	&.hk-list.menu>.hk-item {
+		background: transparent;
+		min-height: 120rpx;
+	}
+
+	.hk-btn {
+		height: 52rpx;
+		border-radius: 4rpx;
+		padding: 0 26rpx;
+		line-height: 52rpx;
+		font-size: 24rpx;
+		font-family: PingFangSC-Semibold, PingFang SC;
+		font-weight: 600;
+		color: #666666;
+	}
+}
+
+.renqi {
+	width: 156rpx;
+	height: 40rpx;
+	font-size: 28rpx;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: #777;
+	line-height: 40rpx;
+}
+
+.number-text {
+	width: 18rpx;
+	height: 38rpx;
+	font-size: 32rpx;
+	font-family: Helvetica-Bold, Helvetica;
+	font-weight: bold;
+	color: #888;
+	line-height: 38rpx;
+}

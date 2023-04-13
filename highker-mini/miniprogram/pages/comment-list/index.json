@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "hk-comment-list": "/components/comment-list/index",
+    "hk-list-item": "/components/comment-list/item",
+    "hk-emoji": "/components/emoji/index",
+    "hk-loadmore": "/components/loadmore/index"
+  },
+  "navigationStyle": "custom",
+  "disableScroll": true
+}

@@ -1,0 +1,13 @@
+<!--pages/agreement/index.wxml-->
+<hk-custom-nav isBack>
+  <view slot="content">{{data && data.title || ''}}</view>
+</hk-custom-nav>
+<scroll-view scroll-y style="height: calc(100vh - {{customBarHeight}}px);" wx:if="{{data}}">
+  <view class="padding-lr" style="padding-bottom: env(safe-area-inset-bottom);">
+    <rich-text nodes="{{data.content}}"></rich-text>
+  </view>
+</scroll-view>
+
+<view wx:else class="flex align-center justify-center" style="height: calc(100vh - {{customBarHeight}}px)">
+  <hk-loading></hk-loading>
+</view>

@@ -1,0 +1,9 @@
+<!--components/circle/index.wxml-->
+<wxs src="./init.wxs" module="utils" />
+<view class="hk-circle" style="width: {{size}}px; height: {{size}}px;">
+  <canvas class="hk-circle__canvas" type="{{ type }}" style="width: {{size}}px; height: {{size}}px;" id="hk-circle" canvas-id="hk-circle"></canvas>
+  <view wx:if="{{ !text }}" class="hk-circle__text">
+    <slot></slot>
+  </view>
+  <cover-view wx:else class="hk-circle__text">{{ text }}</cover-view>
+</view>

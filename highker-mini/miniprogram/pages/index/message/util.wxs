@@ -1,0 +1,21 @@
+function parsingContent(data) {
+  var str = ''
+  var event = data.event
+  var compressCount = data.data.compress_count
+  var multipleStr = compressCount && compressCount > 1 ? '等' + compressCount + '人' : ''
+  if (event == 1) {
+    str = multipleStr + '点赞了你的动态'
+  } else if (event == 4) {
+    str = multipleStr + '点赞了你的评论'
+  } else if (event == 3) {
+    str = multipleStr + '回复了你的评论'
+  } else if (event == 2) {
+    str = multipleStr + '评论了你的动态'
+  } else if (event == 5) {
+    str = multipleStr + '用户关注了你'
+  }
+  return str
+}
+module.exports = {
+  parsingContent: parsingContent
+}

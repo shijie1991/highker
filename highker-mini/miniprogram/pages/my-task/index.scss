@@ -1,0 +1,126 @@
+/* pages/my-task/index.wxss */
+.my-task {
+  &__nav-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 750rpx;
+    height: 780rpx;
+    z-index: -1;
+  }
+  &__header {
+    padding-right: 34rpx;
+    padding-left: 30rpx;
+    padding-top: 40rpx;
+    .title-icon {
+      width: 360rpx;
+      height: 76rpx;
+    }
+    .signin-num {
+      position: relative;
+      width: 172rpx;
+      height: 144rpx;
+      .signin-text {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 20rpx;
+        z-index: 1;
+        text-align: center;
+        .p {
+          font-size: 56rpx;
+          color: #222222;
+          line-height: 50rpx;
+          height: 50rpx;
+        }
+        .l {
+          font-size: 20rpx;
+          color: #222222;
+        }
+      }
+      .signin-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &__list {
+    background: #fff;
+    margin: 40rpx 30rpx 0 30rpx;
+    padding: 16rpx 0;
+    .card-title {
+      position: relative;
+      font-size: 36rpx;
+      font-family: PingFangSC-Semibold, PingFang SC;
+      font-weight: 600;
+      color: #222222;
+      padding-left: 20rpx;
+      height: 80rpx;
+      line-height: 80rpx;
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        content: "";
+        width: 8rpx;
+        height: 40rpx;
+        transform: translateY(-50%);
+        background: linear-gradient(315deg, #4db8ff 0%, #c183f2 100%);
+      }
+      image {
+        width: 24rpx;
+        height: 24rpx;
+        margin-top: 16rpx;
+      }
+    }
+    .hk-list.menu > .hk-item {
+      height: 124rpx;
+    }
+    .hk-list.menu > .hk-item .content .item-icon {
+      width: 56rpx;
+      height: 56rpx;
+    }
+    .item-text {
+      font-size: 28rpx;
+      font-family: PingFangSC-Semibold, PingFang SC;
+      font-weight: 600;
+      color: #222222;
+      height: 40rpx;
+      line-height: 40rpx;
+    }
+    .item-doc {
+      font-size: 24rpx;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #999999;
+      height: 32rpx;
+      line-height: 32rpx;
+    }
+    .hk-btn {
+      height: 52rpx;
+      width: 114rpx;
+      line-height: 52rpx;
+      padding: 0;
+    }
+  }
+  &__task-privi {
+    margin: 26rpx 30rpx 60rpx 30rpx;
+    background: #fff;
+    .privi-title {
+      font-size: 36rpx;
+      font-family: PingFangSC-Semibold, PingFang SC;
+      font-weight: 600;
+      color: #222222;
+    }
+    .img-item {
+      width: 148rpx;
+      height: 152rpx;
+    }
+  }
+}

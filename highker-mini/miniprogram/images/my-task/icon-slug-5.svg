@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>关注用户</title>
+    <g id="页面-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="任务中心" transform="translate(-31.000000, -970.000000)">
+            <g id="编组-3备份-8" transform="translate(15.000000, 953.000000)">
+                <g id="关注用户" transform="translate(16.000000, 17.000000)">
+                    <rect id="矩形" fill="#F5F7F9" x="0" y="0" width="28" height="28" rx="2"></rect>
+                    <rect id="矩形" fill="#000000" x="17" y="19" width="8" height="1.5"></rect>
+                    <rect id="矩形备份-2" fill="#000000" transform="translate(21.000000, 19.750000) rotate(90.000000) translate(-21.000000, -19.750000) " x="17" y="19" width="8" height="1.5"></rect>
+                    <circle id="椭圆形" stroke="#000000" stroke-width="1.5" cx="15.5" cy="9.5" r="4.5"></circle>
+                    <path d="M18.969618,14.9204926 C17.7722293,14.331076 16.4247781,14 15,14 C10.0294373,14 6,18.0294373 6,23" id="路径" stroke="#000000" stroke-width="1.5"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
