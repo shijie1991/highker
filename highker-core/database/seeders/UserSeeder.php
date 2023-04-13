@@ -39,7 +39,6 @@ class UserSeeder extends Seeder
     private function createDevUser()
     {
         $accountDev = [
-            '18101035120' => 'dirty',
             '13612345678' => 'devUser',
         ];
 
