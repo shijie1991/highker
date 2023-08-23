@@ -43,6 +43,10 @@ highker:publish     发布 HigKer 路由，配置，迁移文件等。 如果要
 highker:seed        Seed the highker test data
 ```
 
+## 截图
+
+![v36g39.png](https://hk-resources.oss-cn-beijing.aliyuncs.com/WechatIMG1161.jpg)
+
 ## License
 
 MIT
