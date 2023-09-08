@@ -1,7 +1,9 @@
 
 # [HighKer]
-
-📦 基于 laravel 开发的一个社区社交的小程序
+https://github.com/shijie1991/highker
+📦 基于 laravel 开发的 社区/社交 小程序
+# 接口文档
+https://documenter.getpostman.com/view/2207226/Uyr7Hdmk#902e8011-92e4-47a6-ae79-cdbd49dbc433
 
 ## 环境需求
 
