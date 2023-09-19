@@ -18,8 +18,10 @@ jobs:
     - uses: actions/checkout@v3
     - name: Switch to the highker-www directory
       run: cd highker-www
-    - name: Copy .env
-      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+    - name: show
+      run: ls
+    # - name: Copy .env
+    #   run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Install Dependencies
       run: composer install
     - name: install highker
