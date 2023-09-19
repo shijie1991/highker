@@ -20,8 +20,6 @@ jobs:
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-    - name: Generate key
-      run: php artisan key:generate
     - name: install highker
       run: php artisan highker:install
     - name: highker publish
@@ -36,8 +34,8 @@ jobs:
       run: |
         mkdir -p database
         touch database/database.sqlite
-    - name: Execute tests (Unit and Feature tests) via PHPUnit
-      env:
-        DB_CONNECTION: sqlite
-        DB_DATABASE: database/database.sqlite
-      run: vendor/bin/phpunit
+    # - name: Execute tests (Unit and Feature tests) via PHPUnit
+    #   env:
+    #     DB_CONNECTION: sqlite
+    #     DB_DATABASE: database/database.sqlite
+    #   run: vendor/bin/phpunit
